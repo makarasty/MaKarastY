@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
-<img src="https://img.shields.io/badge/-vscode-0078D4?style=for-the-badge&logo=visual-studio-code"/>
+<img alt="Windows 10" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
+<img alt="VisualStudioCode" src="https://img.shields.io/badge/-vscode-0078D4?style=for-the-badge&logo=visual-studio-code"/>
 </p>
 
 <p align="center">
@@ -19,5 +19,5 @@
 </p>
 
 <p align="center">
-<a href="mailto:makarasty1234@gmail.com"><img alt = "Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="mailto:makarasty1234@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
