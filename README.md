@@ -1,7 +1,9 @@
 <p align="center"><img src="https://github.com/makarasty/MaKarastY/blob/main/makarasty.png"</p>
- <div align=center>
-## See the languages that I know and what I work with 🧠 💭:
- </div>
+
+ 
+##See the languages that I know and what I work with 🧠 💭:
+  
+
 <p align="center">
 <a href="https://en.wikipedia.org/wiki/HTML">
   <img src="https://img.shields.io/badge/html%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
