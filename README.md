@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/makarasty/MaKarastY/blob/main/makarasty.png"</p>
  <div align=center>
- ## See the languages that I know and what I work with 🧠 💭:
+## See the languages that I know and what I work with 🧠 💭:
  </div>
 <p align="center">
 <a href="https://en.wikipedia.org/wiki/HTML">
