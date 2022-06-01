@@ -14,5 +14,5 @@
 </p>
 
 <p align="center">
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fanic17&count_bg=%23FFFFFF&title_bg=%23FFFFFF&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false" height=0 width=0>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anic17&layout=compact&count_private=true&langs_count=8&hide_border=true&theme=dark">
 </p>
