@@ -1,5 +1,5 @@
 <p align="center"><img src="https://github.com/makarasty/MaKarastY/blob/main/makarasty.png"</p>
-## 
+  
 <p align="center">
 <a href="https://en.wikipedia.org/wiki/HTML">
   <img src="https://img.shields.io/badge/html%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
@@ -23,7 +23,7 @@
   <img src="https://img.shields.io/badge/shell_script-233d4d.svg?&style=for-the-badge&logo=gnu-bash&logoColor=white"/>
   </a>
 </p>
-## 
+
 <p align="center">
   <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">
 <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
@@ -38,13 +38,13 @@
 <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"/>
   </a>
 </p>
-## 
+
 <p align="center">
   <a href="README.md">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKarastY&layout=compact&count_private=true&langs_count=8&hide_border=true&theme=dark">
      </a>
 </p>
-## 
+
 <p align="center">
 <a href="https://t.me/makarasty"><img src="https://img.shields.io/badge/@MaKarastY-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
 <a href="https://instagram.com/makarasty"><img src="https://img.shields.io/badge/-@MaKarastY-purple?style=for-the-badge&logo=instagram&logoColor=white"/></a>
@@ -55,4 +55,4 @@
 <p align="center">
 <a href="mailto:makarasty123@gmail.com"><img src="https://img.shields.io/badge/makarasty123@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
-## 
+
