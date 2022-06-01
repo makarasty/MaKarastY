@@ -1,7 +1,7 @@
 <p align="center"><img src="https://github.com/makarasty/MaKarastY/blob/main/makarasty.png"</p>
 
  
-##See the languages that I know and what I work with 🧠 💭:
+## See the languages that I know and what I work with 🧠 💭:
   
 
 <p align="center">
