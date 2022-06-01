@@ -22,9 +22,9 @@
 </p>
 
 <p align="center">
-<a href="mailto:makarasty1234@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<a href="https://t.me/makarasty"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/-MaKarastY-purple?style=for-the-badge&logo=instagram&logoColor=white"/>
+<a href="mailto:makarasty123@gmail.com"><img src="https://img.shields.io/badge/makarasty123@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://t.me/makarasty"><img src="https://img.shields.io/badge/@MaKarastY-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/-@MaKarastY-purple?style=for-the-badge&logo=instagram&logoColor=white"/>
 <img src="https://img.shields.io/badge/-MaKarastY-171515?style=for-the-badge&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/-MaKarastY%236177-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"/>
 </p>
