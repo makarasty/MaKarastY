@@ -51,8 +51,3 @@
 <a href="https://github.com/makarasty"><img src="https://img.shields.io/badge/-MaKarastY-171515?style=for-the-badge&logo=github&logoColor=white"/></a>
 <a href="https://discord.gg/PJMSpufzBF"><img src="https://img.shields.io/badge/-MaKarastY%236177-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"/></a>
 
-</p>
-<p align="center">
-<a href="mailto:makarasty123@gmail.com"><img src="https://img.shields.io/badge/makarasty123@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-</p>
-
