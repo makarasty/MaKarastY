@@ -30,7 +30,7 @@
   <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code">
 <img src="https://img.shields.io/badge/-vscode-0078D4?style=for-the-badge&logo=visual-studio-code"/>
   </a>
-  <a href="https://en.wikipedia.org/wiki/GitHub">
+  <a href="https://makarasty.github.io">
 <img src="https://img.shields.io/badge/GitHub_Pages-100000?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
   <a href="https://en.wikipedia.org/wiki/Google">
