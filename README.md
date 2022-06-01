@@ -1,7 +1,7 @@
 <p align="center"><img src="https://github.com/makarasty/MaKarastY/blob/main/makarasty.png"</p>
 
 <p align="center">
-  <a href="">
+  <a href="README.md">
 <img src="https://img.shields.io/badge/html%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/css-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/> 
 <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> 
