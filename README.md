@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/makarasty/MaKarastY/blob/main/makarasty.png"</p>
   
-## Langs
+##
   
 <p align="center">
 <a href="https://en.wikipedia.org/wiki/HTML">
