@@ -17,3 +17,7 @@
 <p align="center">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKarastY&layout=compact&count_private=true&langs_count=8&hide_border=true&theme=dark">
 </p>
+
+<p align="center">
+<a href="makarasty1234@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+</p>
