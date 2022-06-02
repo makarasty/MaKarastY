@@ -15,9 +15,6 @@
 <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">
   <img src="https://img.shields.io/badge/Python-00008B?style=for-the-badge&logo=python&logoColor=white"/>
   </a>
-<a href="https://en.wikipedia.org/wiki/PowerShell">
-  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=PowerShell&logoColor=white"/>
-  </a>
 <a href="https://en.wikipedia.org/wiki/Shell_script">
   <img src="https://img.shields.io/badge/shell_script-233d4d.svg?&style=for-the-badge&logo=gnu-bash&logoColor=white"/>
   </a>
