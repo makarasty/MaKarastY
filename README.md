@@ -44,6 +44,5 @@
 <p align="center">
 <a href="https://t.me/makarasty"><img src="https://img.shields.io/badge/@MaKarastY-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
 <a href="https://instagram.com/makarasty"><img src="https://img.shields.io/badge/-@MaKarastY-purple?style=for-the-badge&logo=instagram&logoColor=white"/></a>
-<a href="https://github.com/makarasty"><img src="https://img.shields.io/badge/-MaKarastY-171515?style=for-the-badge&logo=github&logoColor=white"/></a>
 <a href="https://discord.gg/PJMSpufzBF"><img src="https://img.shields.io/badge/-MaKarastY%236177-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"/></a>
 
