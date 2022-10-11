@@ -25,17 +25,10 @@
 <p align="center">
   <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">
 <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
-  </a>
-</p>
-<p align="center">
   <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code">
 <img src="https://img.shields.io/badge/-vscode-0078D4?style=for-the-badge&logo=visual-studio-code"/>
-  </a>
-</p>
-<p align="center">
   <a href="https://makarasty.github.io">
 <img src="https://img.shields.io/badge/GitHub_Pages-100000?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
   <a href="https://en.wikipedia.org/wiki/Google">
 <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"/>
   </a>
