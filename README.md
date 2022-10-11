@@ -9,6 +9,8 @@
 <a href="https://en.wikipedia.org/wiki/JavaScript">
   <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
   </a>
+</p>
+<p align="center">
 <a href="https://en.wikipedia.org/wiki/Node.js">
   <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"/>
   </a>
