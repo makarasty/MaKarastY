@@ -48,7 +48,5 @@
 </p>
 
 <p align="center">
-  <a href="README.md">projects
-<img src="https://img.shields.io/website?color=%23&down_color=%23fc0000&down_message=offline&label=my%20Discord%20bot&logo=discord&logoColor=%23738adb&style=for-the-badge&up_color=green&up_message=online&url=http%3A%2F%2Fsrv.daki.cc%3A4087">
-     </a>
+  <img src="https://img.shields.io/website?color=%23&down_color=%23fc0000&down_message=offline&label=my%20Discord%20bot&logo=discord&logoColor=%23738adb&style=for-the-badge&up_color=green&up_message=online&url=http%3A%2F%2Fsrv.daki.cc%3A4087">
 </p>
