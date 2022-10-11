@@ -40,9 +40,3 @@
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKarastY&layout=compact&count_private=true&langs_count=8&hide_border=true&theme=dark">
      </a>
 </p>
-
-<p align="center">
-<a href="https://t.me/makarasty"><img src="https://img.shields.io/badge/@MaKarastY-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
-<a href="https://instagram.com/makarasty"><img src="https://img.shields.io/badge/-@MaKarastY-purple?style=for-the-badge&logo=instagram&logoColor=white"/></a>
-<a href="https://discord.gg/PJMSpufzBF"><img src="https://img.shields.io/badge/-MaKarastY%236177-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"/></a>
-
