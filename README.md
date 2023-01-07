@@ -39,9 +39,3 @@
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKarastY&layout=compact&count_private=true&langs_count=8&hide_border=true&theme=dark">
      </a>
 </p>
-
-<p align="center">
-  <a href="https://discord.com/api/oauth2/authorize?client_id=750372619077025856&permissions=8&scope=bot">
-  <img src="https://img.shields.io/website?color=%23&down_color=%23fc0000&down_message=offline&label=my%20Discord%20bot&logo=discord&logoColor=%23738adb&style=for-the-badge&up_color=green&up_message=online&url=http%3A%2F%2Fsrv.daki.cc%3A4087">
-</a>
-</p>
