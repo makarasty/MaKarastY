@@ -120,7 +120,7 @@
 	</a>
 </div>
 <div align="center">
-  <a><strong>SOCIAL</strong></a>
+  <a><strong>SOCIALS</strong></a>
 </div>
 <div align="center">
 	<a href="https://steamcommunity.com/profiles/76561199076253091/" style="user-select: none; text-decoration: none;">
