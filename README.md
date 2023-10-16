@@ -62,7 +62,7 @@
 	</a>
 	<a href="https://en.wikipedia.org/wiki/Batch_file" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
-			src="https://img.shields.io/badge/C%23-323330?style=for-the-badge&logo=csharp&logoColor=%2399CC00" />
+			src="https://img.shields.io/badge/csharp-323330?style=for-the-badge&logo=csharp&logoColor=%2399CC00" />
 	</a>
 </div>
 <div align="center">
