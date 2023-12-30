@@ -18,6 +18,10 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/debian-323330?style=for-the-badge&logo=debian&logoColor=%23A81D33" />
 	</a>
+	<a href="https://ubuntu.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/ubuntu-323330?style=for-the-badge&logo=ubuntu&logoColor=%23E95420" />
+	</a>
 </div>
 <div align="center">
   <a><strong>CODE EDITORS</strong></a>
