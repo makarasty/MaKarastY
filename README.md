@@ -114,7 +114,7 @@
 		<img alt="logo" src="https://img.shields.io/badge/html-323330?style=for-the-badge&logo=html5" />
 	</a>
 	<a href="https://ejs.co/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/ejs-323330?style=for-the-badge&logo=readdotcv" />
+		<img alt="logo" src="https://img.shields.io/badge/ejs-323330?style=for-the-badge&logo=readdotcv&logoColor=%23a83f4f" />
 	</a>
 	<a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
