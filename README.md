@@ -32,6 +32,10 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/pterodactyl-323330?style=for-the-badge&logo=pterodactyl&logoColor=%2310539F" />
 	</a>
+	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/spigotmc-323330?style=for-the-badge&logo=spigotmc&logoColor=%23ED8106" />
+	</a>
 </div>
 <div align="center">
 	<a href="https://code.visualstudio.com/" style="user-select: none; text-decoration: none;">
