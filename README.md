@@ -24,6 +24,12 @@
 	</a>
 </div>
 <div align="center">
+	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/openai-323330?style=for-the-badge&logo=openai&logoColor=%23412991" />
+	</a>
+</div>
+<div align="center">
 	<a href="https://code.visualstudio.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/vscode-323330?style=for-the-badge&logo=visual-studio-code&logoColor=%23007ACC" />
