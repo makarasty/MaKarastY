@@ -76,6 +76,10 @@
 	<a href="https://www.mysql.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/mysql-323330?style=for-the-badge&logo=mysql" />
 	</a>
+	<a href="https://www.w3schools.com/cs/index.php" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/sqlite-323330?style=for-the-badge&logo=sqlite&logoColor=%23003B57" />
+	</a>
 	<a href="https://www.mongodb.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/mongodb-323330?style=for-the-badge&logo=mongodb" />
 	</a>
@@ -84,10 +88,6 @@
 	</a>
 	<a href="https://redis.io/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/redis-323330?style=for-the-badge&logo=redis" />
-	</a>
-	<a href="https://www.w3schools.com/cs/index.php" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/sqlite-323330?style=for-the-badge&logo=sqlite&logoColor=%23003B57" />
 	</a>
 </div>
 <div align="center">
