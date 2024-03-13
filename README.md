@@ -192,7 +192,6 @@
 			src="https://img.shields.io/badge/css-323330?style=for-the-badge&logo=css3&logoColor=%231572B6" />
 	</a>
 </div>
-<HR>
 <div align="center">
 	<a href="https://github.com/makarasty?tab=repositories" style="user-select: none; text-decoration: none;">
 		<img alt="stats"
