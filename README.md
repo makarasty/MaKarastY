@@ -135,15 +135,15 @@
   <a><strong>SOCIALS</strong></a>
 </div>
 <div align="center">
-	<a href="https://steamcommunity.com/profiles/76561199076253091/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/steam-323330?style=for-the-badge&logo=steam" />
-	</a>
 	<a href="https://overwatch.blizzard.com/ru-ru/career/MaKarastY-2600/"
 		style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/battle.net-323330?style=for-the-badge&logo=battledotnet" />
 	</a>
 	<a href="https://github.com/makarasty/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/github-323330?style=for-the-badge&logo=github" />
+	</a>
+	<a href="https://steamcommunity.com/profiles/76561199076253091/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/steam-323330?style=for-the-badge&logo=steam" />
 	</a>
 </div>
 <div align="center">
