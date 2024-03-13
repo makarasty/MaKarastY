@@ -32,9 +32,81 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/pterodactyl-323330?style=for-the-badge&logo=pterodactyl&logoColor=%2310539F" />
 	</a>
-	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
+	<a href="https://www.spigotmc.org/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/spigotmc-323330?style=for-the-badge&logo=spigotmc&logoColor=%23ED8106" />
+	</a>
+	<a href="https://stackoverflow.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/stackoverflow-323330?style=for-the-badge&logo=stackoverflow&logoColor=%23F58025" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/tor-323330?style=for-the-badge&logo=torbrowser&logoColor=%237D4698" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/wireguard-323330?style=for-the-badge&logo=wireguard&logoColor=%2388171A" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/codewars-323330?style=for-the-badge&logo=codewars&logoColor=%23B1361E" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/anydesk-323330?style=for-the-badge&logo=anydesk&logoColor=%23EF443B" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/aseprite-323330?style=for-the-badge&logo=aseprite&logoColor=%237D929E" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/blockbench-323330?style=for-the-badge&logo=blockbench&logoColor=%231E93D9" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/curseforge-323330?style=for-the-badge&logo=curseforge&logoColor=%23F16436" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/deepl-323330?style=for-the-badge&logo=deepl&logoColor=%230F2B46" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/diagramsdotnet-323330?style=for-the-badge&logo=diagramsdotnet&logoColor=%23F08705" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/docker-323330?style=for-the-badge&logo=docker&logoColor=%232496ED" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/duckduckgo-323330?style=for-the-badge&logo=duckduckgo&logoColor=%23DE5833" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/fastify-323330?style=for-the-badge&logo=fastify&logoColor=%23000000" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/filezilla-323330?style=for-the-badge&logo=filezilla&logoColor=%23BF0000" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/firefoxbrowser-323330?style=for-the-badge&logo=firefoxbrowser&logoColor=%23FF7139" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/git-323330?style=for-the-badge&logo=git&logoColor=%23F05032" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/googledrive-323330?style=for-the-badge&logo=googledrive&logoColor=%234285F4" />
+	</a>
+	<a href="https://www.torproject.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/phpmyadmin-323330?style=for-the-badge&logo=phpmyadmin&logoColor=%236C78AF" />
 	</a>
 </div>
 <div align="center">
@@ -74,7 +146,7 @@
 	</a>
 	<a href="https://en.wikipedia.org/wiki/Batch_file" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
-			src="https://img.shields.io/badge/csharp-323330?style=for-the-badge&logo=csharp&logoColor=%2399CC00" />
+			src="https://img.shields.io/badge/csharp-323330?style=for-the-badge&logo=csharp&logoColor=%23512BD4" />
 	</a>
 </div>
 <div align="center">
@@ -113,7 +185,7 @@
 		<img alt="logo" src="https://img.shields.io/badge/html-323330?style=for-the-badge&logo=html5" />
 	</a>
 	<a href="https://ejs.co/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="" />
+		<img alt="logo" src="https://img.shields.io/badge/ejs-323330?style=for-the-badge&logo=ejs&logoColor=%23B4CA65" />
 	</a>
 	<a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
