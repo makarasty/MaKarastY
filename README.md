@@ -28,6 +28,10 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/openai-323330?style=for-the-badge&logo=openai&logoColor=%23412991" />
 	</a>
+	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/pterodactyl-323330?style=for-the-badge&logo=pterodactyl&logoColor=%2310539F" />
+	</a>
 </div>
 <div align="center">
 	<a href="https://code.visualstudio.com/" style="user-select: none; text-decoration: none;">
