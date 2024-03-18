@@ -128,10 +128,6 @@
 	<a href="https://www.python.org/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/python-323330?style=for-the-badge&logo=python" />
 	</a>
-	<a href="https://ru.wikipedia.org/wiki/C%2B%2B" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/cpp-323330?style=for-the-badge&logo=c%2B%2B&logoColor=%2300599C" />
-	</a>
 	<a href="https://en.wikipedia.org/wiki/Batch_file" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/bath-323330?style=for-the-badge&logo=windowsterminal&logoColor=%234D4D4D" />
