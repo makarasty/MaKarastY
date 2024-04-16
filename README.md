@@ -169,7 +169,10 @@
 			src="https://img.shields.io/badge/yaml-323330?style=for-the-badge&logo=yaml&logoColor=%23CB171E" />
 	</a>
 	<a href="https://www.dotenv.org/docs/security/env.html" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/.env-323330?style=for-the-badge&logo=dotenv" />
+		<img alt="logo" src="https://img.shields.io/badge/.env-323330?style=for-the-badge&logo=dotenv&logoColor=%23ECD53F" />
+	</a>
+	<a href="https://toml.io/en/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/toml-323330?style=for-the-badge&logo=toml&logoColor=%239C4121" />
 	</a>
 </div>
 <div align="center">
