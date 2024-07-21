@@ -6,7 +6,7 @@
 <div align="center">
 	<a href="https://www.microsoft.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
-			src="https://img.shields.io/badge/windows-323330?style=for-the-badge&logo=windows&logoColor=%230078D6" />
+			src="https://img.shields.io/badge/windows-323330?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCI+PHBhdGggZmlsbD0iIzAwQURFRiIgZD0ibTEyNiAxLjYzN2wtNjcgOS44MzR2NDkuODMxbDY3LS41MzR6TTEuNjQ3IDY2LjcwOWwuMDAzIDQyLjQwNGw1MC43OTEgNi45ODNsLS4wNC00OS4wNTd6bTU2LjgyLjY4bC4wOTQgNDkuNDY1bDY3LjM3NiA5LjUwOWwuMDE2LTU4Ljg2M3pNMS42MSAxOS4yOTdsLjA0NyA0Mi4zODNsNTAuNzkxLS4yODlsLS4wMjMtNDkuMDE2eiIvPjwvc3ZnPg==&logoColor=%230078D6" />
 	</a>
 	<a href="https://www.linux.org/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/Linux-323330?style=for-the-badge&logo=linux&logoColor=%23FCC624" />
@@ -108,7 +108,7 @@
 <div align="center">
 	<a href="https://code.visualstudio.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
-			src="https://img.shields.io/badge/vscode-323330?style=for-the-badge&logo=visual-studio-code&logoColor=%23007ACC" />
+			src="https://img.shields.io/badge/vscode-323330?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxwYXRoIGZpbGw9IiMwMDY1YTkiIGQ9Im0yOS4wMSA1LjAzbC01Ljc2Ni0yLjc3NmExLjc0MiAxLjc0MiAwIDAgMC0xLjk4OS4zMzhMMi4zOCAxOS44YTEuMTY2IDEuMTY2IDAgMCAwLS4wOCAxLjY0N2MuMDI1LjAyNy4wNS4wNTMuMDc3LjA3N2wxLjU0MSAxLjRhMS4xNjUgMS4xNjUgMCAwIDAgMS40ODkuMDY2TDI4LjE0MiA1Ljc1QTEuMTU4IDEuMTU4IDAgMCAxIDMwIDYuNjcydi0uMDY3YTEuNzQ4IDEuNzQ4IDAgMCAwLS45OS0xLjU3NVoiLz48cGF0aCBmaWxsPSIjMDA3YWNjIiBkPSJtMjkuMDEgMjYuOTdsLTUuNzY2IDIuNzc3YTEuNzQ1IDEuNzQ1IDAgMCAxLTEuOTg5LS4zMzhMMi4zOCAxMi4yYTEuMTY2IDEuMTY2IDAgMCAxLS4wOC0xLjY0N2MuMDI1LS4wMjcuMDUtLjA1My4wNzctLjA3N2wxLjU0MS0xLjRBMS4xNjUgMS4xNjUgMCAwIDEgNS40MSA5LjAxbDIyLjczMiAxNy4yNEExLjE1OCAxLjE1OCAwIDAgMCAzMCAyNS4zMjh2LjA3MmExLjc0OSAxLjc0OSAwIDAgMS0uOTkgMS41N1oiLz48cGF0aCBmaWxsPSIjMWY5Y2YwIiBkPSJNMjMuMjQ0IDI5Ljc0N2ExLjc0NSAxLjc0NSAwIDAgMS0xLjk4OS0uMzM4QTEuMDI1IDEuMDI1IDAgMCAwIDIzIDI4LjY4NFYzLjMxNmExLjAyNCAxLjAyNCAwIDAgMC0xLjc0OS0uNzI0YTEuNzQ0IDEuNzQ0IDAgMCAxIDEuOTg5LS4zMzlsNS43NjUgMi43NzJBMS43NDggMS43NDggMCAwIDEgMzAgNi42djE4LjhhMS43NDggMS43NDggMCAwIDEtLjk5MSAxLjU3NloiLz48L3N2Zz4=&logoColor=%23007ACC" />
 	</a>
 	<a href="https://www.sublimetext.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/sublimetext-323330?style=for-the-badge&logo=sublimetext" />
@@ -138,7 +138,7 @@
 	</a>
 	<a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
-			src="https://img.shields.io/badge/csharp-323330?style=for-the-badge&logo=csharp&logoColor=%23512BD4" />
+			src="https://img.shields.io/badge/csharp-323330?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PHBhdGggZmlsbD0iIzUxMkJENCIgZD0iTTAgMGgyNTZ2MjU2SDB6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTQ1LjYyNyAxNjMuNTU1Yy0xLjgxIDAtMy4zNDgtLjYwMy00LjYxNS0xLjgwOWMtMS4yNjctMS4yMzctMS45MDEtMi43MDctMS45MDEtNC40MDhjMC0xLjczMi42MzQtMy4yMTYgMS45LTQuNDU0YzEuMjY4LTEuMjM3IDIuODA2LTEuODU2IDQuNjE2LTEuODU2YzEuODQgMCAzLjM5NC42MTkgNC42NjEgMS44NTZjMS4yOTggMS4yMzggMS45NDYgMi43MjIgMS45NDYgNC40NTRjMCAxLjcwMS0uNjQ4IDMuMTctMS45NDYgNC40MDhjLTEuMjY3IDEuMjA2LTIuODIgMS44MS00LjY2IDEuODFabTcyLjM2MS0xLjAyaC0xMS43NjVMNzUuMjI1IDExMy42M2EyMS44ODIgMjEuODgyIDAgMCAxLTEuOTQ2LTMuODVoLS4yNzJsLjA0Ny4zMDVsLjA0My4zNWwuMDQuMzkzbC4wMzguNDM2bC4wNDkuNzM2bC4wNDIuODMybC4wMzUuOTNsLjAyOCAxLjAyOGwuMDIgMS4xMjVsLjAxLjgwNWwuMDEgMi4ydjQzLjYxNEg2Mi45NjFWOTZoMTIuNTM1bDI5Ljk1NyA0Ny43NDNsLjc0IDEuMTY5bC40NzcuNzY4bC40MDguNjc1bC4zNC41ODNsLjE5LjMzOGwuMTYuMjk2bC4xMy4yNTVoLjE4bC0uMDM0LS4yMWwtLjA2NC0uNDVsLS4wNi0uNDkzbC0uMDUzLS41MzdhMzUuOTQzIDM1Ljk0MyAwIDAgMS0uMDI0LS4yODVsLS4wNDYtLjYwMmwtLjA0LS42NDVsLS4wMzUtLjY5bC0uMDQyLTEuMTE0bC0uMDMtMS4yMTJsLS4wMTgtMS4zMWwtLjAwNi0xLjQwN1Y5NmgxMC4zNjJ2NjYuNTM1Wm01MC42ODUgMGgtMzYuNDI4Vjk2aDM0Ljk4djkuMzczaC0yNC4yMXYxOC44MzdoMjIuMzF2OS4zMjZoLTIyLjMxdjE5LjY3M2gyNS42NTh2OS4zMjZabTUxLjc3Mi01Ny4xNjJIMjAxLjh2NTcuMTYyaC0xMC43N3YtNTcuMTYyaC0xOC42Vjk2aDQ4LjAxNHY5LjM3M1oiLz48L3N2Zz4=&logoColor=%23512BD4" />
 	</a>
 </div>
 <div align="center">
@@ -152,8 +152,8 @@
 	<a href="https://www.mongodb.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/mongodb-323330?style=for-the-badge&logo=mongodb" />
 	</a>
-	<a href="https://www.npmjs.com/package/nedb/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/nedb-323330?style=for-the-badge&logo=databricks" />
+	<a href="https://www.npmjs.com/package/lmdb/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/lmdb-323330?style=for-the-badge&logo=databricks" />
 	</a>
 	<a href="https://redis.io/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/redis-323330?style=for-the-badge&logo=redis" />
@@ -213,3 +213,4 @@
 		<img alt="logo" src="https://img.shields.io/badge/discord-323330?style=for-the-badge&logo=discord" />
 	</a>
 </div>
+
