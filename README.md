@@ -31,7 +31,7 @@
 		<img alt="logo" src="https://img.shields.io/badge/sublimetext-323330?style=for-the-badge&logo=sublimetext" />
 	</a>
 	<a href="https://www.jetbrains.com/idea/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/intellijidea-323330?style=for-the-badge&logo=intellijidea&logoColor=%23000000" />
+		<img alt="logo" src="https://img.shields.io/badge/intellijidea-323330?style=for-the-badge&logo=intellijidea" />
 	</a>
 	<a href="https://unity.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/unity-323330?style=for-the-badge&logo=unity&logoColor=%23FFFFFF" />
@@ -42,6 +42,11 @@
 	<a href="https://nodejs.org/en/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/node.js-323330?style=for-the-badge&logo=nodedotjs" />
 	</a>
+	<a href="https://bun.sh/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/bun-323330?style=for-the-badge&logo=bun" />
+	</a>
+</div>
+<div align="center" style="user-select: none; text-decoration: none;">
 	<a href="https://www.typescriptlang.org/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/typescript-323330?style=for-the-badge&logo=typescript" />
 	</a>
@@ -147,11 +152,27 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/googledrive-323330?style=for-the-badge&logo=googledrive&logoColor=%234285F4" />
 	</a>
+	<a href="https://pterodactyl.io/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/pterodactyl-323330?style=for-the-badge&logo=pterodactyl&logoColor=%2310539F" />
+	</a>
 </div>
 <div align="center" style="user-select: none; text-decoration: none;">
 	<a href="https://www.codewars.com/users/MaKarastY" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/codewars-323330?style=for-the-badge&logo=codewars&logoColor=%23B1361E" />
+	</a>
+	<a href="https://www.npmjs.com/~makarasty" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/npm-323330?style=for-the-badge&logo=npm&logoColor=%23CB3837" />
+	</a>
+	<a href="https://stats.uptimerobot.com/knqRXIY3qY" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/SERVICES-323330?style=for-the-badge&logo=downdetector&logoColor=%23FF160A" />
+	</a>
+	<a href="https://monkeytype.com/profile/MaKarastY" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/monkeytype-323330?style=for-the-badge&logo=monkeytype&logoColor=%23E2B714" />
 	</a>
 </div>
 <br>
