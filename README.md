@@ -158,6 +158,10 @@
 	</a>
 </div>
 <div align="center" style="user-select: none; text-decoration: none;">
+	<a href="https://stats.uptimerobot.com/knqRXIY3qY" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/SERVICES-323330?style=for-the-badge&logo=downdetector&logoColor=%23FF160A" />
+	</a>
 	<a href="https://www.codewars.com/users/MaKarastY" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/codewars-323330?style=for-the-badge&logo=codewars&logoColor=%23B1361E" />
@@ -165,10 +169,6 @@
 	<a href="https://www.npmjs.com/~makarasty" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/npm-323330?style=for-the-badge&logo=npm&logoColor=%23CB3837" />
-	</a>
-	<a href="https://stats.uptimerobot.com/knqRXIY3qY" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/SERVICES-323330?style=for-the-badge&logo=downdetector&logoColor=%23FF160A" />
 	</a>
 	<a href="https://monkeytype.com/profile/MaKarastY" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
