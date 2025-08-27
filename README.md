@@ -67,11 +67,14 @@
 	</a>
 </div>
 <div align="center" style="user-select: none; text-decoration: none;">
-	<a href="https://react.dev/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/react-323330?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+	<a href="https://vuejs.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/vue-323330?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" />
 	</a>
 	<a href="https://ejs.co/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/ejs-323330?style=for-the-badge&logo=ejs&logoColor=%23B4CA65" />
+	</a>
+	<a href="https://react.dev/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/react-323330?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
 	</a>
 	<a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
@@ -83,15 +86,14 @@
 </div>
 <br>
 <div align="center" style="user-select: none; text-decoration: none;">
-	<a href="https://www.mysql.com/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/mysql-323330?style=for-the-badge&logo=mysql" />
-	</a>
 	<a href="https://www.mongodb.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/mongodb-323330?style=for-the-badge&logo=mongodb" />
 	</a>
-	<a href="https://www.sqlite.org/" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/sqlite-323330?style=for-the-badge&logo=sqlite&logoColor=%23003B57" />
+	<a href="https://firebase.google.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/firebase-323330?style=for-the-badge&logo=firebase&logoColor=%23DD2C00" />
+	</a>
+	<a href="https://www.npmjs.com/package/lmdb/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/lmdb-323330?style=for-the-badge&logo=databricks" />
 	</a>
 	<a href="https://redis.io/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/redis-323330?style=for-the-badge&logo=redis" />
@@ -99,8 +101,12 @@
 	<a href="https://www.postgresql.org/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/postgresql-323330?style=for-the-badge&logo=postgresql&logoColor=%234169E1" />
 	</a>
-	<a href="https://www.npmjs.com/package/lmdb/" style="user-select: none; text-decoration: none;">
-		<img alt="logo" src="https://img.shields.io/badge/lmdb-323330?style=for-the-badge&logo=databricks" />
+	<a href="https://www.mysql.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo" src="https://img.shields.io/badge/mysql-323330?style=for-the-badge&logo=mysql" />
+	</a>
+	<a href="https://www.sqlite.org/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/sqlite-323330?style=for-the-badge&logo=sqlite&logoColor=%23003B57" />
 	</a>
 </div>
 <div align="center" style="user-select: none; text-decoration: none;">
@@ -115,16 +121,16 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/yaml-323330?style=for-the-badge&logo=yaml&logoColor=%23CB171E" />
 	</a>
+	<a href="https://en.wikipedia.org/wiki/Comma-separated_values" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/CSV-323330?style=for-the-badge&logo=comma&logoColor=%23000" />
+	</a>
 	<a href="https://toml.io/en/" style="user-select: none; text-decoration: none;">
 		<img alt="logo" src="https://img.shields.io/badge/toml-323330?style=for-the-badge&logo=toml&logoColor=%239C4121" />
 	</a>
 </div>
 <br>
 <div align="center" style="user-select: none; text-decoration: none;">
-	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/openai-323330?style=for-the-badge&logo=openai&logoColor=%23412991" />
-	</a>
 	<a href="https://claude.ai/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/anthropic-323330?style=for-the-badge&logo=anthropic&logoColor=%23191919" />
@@ -133,8 +139,29 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/gemini-323330?style=for-the-badge&logo=googlegemini&logoColor=%238E75B2" />
 	</a>
+	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/openai-323330?style=for-the-badge&logo=openai&logoColor=%23412991" />
+	</a>
 </div>
 <br>
+<div align="center" style="user-select: none; text-decoration: none;">
+	<a href="https://www.notion.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/notion-323330?style=for-the-badge&logo=notion" />
+	</a>
+	<a href="https://obsidian.md/about" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/obsidian-323330?style=for-the-badge&logo=obsidian&logoColor=%237C3AED" />
+	</a>
+	<a href="https://www.figma.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/figma-323330?style=for-the-badge&logo=figma&logoColor=%23F24E1E" />
+	</a>
+	<a href="https://www.drawio.com/" style="user-select: none; text-decoration: none;">
+		<img alt="logo"
+			src="https://img.shields.io/badge/draw.io-323330?style=for-the-badge&logo=diagramsdotnet&logoColor=%23F08705" />
+	</a></div>
 <div align="center" style="user-select: none; text-decoration: none;">
 	<a href="https://www.docker.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
@@ -143,10 +170,6 @@
 	<a href="https://git-scm.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
 			src="https://img.shields.io/badge/git-323330?style=for-the-badge&logo=git&logoColor=%23F05032" />
-	</a>
-	<a href="https://www.drawio.com/" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/draw.io-323330?style=for-the-badge&logo=diagramsdotnet&logoColor=%23F08705" />
 	</a>
 	<a href="https://drive.google.com/" style="user-select: none; text-decoration: none;">
 		<img alt="logo"
