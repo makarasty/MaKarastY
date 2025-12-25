@@ -139,10 +139,6 @@
 		<img alt="logo"
 			src="https://img.shields.io/badge/gemini-323330?style=for-the-badge&logo=googlegemini&logoColor=%238E75B2" />
 	</a>
-	<a href="https://openai.com/" style="user-select: none; text-decoration: none;">
-		<img alt="logo"
-			src="https://img.shields.io/badge/openai-323330?style=for-the-badge&logo=openai&logoColor=%23412991" />
-	</a>
 </div>
 <br>
 <div align="center" style="user-select: none; text-decoration: none;">
