@@ -83,6 +83,9 @@
   <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference/">
     <img alt="CSS3" src="https://img.shields.io/badge/css-323330?style=for-the-badge&logo=css&logoColor=%231572B6" />
   </a>
+  <a href="https://sass-lang.com/">
+    <img alt="Sass" src="https://img.shields.io/badge/sass-323330?style=for-the-badge&logo=sass&logoColor=%23CC6699" />
+  </a>
   <a href="https://ru.wikipedia.org/wiki/HTML5/">
     <img alt="HTML5" src="https://img.shields.io/badge/html-323330?style=for-the-badge&logo=html5" />
   </a>
@@ -163,6 +166,9 @@
 <div align="center">
   <a href="https://www.docker.com/">
     <img alt="Docker" src="https://img.shields.io/badge/docker-323330?style=for-the-badge&logo=docker&logoColor=%232496ED" />
+  </a>
+  <a href="https://nginx.org/">
+    <img alt="Nginx" src="https://img.shields.io/badge/nginx-323330?style=for-the-badge&logo=nginx&logoColor=%23009639" />
   </a>
   <a href="https://git-scm.com/">
     <img alt="Git" src="https://img.shields.io/badge/git-323330?style=for-the-badge&logo=git&logoColor=%23F05032" />
