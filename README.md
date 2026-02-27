@@ -72,7 +72,7 @@
     <img alt="Vue.js" src="https://img.shields.io/badge/vue-323330?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" />
   </a>
   <a href="https://nuxt.com/">
-    <img alt="Nuxt.js" src="https://img.shields.io/badge/nuxt.js-323330?style=for-the-badge&logo=nuxt&logoColor=%2300C58E" />
+    <img alt="Nuxt" src="https://img.shields.io/badge/nuxt-323330?style=for-the-badge&logo=nuxt&logoColor=%2300C58E" />
   </a>
   <a href="https://ejs.co/">
     <img alt="EJS" src="https://img.shields.io/badge/ejs-323330?style=for-the-badge&logo=ejs&logoColor=%23B4CA65" />
