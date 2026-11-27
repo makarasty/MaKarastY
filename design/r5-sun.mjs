@@ -86,7 +86,10 @@ const res = [
   build(`variants/${D}/stack.svg`, { W: 840, H: 680, meR: 48, aiR: 31, tR: 20, icon: 1.2, r0: 100, margin: 14 }),
   build(`variants/${D}/stack-m.svg`, { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
 ];
-linkCards(D, { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
+// env LINKS=icons: icon-only buttons on desktop too (round 8 tie: cards 9, icons 9).
+linkCards(D, process.env.LINKS === 'icons'
+  ? { bg: TILE, rx: 22, stroke: LINE, h: 44, iconOnly: true }
+  : { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
 // Round 8: no header image and no "+N more" block (the user: "шапку видимо прийдеться убрать", "+21 more фигня").
 out(`variants/${D}.md`, `<!-- ${process.env.NAME ?? TITLE} -->\n<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n<br>\n\n${linkRow(D)}\n`);
 console.log(`built ${D} |`, order.length, 'items |', res.map((r) => `${r.file} c=${r.c} min gap=${r.gap}`).join(' | '));
