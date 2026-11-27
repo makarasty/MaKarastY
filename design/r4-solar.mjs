@@ -1,11 +1,11 @@
 // Round 4, "Солнечная система": the user in the centre, the three AI on the first orbit as equals,
 // categories as planets on the second orbit, each with its technologies as moons.
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar, byScore } from './lib.mjs';
 
 const BG = '#0d1117', TILE = '#161b22', LINE = '#30363d';
 const ai = stack.filter((s) => s.tier === 'ai');
 const systems = CAT_ORDER.filter((c) => c !== 'ai')
-  .map((cat) => ({ cat, moons: stack.filter((s) => s.tier !== 'ai' && s.cat === cat) }))
+  .map((cat) => ({ cat, moons: stack.filter((s) => s.tier !== 'ai' && s.cat === cat).sort(byScore) }))
   .filter((s) => s.moons.length);
 
 const CSS = `<style>

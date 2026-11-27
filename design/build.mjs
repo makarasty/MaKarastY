@@ -223,7 +223,7 @@ for (const [style, name] of Object.entries(r3)) {
 const readme = fs.readFileSync(new URL('README.md', root), 'utf8').replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
 // The page shows the current round only; older variants stay in variants/ and in git.
 // r4b/r4c come from r4-hex.mjs / r4-iso.mjs, r4a from r4-solar.mjs; a missing one is skipped.
-const ROUND = ['r4a', 'r4b', 'r4c', 'r5d'];
+const ROUND = ['r4a', 'r4b', 'r5d'];
 const files = ROUND.map((k) => `${k}.md`).filter((f) => fs.existsSync(new URL(`variants/${f}`, root)));
 const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
   const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');

@@ -1,6 +1,6 @@
 // Round 4 variant "Соты": 61 pointy-top hex cells in one big hexagon (4 rings), categories as pie wedges.
 import fs from 'node:fs';
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, me as avatar } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, me as avatar, byScore } from './lib.mjs';
 
 const BG = '#0d1117';
 const SQ3 = Math.sqrt(3);
@@ -23,7 +23,16 @@ const near = (a, b) => Math.abs(a - b) < 1e-6;
 const isAi = (c) => c.ring === 1 && [30, 150, 270].some((d) => near(c.ang, (d * Math.PI) / 180));
 // ring 1: three AI cells and three petals styled like the centre; wedges: by angle from the top, then ring; the one spare cell ends the list, so it is a seam before the first category
 const rest = cells.filter((c) => c.ring > 1).sort((a, b) => (near(a.ang, b.ang) ? a.ring - b.ring : a.ang - b.ang));
-if (rest.length !== techs.length + 1) throw new Error(`cells ${rest.length} vs techs ${techs.length}`);
+if (rest.length < techs.length) throw new Error(`cells ${rest.length} vs techs ${techs.length}`);
+// Inside each category's wedge the user's higher scores take the inner rings.
+const slot = new Map();
+for (let i = 0; i < techs.length;) {
+  let j = i;
+  while (j < techs.length && techs[j].cat === techs[i].cat) j++;
+  const cellsOf = rest.slice(i, j).sort((a, b) => a.ring - b.ring || a.ang - b.ang);
+  techs.slice(i, j).sort(byScore).forEach((t, k) => slot.set(cellsOf[k], t));
+  i = j;
+}
 
 // The centre cell. One place to swap the text for an avatar later.
 function centre(cx, cy, w, r, label) {
@@ -53,7 +62,7 @@ function build(file, width, w, iconRatio, label) {
     body += hex(x, y, r, mix(BG, col, 0.12), col, 'ai') + icon(it, x - isz / 2, y - isz / 2, isz, BG);
   });
   rest.forEach((c, i) => {
-    const [x, y] = pos(c), it = techs[i];
+    const [x, y] = pos(c), it = slot.get(c);
     if (!it) { body += hex(x, y, r, BG, mix(BG, '#e6edf3', 0.1)); return; }
     const col = CAT[it.cat][0];
     body += hex(x, y, r, mix(BG, col, 0.12), mix(BG, col, 0.4)) + icon(it, x - isz / 2, y - isz / 2, isz, mix(BG, col, 0.12));

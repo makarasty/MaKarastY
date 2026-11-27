@@ -68,6 +68,8 @@ export const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 
 export const CUSTOM = {
   mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
   lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
+  // no icon set has a CSV mark: a small sheet with a header row
+  csv: { raw: '<rect x="3" y="4" width="18" height="16" rx="2" fill="#1F7A4D"/><path d="M3 9h18M9 4v16M15 4v16M3 14.5h18" stroke="#E6EDF3" stroke-width="1.4"/>', hex: '#1F7A4D' },
   // grass block: the simple-icons Minecraft mark is a wordmark and turns into a line at 16px
   minecraft: { raw: '<path d="M3 3h18v7H3z" fill="#62B47A"/><path d="M3 10h18v11H3z" fill="#8B5E3C"/><path d="M5 10h3v3H5zM12 10h3v2h-3zM17 10h2v4h-2z" fill="#62B47A"/>', hex: '#62B47A' },
 };
@@ -150,6 +152,8 @@ export const svg = (w, h, body, extra = '') =>
 
 // Inside a tier, things of one kind sit together; stack.mjs order (usage) decides within a kind.
 export const CAT_ORDER = ['ai', 'lang', 'web', 'data', 'infra', 'tool', 'os', 'game', 'format'];
+// Higher user score first; unscored last; ties keep stack.mjs order (Array.sort is stable).
+export const byScore = (a, b) => (b.score ?? 0) - (a.score ?? 0);
 export const byTier = (t) =>
   stack.filter((s) => s.tier === t).sort((a, b) => CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat));
 export const W = 840;
