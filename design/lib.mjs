@@ -122,10 +122,10 @@ export function iconColor(item, bg, mono) {
 }
 // Full-colour logos (Iconify "logos" CC0 and "devicon" MIT sets, or a local PNG); ids not listed keep
 // the one-colour simple-icons mark. The user asked for the real colour logos (round 4).
-const ICON_SETS = {
-  logos: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/logos/icons.json', import.meta.url), 'utf8')),
-  devicon: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/devicon/icons.json', import.meta.url), 'utf8')),
-  vscode: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/vscode-icons/icons.json', import.meta.url), 'utf8')),
+const loadSet = (pkg) => JSON.parse(fs.readFileSync(new URL(`./node_modules/@iconify-json/${pkg}/icons.json`, import.meta.url), 'utf8'));
+export const ICON_SETS = {
+  logos: loadSet('logos'), devicon: loadSet('devicon'), vscode: loadSet('vscode-icons'),
+  deviconplain: loadSet('devicon-plain'), skill: loadSet('skill-icons'), material: loadSet('material-icon-theme'),
 };
 const dataUri = (file, type) => `data:${type};base64,${fs.readFileSync(new URL(`./assets/${file}`, import.meta.url)).toString('base64')}`;
 export const LOGOS = {
@@ -158,10 +158,24 @@ export const LOGOS = {
   svg: 'logos:svg',
 };
 const LIGHT = '#E6EDF3';
+// The user's own picks from variants/icons.html (round 10) win over LOGOS above.
+const PICKS_FILE = new URL('./icon-picks.json', import.meta.url);
+export const PICKS = fs.existsSync(PICKS_FILE) ? JSON.parse(fs.readFileSync(PICKS_FILE, 'utf8')) : {};
 function colourLogo(id) {
-  const ref = LOGOS[id];
-  if (!ref) return null;
-  const [set, name] = ref.split(':');
+  const ref = PICKS[id] ?? LOGOS[id];
+  return ref ? logoFromRef(ref, id) : null;
+}
+// Draws any icon from a 'set:name' reference: an Iconify set, 'si:<simple-icons key>', 'custom:<CUSTOM key>',
+// 'png:<file under assets/>' or 'file:<svg under assets/>'.
+export function logoFromRef(ref, id = ref) {
+  const [set, name] = [ref.slice(0, ref.indexOf(':')), ref.slice(ref.indexOf(':') + 1)];
+  if (set === 'custom') return { raw: CUSTOM[name].raw, vb: '0 0 24 24' };
+  if (set === 'si') {
+    const s = si[name] ?? si9[name];
+    if (!s) throw new Error(`no ${ref} for ${id}`);
+    const hex = '#' + s.hex;
+    return { raw: `<path d="${s.path}" fill="${lum(hex) < 0.05 ? LIGHT : hex}"/>`, vb: '0 0 24 24' };
+  }
   if (set === 'png') return { raw: `<image href="${dataUri(name, 'image/png')}" width="24" height="24"/>`, vb: '0 0 24 24' };
   if (set === 'file') {
     // Official logo saved under assets/ (see assets/logos/SOURCES.md). Editor metadata is cut so the

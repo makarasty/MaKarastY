@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Выбор иконок</title>
+<style>
+  :root { --bg:#0d1117; --box:#161b22; --line:#30363d; --fg:#e6edf3; --mute:#8b949e; --acc:#2f81f7; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; }
+  .bar { position:sticky; top:0; z-index:2; display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:10px 16px; background:var(--bg); border-bottom:1px solid var(--line); }
+  .bar b { margin-right:auto; }
+  button { font:inherit; color:var(--fg); background:#21262d; border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
+  button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  main { max-width:1100px; margin:0 auto; padding:12px 16px 40px; }
+  .row { display:grid; grid-template-columns:150px 1fr; gap:12px; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); }
+  .nm b { display:block; }
+  .nm span { color:var(--mute); font-size:12px; }
+  .opts { display:flex; flex-wrap:wrap; gap:8px; }
+  .opt { display:flex; flex-direction:column; align-items:center; gap:4px; padding:6px; width:86px; background:transparent; border:1px solid transparent; border-radius:10px; }
+  .opt[aria-pressed="true"] { border-color:var(--acc); background:#1b2a3f; }
+  .opt .big { width:56px; height:56px; border-radius:50%; background:var(--box); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; }
+  .opt .big img { width:30px; height:30px; }
+  .opt .small { width:26px; height:26px; border-radius:50%; background:var(--box); display:flex; align-items:center; justify-content:center; }
+  .opt .small img { width:15px; height:15px; }
+  .opt .src { font-size:10px; color:var(--mute); max-width:80px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .opt .now { font-size:10px; color:#7ee787; }
+  .state { color:var(--mute); font-size:12px; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>Выбор иконок</b>
+  <span class="state" id="count"></span>
+  <button id="copy">Скопировать выбор</button>
+  <span class="state" id="state">клик по иконке = выбор; «сейчас» = что стоит в профиле</span>
+</div>
+<main id="list"></main>
+<script>
+/*DATA*/
+const KEY = 'profile-icon-picks';
+let picks = {};
+try { picks = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
+const save = () => {
+  try { localStorage.setItem(KEY, JSON.stringify(picks)); document.getElementById('state').textContent = 'сохранено'; }
+  catch { document.getElementById('state').textContent = 'не сохраняется: браузер запретил хранилище'; }
+  document.getElementById('count').textContent = `выбрано: ${Object.keys(picks).length} из ${ITEMS.length}`;
+};
+const list = document.getElementById('list');
+for (const it of ITEMS) {
+  const row = document.createElement('div');
+  row.className = 'row';
+  row.innerHTML = `<div class="nm"><b>${it.name}</b><span>${it.link ? 'ссылка' : it.score != null ? 'оценка ' + it.score : ''} · ${it.options.length} вар.</span></div><div class="opts"></div>`;
+  for (const o of it.options) {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.title = o.ref;
+    b.setAttribute('aria-pressed', picks[it.id] ? picks[it.id] === o.ref : o.current);
+    b.innerHTML = `<span class="big"><img alt="" src="${o.uri}"></span><span class="small"><img alt="" src="${o.uri}"></span>` +
+      `<span class="src">${o.ref.split(':')[0]}</span>${o.current ? '<span class="now">сейчас</span>' : ''}`;
+    b.onclick = () => {
+      picks[it.id] = o.ref;
+      row.querySelectorAll('.opt').forEach((x) => x.setAttribute('aria-pressed', x === b));
+      save();
+    };
+    row.querySelector('.opts').append(b);
+  }
+  list.append(row);
+}
+save();
+document.getElementById('copy').onclick = async () => {
+  try { await navigator.clipboard.writeText(JSON.stringify(picks, null, 1)); document.getElementById('state').textContent = 'скопировано'; }
+  catch { document.getElementById('state').textContent = 'не скопировалось'; }
+};
+</script>
+</body>
+</html>
