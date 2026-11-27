@@ -63,8 +63,16 @@ const mix = (a, b, t) => {
 
 // ---------- icons ----------
 const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 'utf8');
+// Simple stand-in marks for things simple-icons has no logo for.
+const CUSTOM = {
+  mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
+  lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
+  // grass block: the simple-icons Minecraft mark is a wordmark and turns into a line at 16px
+  minecraft: { raw: '<path d="M3 3h18v7H3z" fill="#62B47A"/><path d="M3 10h18v11H3z" fill="#8B5E3C"/><path d="M5 10h3v3H5zM12 10h3v2h-3zM17 10h2v4h-2z" fill="#62B47A"/>', hex: '#62B47A' },
+};
 function iconData(item) {
   if (item.icon === 'java') return { raw: JAVA, vb: '0 0 256 346', hex: '#E76F00' };
+  if (item.icon.startsWith('custom:')) return { ...CUSTOM[item.icon.slice(7)], vb: '0 0 24 24' };
   const s = si[item.icon] ?? si9[item.icon];
   if (!s) throw new Error(`no icon ${item.icon} for ${item.id}`);
   return { d: s.path, vb: '0 0 24 24', hex: item.color ?? '#' + s.hex };
@@ -79,7 +87,7 @@ function icon(item, x, y, size, bg, mono) {
   const data = iconData(item);
   const c = iconColor(item, bg, mono);
   const inner = data.raw
-    ? mono ? data.raw.replace(/fill="#[0-9A-Fa-f]{6}"/g, `fill="${c}"`) : data.raw
+    ? data.raw.replace(/fill="#[0-9A-Fa-f]{6}"/g, (m) => (mono || c !== data.hex ? `fill="${c}"` : m))
     : `<path d="${data.d}" fill="${c}"/>`;
   return `<svg x="${r2(x)}" y="${r2(y)}" width="${size}" height="${size}" viewBox="${data.vb}">${inner}</svg>`;
 }
@@ -144,13 +152,19 @@ function v1() {
       text(F.mono, it.tag.toUpperCase(), x + aw - 14, y + 26.5, 10, { anchor: 'end', ls: 1, fill: '#8b949e' });
   });
   y += ah + 18;
-  for (const t of ['main', 'active', 'tried']) {
-    const dim = t === 'tried';
+  const blocks = ['main', 'active', 'tried'].map((t) => {
     const items = byTier(t), cols = fullCols(items.length, 5, 7, 6);
-    const g = grid(items, cols, (W - (cols - 1) * 8) / cols, 32, 8, 8, y, (it, x, yy, w, h) =>
+    return { t, items, cols, cw: (W - (cols - 1) * 8) / cols };
+  });
+  // One label size for every card: the tightest fit across blocks decides it.
+  const size = Math.min(10.5, ...blocks.map(({ items, cw }) =>
+    (10.5 * (cw - 46)) / Math.max(...items.map((it) => measure(F.bold, it.name.toUpperCase(), 10.5, 1.1)))));
+  for (const { t, items, cols, cw } of blocks) {
+    const dim = t === 'tried';
+    const g = grid(items, cols, cw, 32, 8, 8, y, (it, x, yy, w, h) =>
       `<rect x="${r2(x)}" y="${yy}" width="${r2(w)}" height="${h}" rx="2" fill="${dim ? dimBg : bg}"/>` +
       icon(it, x + 11, yy + 8, 16, bg, dim ? '#7d8590' : null) +
-      text(F.bold, it.name.toUpperCase(), x + 36, yy + 20, 10.5, { ls: 1.1, fill: dim ? '#9da5ae' : '#fff' }));
+      text(F.bold, it.name.toUpperCase(), x + 36, yy + 16 + size * 0.36, size, { ls: (1.1 * size) / 10.5, fill: dim ? '#9da5ae' : '#fff' }));
     body += g.body;
     y += g.h + 18;
   }
@@ -161,34 +175,24 @@ function v1() {
 // ---------- V2: icons only, square tiles ----------
 function v2() {
   const bg = '#161b22', stroke = '#30363d';
-  let y = 0, body = '';
-  const ai = byTier('ai');
-  const aw = (W - 2 * 10) / 3, ah = 64;
-  ai.forEach((it, i) => {
-    const x = i * (aw + 10);
-    body += `<rect x="${r2(x + 0.5)}" y="${y + 0.5}" width="${r2(aw - 1)}" height="${ah - 1}" rx="14" fill="${bg}" stroke="${stroke}"/>` +
-      icon(it, x + 20, y + 18, 28, bg) +
-      text(F.semi, it.name, x + 62, y + 38.5, 16, { fill: '#e6edf3' }) +
-      text(F.mono, it.tag, x + aw - 20, y + 38, 11, { anchor: 'end', fill: '#7d8590' });
-  });
-  y += ah + 22;
-  // One block, tier shown by the tile: solid colour, solid outline, dashed grey.
-  const rest = ['main', 'active', 'tried'].flatMap(byTier);
-  const cols = fullCols(rest.length, 12, 16, 14), cell = 50, gap = (W - cols * cell) / (cols - 1);
-  const g = grid(rest, cols, cell, cell, gap, gap, y, (it, x, yy, w, h) => {
-    const dim = it.tier === 'tried', main = it.tier === 'main';
-    return `<rect x="${r2(x + 0.5)}" y="${yy + 0.5}" width="${w - 1}" height="${h - 1}" rx="12" fill="${main ? '#1f262f' : bg}" stroke="${main ? '#3d444d' : stroke}"${dim ? ' stroke-dasharray="3 3"' : ''}/>` +
+  // One block in usage order. AI tiles carry their brand outline, main ones are lighter, tried ones dashed grey.
+  const all = tiers.flatMap(byTier);
+  const cols = fullCols(all.length, 12, 16, 14), cell = 50, gap = (W - cols * cell) / (cols - 1);
+  const g = grid(all, cols, cell, cell, gap, gap, 0, (it, x, yy, w, h) => {
+    const dim = it.tier === 'tried', main = it.tier === 'main', ai = it.tier === 'ai';
+    const edge = ai ? iconColor(it, bg) : main ? '#3d444d' : stroke;
+    return `<rect x="${r2(x + 0.5)}" y="${yy + 0.5}" width="${w - 1}" height="${h - 1}" rx="12" fill="${main || ai ? '#1f262f' : bg}" stroke="${edge}"${ai ? ' stroke-opacity="0.8"' : ''}${dim ? ' stroke-dasharray="3 3"' : ''}/>` +
       icon(it, x + 13, yy + 13, 24, bg, dim ? '#6e7681' : null);
   });
-  body += g.body;
-  out('variants/v2/stack.svg', svg(W, y + g.h, body));
+  out('variants/v2/stack.svg', svg(W, g.h, g.body));
   linkCards('v2', { bg, rx: 10, stroke, fg: '#e6edf3', h: 36 });
 }
 
 // ---------- V3: periodic table, number = usage rank ----------
 const CAT = {
   ai: ['#D97757', 'ai'], lang: ['#A78BFA', 'languages'], web: ['#34D399', 'web'], data: ['#60A5FA', 'data'],
-  tool: ['#FBBF24', 'tools'], os: ['#F472B6', 'platforms'], infra: ['#22D3EE', 'infra'], format: ['#94A3B8', 'formats'],
+  tool: ['#FBBF24', 'tools'], os: ['#F472B6', 'platforms'], infra: ['#22D3EE', 'infra'], game: ['#A3E635', 'games'],
+  format: ['#94A3B8', 'formats'],
 };
 function v3() {
   const items = tiers.flatMap(byTier);
@@ -223,30 +227,38 @@ function v3() {
 
 // ---------- V4: keyboard, AI on the space row ----------
 function v4() {
-  const u = 54, pad = 15, gap = 5, H = 5 * u + 2 * pad;
+  // Keys: a number is a free key, ['text', u] a printed legend, ['@id', u] a fixed item,
+  // ['_', u] empty space, ['~f1', u] a free key that prints f1 when nothing lands on it.
+  const u = 54, pad = 15, gap = 5, fGap = 14, H = 6 * u + fGap + 2 * pad;
+  const fKeys = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => [`~f${a + i}`, 1]);
   const rows = [
-    [['esc', 1], ...Array(12).fill(1), ['back', 2]],
+    [['esc', 1], ['_', 0.5], ...fKeys(1, 4), ['_', 0.25], ...fKeys(5, 8), ['_', 0.25], ...fKeys(9, 12), ['del', 1]],
+    [['~', 1], ...Array(12).fill(1), ['back', 2]],
     [['tab', 1.5], ...Array(12).fill(1), 1.5],
     [['caps', 1.75], ...Array(11).fill(1), ['enter', 2.25]],
     [['shift', 2.25], ...Array(10).fill(1), ['shift', 2.75]],
     [['ctrl', 1.25], ['@windows', 1.25], ['@gemini', 1.25], ['@claude', 6.25], ['@chatgpt', 1.25], ['fn', 1.25], ['menu', 1.25], ['ctrl', 1.25]],
   ];
-  // Free keys fill in rank order: QWERTY row, home row, bottom row, then the number row.
+  // Free keys fill in rank order: QWERTY row, home row, bottom row, number row, then the F row.
   const pinned = new Set(['windows', 'gemini', 'claude', 'chatgpt']);
   const queue = [...byTier('main'), ...byTier('active'), ...byTier('tried')].filter((s) => !pinned.has(s.id));
-  const slots = { 0: [], 1: [], 2: [], 3: [], 4: [] };
-  for (const r of [1, 2, 3, 0]) for (const k of rows[r]) if (typeof k === 'number') slots[r].push(queue.shift() ?? null);
-  if (queue.length) console.warn('keyboard: no key for', queue.map((q) => q.id).join(', '));
+  const free = (k) => typeof k === 'number' || k[0].startsWith('~f');
+  const slots = rows.map(() => []);
+  for (const r of [2, 3, 4, 1, 0]) for (const k of rows[r]) if (free(k)) slots[r].push(queue.shift() ?? null);
+  if (queue.length) throw new Error('keyboard: no key for ' + queue.map((q) => q.id).join(', '));
   const find = (id) => stack.find((s) => s.id === id);
 
   let body = `<rect width="${W}" height="${H}" rx="14" fill="#16181c"/><rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="13" stroke="#2a2d33"/>`;
   rows.forEach((row, ri) => {
     let x = pad;
-    const y = pad + ri * u;
+    const y = pad + ri * u + (ri ? fGap : 0);
     const fill = [...slots[ri]];
     for (const k of row) {
-      const [label, units] = typeof k === 'number' ? [null, k] : k;
-      const item = label === null ? fill.shift() : label.startsWith('@') ? find(label.slice(1)) : undefined;
+      if (k[0] === '_') { x += k[1] * u; continue; }
+      let [label, units] = typeof k === 'number' ? [null, k] : k;
+      let item;
+      if (free(k)) { item = fill.shift(); label = item ? null : label?.slice(1); }
+      else if (label.startsWith('@')) item = find(label.slice(1));
       const kw = units * u - gap, kh = u - gap, kx = x + gap / 2, ky = y + gap / 2;
       const isClaude = item?.id === 'claude';
       const top = isClaude ? '#3b2a24' : '#2b2e34';

@@ -18,8 +18,10 @@ export const stack = [
   { id: 'nuxt', name: 'Nuxt', icon: 'siNuxt', tier: 'main', cat: 'web', sym: 'Nx' },
   { id: 'java', name: 'Java', icon: 'java', tier: 'main', cat: 'lang', sym: 'Jv' },
   { id: 'git', name: 'Git', icon: 'siGit', tier: 'main', cat: 'tool', sym: 'Gt' },
+  { id: 'actions', name: 'Actions', icon: 'siGithubactions', tier: 'main', cat: 'infra', sym: 'Ac' },
   { id: 'obsidian', name: 'Obsidian', icon: 'siObsidian', tier: 'main', cat: 'tool', sym: 'Ob' },
   { id: 'kotlin', name: 'Kotlin', icon: 'siKotlin', tier: 'main', cat: 'lang', sym: 'Kt' },
+  { id: 'gradle', name: 'Gradle', icon: 'siGradle', tier: 'main', cat: 'tool', sym: 'Gr' },
 
   { id: 'docker', name: 'Docker', icon: 'siDocker', tier: 'active', cat: 'infra', sym: 'Dk' },
   { id: 'csharp', name: 'C#', icon: 'siCsharp', tier: 'active', cat: 'lang', sym: 'Cs' },
@@ -39,6 +41,12 @@ export const stack = [
   { id: 'firebase', name: 'Firebase', icon: 'siFirebase', tier: 'active', cat: 'data', sym: 'Fb' },
   { id: 'mysql', name: 'MySQL', icon: 'siMysql', color: '#5D9BC4', tier: 'active', cat: 'data', sym: 'My' },
   { id: 'lmdb', name: 'LMDB', icon: 'siDatabricks', tier: 'active', cat: 'data', sym: 'Lm' },
+  { id: 'vite', name: 'Vite', icon: 'siVite', tier: 'active', cat: 'web', sym: 'Vt' },
+  { id: 'tailwind', name: 'Tailwind', icon: 'siTailwindcss', tier: 'active', cat: 'web', sym: 'Tw' },
+  { id: 'discordjs', name: 'discord.js', icon: 'siDiscorddotjs', tier: 'active', cat: 'web', sym: 'Dj' },
+  { id: 'mindustry', name: 'Mindustry', icon: 'custom:mindustry', tier: 'active', cat: 'game', sym: 'Mi' },
+  { id: 'minecraft', name: 'Minecraft', icon: 'custom:minecraft', tier: 'active', cat: 'game', sym: 'Mc' },
+  { id: 'lavalink', name: 'Lavalink', icon: 'custom:lavalink', tier: 'active', cat: 'infra', sym: 'Ll' },
 
   { id: 'mongodb', name: 'MongoDB', icon: 'siMongodb', tier: 'tried', cat: 'data', sym: 'Mg' },
   { id: 'ubuntu', name: 'Ubuntu', icon: 'siUbuntu', tier: 'tried', cat: 'os', sym: 'Ub' },
