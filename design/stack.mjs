@@ -65,13 +65,14 @@ export const stack = [
   { id: 'env', name: '.env', icon: 'siDotenv', tier: 'tried', cat: 'format', sym: 'Ev' },
 ];
 
-// Clickable cards under the stack. Services link is kept as it is in README.md.
+// Clickable cards under the stack, in two groups: how to reach me, and everything else.
+// Services link is kept as it is in README.md.
 export const links = [
-  { id: 'telegram', name: 'Telegram', icon: 'siTelegram', href: 'https://t.me/makarasty/' },
-  { id: 'proton', name: 'Proton', icon: 'siProtonmail', href: 'mailto:makarasty@proton.me' },
-  { id: 'gmail', name: 'Gmail', icon: 'siGmail', href: 'mailto:makarastydev@gmail.com' },
-  { id: 'npm', name: 'npm', icon: 'siNpm', href: 'https://www.npmjs.com/~makarasty' },
-  { id: 'codewars', name: 'Codewars', icon: 'siCodewars', href: 'https://www.codewars.com/users/MaKarastY' },
-  { id: 'monkeytype', name: 'Monkeytype', icon: 'siMonkeytype', href: 'https://monkeytype.com/profile/MaKarastY' },
-  { id: 'services', name: 'Services', icon: 'siUptimekuma', color: '#5CDD8B', href: 'https://stats.uptimerobot.com/knqRXIY3qY' },
+  { id: 'telegram', group: 'contact', name: 'Telegram', icon: 'siTelegram', href: 'https://t.me/makarasty/' },
+  { id: 'proton', group: 'contact', name: 'Proton', icon: 'siProtonmail', href: 'mailto:makarasty@proton.me' },
+  { id: 'gmail', group: 'contact', name: 'Gmail', icon: 'siGmail', href: 'mailto:makarastydev@gmail.com' },
+  { id: 'npm', group: 'other', name: 'npm', icon: 'siNpm', href: 'https://www.npmjs.com/~makarasty' },
+  { id: 'codewars', group: 'other', name: 'Codewars', icon: 'siCodewars', href: 'https://www.codewars.com/users/MaKarastY' },
+  { id: 'monkeytype', group: 'other', name: 'Monkeytype', icon: 'siMonkeytype', href: 'https://monkeytype.com/profile/MaKarastY' },
+  { id: 'services', group: 'other', name: 'Services', icon: 'siUptimekuma', color: '#5CDD8B', href: 'https://stats.uptimerobot.com/knqRXIY3qY' },
 ];

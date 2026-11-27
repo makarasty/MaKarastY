@@ -1,159 +1,25 @@
-// Builds the profile SVGs and the variant READMEs from stack.mjs.
-// Text is converted to outlines so every viewer sees the same widths, whatever fonts they have.
+// Builds my variants (v1..v5) and the review page from stack.mjs.
 import fs from 'node:fs';
-import opentype from 'opentype.js';
-import * as si from 'simple-icons';
-import * as si9 from 'si9';
-import { stack, links, tiers } from './stack.mjs';
-
-const root = new URL('../', import.meta.url);
-const out = (p, s) => {
-  const u = new URL(p, root);
-  fs.mkdirSync(new URL('./', u), { recursive: true });
-  fs.writeFileSync(u, s);
-};
-const loadFont = (pkg, file) => {
-  const b = fs.readFileSync(new URL(`./node_modules/@fontsource/${pkg}/files/${file}`, import.meta.url));
-  return opentype.parse(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength));
-};
-const F = {
-  bold: loadFont('inter', 'inter-latin-700-normal.woff'),
-  semi: loadFont('inter', 'inter-latin-600-normal.woff'),
-  mid: loadFont('inter', 'inter-latin-500-normal.woff'),
-  mono: loadFont('jetbrains-mono', 'jetbrains-mono-latin-400-normal.woff'),
-  monoB: loadFont('jetbrains-mono', 'jetbrains-mono-latin-700-normal.woff'),
-};
-
-const r2 = (n) => Math.round(n * 100) / 100;
-
-// ---------- text ----------
-function measure(f, s, size, ls = 0) {
-  return f.getAdvanceWidth(s, size) + ls * Math.max(0, [...s].length - 1);
-}
-function text(f, s, x, y, size, { anchor = 'start', ls = 0, fill = '#fff', opacity } = {}) {
-  const w = measure(f, s, size, ls);
-  let cx = anchor === 'middle' ? x - w / 2 : anchor === 'end' ? x - w : x;
-  let d;
-  if (!ls) d = f.getPath(s, cx, y, size).toPathData(2);
-  else {
-    d = '';
-    for (const ch of s) {
-      const g = f.charToGlyph(ch);
-      d += g.getPath(cx, y, size).toPathData(2);
-      cx += (g.advanceWidth * size) / f.unitsPerEm + ls;
-    }
-  }
-  return `<path d="${d}" fill="${fill}"${opacity != null ? ` opacity="${opacity}"` : ''}/>`;
-}
-
-// ---------- colour ----------
-const hexToRgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
-const lum = (h) => {
-  const [r, g, b] = hexToRgb(h).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-};
-const contrast = (a, b) => {
-  const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
-  return (x + 0.05) / (y + 0.05);
-};
-const mix = (a, b, t) => {
-  const A = hexToRgb(a), B = hexToRgb(b);
-  return '#' + A.map((c, i) => Math.round((c * (1 - t) + B[i] * t) * 255).toString(16).padStart(2, '0')).join('');
-};
-
-// ---------- icons ----------
-const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 'utf8');
-// Simple stand-in marks for things simple-icons has no logo for.
-const CUSTOM = {
-  mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
-  lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
-  // grass block: the simple-icons Minecraft mark is a wordmark and turns into a line at 16px
-  minecraft: { raw: '<path d="M3 3h18v7H3z" fill="#62B47A"/><path d="M3 10h18v11H3z" fill="#8B5E3C"/><path d="M5 10h3v3H5zM12 10h3v2h-3zM17 10h2v4h-2z" fill="#62B47A"/>', hex: '#62B47A' },
-};
-function iconData(item) {
-  if (item.icon === 'java') return { raw: JAVA, vb: '0 0 256 346', hex: '#E76F00' };
-  if (item.icon.startsWith('custom:')) return { ...CUSTOM[item.icon.slice(7)], vb: '0 0 24 24' };
-  const s = si[item.icon] ?? si9[item.icon];
-  if (!s) throw new Error(`no icon ${item.icon} for ${item.id}`);
-  return { d: s.path, vb: '0 0 24 24', hex: item.color ?? '#' + s.hex };
-}
-// Brand colour unless it would vanish on the tile; mono forces one colour.
-function iconColor(item, bg, mono) {
-  if (mono) return mono;
-  const { hex } = iconData(item);
-  return contrast(hex, bg) < 2.2 ? '#E6EDF3' : hex;
-}
-function icon(item, x, y, size, bg, mono) {
-  const data = iconData(item);
-  const c = iconColor(item, bg, mono);
-  const inner = data.raw
-    ? data.raw.replace(/fill="#[0-9A-Fa-f]{6}"/g, (m) => (mono || c !== data.hex ? `fill="${c}"` : m))
-    : `<path d="${data.d}" fill="${c}"/>`;
-  return `<svg x="${r2(x)}" y="${r2(y)}" width="${size}" height="${size}" viewBox="${data.vb}">${inner}</svg>`;
-}
-
-const svg = (w, h, body, extra = '') =>
-  `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none">${extra}${body}</svg>\n`;
-
-const byTier = (t) => stack.filter((s) => s.tier === t);
-const W = 840;
-
-// Column count in [min, max] that fills every row, nearest to `want`; falls back to `want`.
-function fullCols(n, min, max, want) {
-  const fits = [];
-  for (let c = min; c <= max; c++) if (n % c === 0) fits.push(c);
-  return fits.sort((a, b) => Math.abs(a - want) - Math.abs(b - want) || b - a)[0] ?? want;
-}
-
-// Rows of `cols`; a short last row is centred.
-function grid(items, cols, cellW, cellH, gapX, gapY, y0, draw) {
-  let body = '';
-  items.forEach((it, i) => {
-    const row = Math.floor(i / cols), col = i % cols;
-    const inRow = Math.min(cols, items.length - row * cols);
-    const rowW = inRow * cellW + (inRow - 1) * gapX;
-    const x = (W - rowW) / 2 + col * (cellW + gapX);
-    body += draw(it, x, y0 + row * (cellH + gapY), cellW, cellH);
-  });
-  const rows = Math.ceil(items.length / cols);
-  return { body, h: rows * cellH + (rows - 1) * gapY };
-}
-
-// ---------- link cards (shared shape, per-variant colours) ----------
-function linkCards(dir, st) {
-  const n = links.length, gap = 8;
-  const w = Math.floor((W - (n - 1) * gap) / n), h = st.h ?? 32;
-  const maxLabel = Math.max(...links.map((l) => measure(F.bold, l.name.toUpperCase(), 10, 0.9)));
-  const size = Math.min(10, (10 * (w - 44)) / maxLabel);
-  for (const l of links) {
-    const body =
-      `<rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="${st.rx}" fill="${st.bg}"${st.stroke ? ` stroke="${st.stroke}"` : ''}/>` +
-      icon(l, 11, (h - 15) / 2, 15, st.bg) +
-      text(F.bold, l.name.toUpperCase(), 33, h / 2 + size * 0.36, size, { ls: 0.9, fill: st.fg });
-    out(`variants/${dir}/link-${l.id}.svg`, svg(w, h, body));
-  }
-}
-const linkRow = (dir) =>
-  `<div align="center">\n` +
-  links.map((l) => `  <a href="${l.href}"><img alt="${l.name}" title="${l.name}" src="${dir}/link-${l.id}.svg"></a>`).join('\n') +
-  `\n</div>`;
+import * as lib from './lib.mjs';
+const { F, W, root, out, text, measure, mix, icon, iconColor, svg, byTier, fullCols, grid, linkCards, linkRow, header, CAT, stack, links, tiers, r2, pic } = lib;
 
 // ---------- V1: same dark cards as today, one width, rows by tier ----------
-function v1() {
+// phone: a 360-wide copy for <picture>; AI cards stack, blocks use 2-3 columns.
+function v1(W = 840, file = 'stack', phone = false) {
   const bg = '#323330', dimBg = '#2a2a29';
   let y = 0, body = '';
-  const ai = byTier('ai');
-  const aw = (W - 2 * 8) / 3, ah = 44;
+  const ai = byTier('ai'), aiCols = phone ? 1 : 3;
+  const aw = (W - (aiCols - 1) * 8) / aiCols, ah = phone ? 38 : 44;
   ai.forEach((it, i) => {
-    const x = i * (aw + 8);
-    body += `<rect x="${r2(x)}" y="${y}" width="${r2(aw)}" height="${ah}" rx="2" fill="${bg}"/>` +
-      icon(it, x + 14, y + 11, 22, bg) +
-      text(F.bold, it.name.toUpperCase(), x + 48, y + 27, 13, { ls: 1.3 }) +
-      text(F.mono, it.tag.toUpperCase(), x + aw - 14, y + 26.5, 10, { anchor: 'end', ls: 1, fill: '#8b949e' });
+    const x = (i % aiCols) * (aw + 8), yy = y + Math.floor(i / aiCols) * (ah + 8);
+    body += `<rect x="${r2(x)}" y="${yy}" width="${r2(aw)}" height="${ah}" rx="2" fill="${bg}"/>` +
+      icon(it, x + 14, yy + (ah - 22) / 2, 22, bg) +
+      text(F.bold, it.name.toUpperCase(), x + 48, yy + ah / 2 + 5, 13, { ls: 1.3 }) +
+      text(F.mono, it.tag.toUpperCase(), x + aw - 14, yy + ah / 2 + 4.5, 10, { anchor: 'end', ls: 1, fill: '#8b949e' });
   });
-  y += ah + 18;
+  y += Math.ceil(ai.length / aiCols) * (ah + 8) - 8 + 18;
   const blocks = ['main', 'active', 'tried'].map((t) => {
-    const items = byTier(t), cols = fullCols(items.length, 5, 7, 6);
+    const items = byTier(t), cols = phone ? fullCols(items.length, 2, 3, 3) : fullCols(items.length, 5, 7, 6);
     return { t, items, cols, cw: (W - (cols - 1) * 8) / cols };
   });
   // One label size for every card: the tightest fit across blocks decides it.
@@ -164,36 +30,34 @@ function v1() {
     const g = grid(items, cols, cw, 32, 8, 8, y, (it, x, yy, w, h) =>
       `<rect x="${r2(x)}" y="${yy}" width="${r2(w)}" height="${h}" rx="2" fill="${dim ? dimBg : bg}"/>` +
       icon(it, x + 11, yy + 8, 16, bg, dim ? '#7d8590' : null) +
-      text(F.bold, it.name.toUpperCase(), x + 36, yy + 16 + size * 0.36, size, { ls: (1.1 * size) / 10.5, fill: dim ? '#9da5ae' : '#fff' }));
+      text(F.bold, it.name.toUpperCase(), x + 36, yy + 16 + size * 0.36, size, { ls: (1.1 * size) / 10.5, fill: dim ? '#9da5ae' : '#fff' }), W);
     body += g.body;
     y += g.h + 18;
   }
-  out('variants/v1/stack.svg', svg(W, y - 18, body));
-  linkCards('v1', { bg, rx: 2, fg: '#fff' });
+  out(`variants/v1/${file}.svg`, svg(W, y - 18, body));
+  if (!phone) { v1(360, 'stack-m', true); linkCards('v1', { bg, rx: 2, fg: '#fff' }); }
 }
 
 // ---------- V2: icons only, square tiles ----------
-function v2() {
+function v2(W = 840, file = 'stack', phone = false) {
   const bg = '#161b22', stroke = '#30363d';
-  // One block in usage order. AI tiles carry their brand outline, main ones are lighter, tried ones dashed grey.
+  // One block: tiers in order, kinds grouped inside each. AI tiles carry their brand outline,
+  // main ones are lighter, tried ones dashed grey.
   const all = tiers.flatMap(byTier);
-  const cols = fullCols(all.length, 12, 16, 14), cell = 50, gap = (W - cols * cell) / (cols - 1);
-  const g = grid(all, cols, cell, cell, gap, gap, 0, (it, x, yy, w, h) => {
+  const cols = phone ? fullCols(all.length, 6, 8, 7) : fullCols(all.length, 12, 16, 14);
+  const gap = 8, cell = phone ? (W - (cols - 1) * gap) / cols : 50, gx = phone ? gap : (W - cols * cell) / (cols - 1);
+  const is = Math.round(cell * 0.48);
+  const g = grid(all, cols, cell, cell, gx, gx, 0, (it, x, yy, w, h) => {
     const dim = it.tier === 'tried', main = it.tier === 'main', ai = it.tier === 'ai';
     const edge = ai ? iconColor(it, bg) : main ? '#3d444d' : stroke;
-    return `<rect x="${r2(x + 0.5)}" y="${yy + 0.5}" width="${w - 1}" height="${h - 1}" rx="12" fill="${main || ai ? '#1f262f' : bg}" stroke="${edge}"${ai ? ' stroke-opacity="0.8"' : ''}${dim ? ' stroke-dasharray="3 3"' : ''}/>` +
-      icon(it, x + 13, yy + 13, 24, bg, dim ? '#6e7681' : null);
-  });
-  out('variants/v2/stack.svg', svg(W, g.h, g.body));
-  linkCards('v2', { bg, rx: 10, stroke, fg: '#e6edf3', h: 36 });
+    return `<rect x="${r2(x + 0.5)}" y="${r2(yy + 0.5)}" width="${r2(w - 1)}" height="${r2(h - 1)}" rx="${phone ? 10 : 12}" fill="${main || ai ? '#1f262f' : bg}" stroke="${edge}"${ai ? ' stroke-opacity="0.8"' : ''}${dim ? ' stroke-dasharray="3 3"' : ''}/>` +
+      icon(it, x + (cell - is) / 2, yy + (cell - is) / 2, is, bg, dim ? '#6e7681' : null);
+  }, W);
+  out(`variants/v2/${file}.svg`, svg(W, r2(g.h), g.body));
+  if (!phone) { v2(360, 'stack-m', true); linkCards('v2', { bg, rx: 10, stroke, fg: '#e6edf3', h: 36 }); }
 }
 
 // ---------- V3: periodic table, number = usage rank ----------
-const CAT = {
-  ai: ['#D97757', 'ai'], lang: ['#A78BFA', 'languages'], web: ['#34D399', 'web'], data: ['#60A5FA', 'data'],
-  tool: ['#FBBF24', 'tools'], os: ['#F472B6', 'platforms'], infra: ['#22D3EE', 'infra'], game: ['#A3E635', 'games'],
-  format: ['#94A3B8', 'formats'],
-};
 function v3() {
   const items = tiers.flatMap(byTier);
   const cols = fullCols(items.length, 8, 12, 10), gap = 6, w = (W - (cols - 1) * gap) / cols, h = 86;
@@ -314,17 +178,28 @@ function v5() {
   linkCards('v5', { bg: '#161b22', rx: 16, stroke: '#30363d', fg: '#e6edf3' });
 }
 
-const header = `<div align="center">\n  <a href="https://makarasty.github.io/">\n    <img alt="header" src="../makarasty.png">\n  </a>\n</div>\n\n<br>\n\n`;
 const names = { v1: 'Ровная сетка', v2: 'Иконки', v3: 'Таблица', v4: 'Клавиатура', v5: 'Орбиты' };
+const phoneCopy = new Set(['v1', 'v2']);
+const stackImg = (k) => (phoneCopy.has(k) ? pic(`${k}/stack.svg`, 'stack') : `<img alt="stack" src="${k}/stack.svg">`);
+const center = (inner) => `<div align="center">\n  ${inner}\n</div>`;
 for (const [k, fn] of Object.entries({ v1, v2, v3, v4, v5 })) {
   fn();
-  out(`variants/${k}.md`,
-    `<!-- ${names[k]} -->\n${header}<div align="center">\n  <img alt="stack" src="${k}/stack.svg">\n</div>\n\n<br>\n\n${linkRow(k)}\n`);
+  out(`variants/${k}.md`, `<!-- ${names[k]} -->\n${header}${center(stackImg(k))}\n\n<br>\n\n${linkRow(k)}\n`);
 }
+
+// V6: orbits always shown, the other views one click away (GitHub keeps <details>).
+const more = (label, k) => `<details>\n<summary>${label}</summary>\n<br>\n\n${center(stackImg(k))}\n\n</details>`;
+out('variants/v6.md', `<!-- Переключатель -->\n${header}${center(stackImg('v5'))}\n\n` +
+  [more('keyboard', 'v4'), more('periodic table', 'v3'), more('cards', 'v1')].join('\n\n') + `\n\n<br>\n\n${linkRow('v5')}\n`);
 
 // Local review page: each variant inside a GitHub-sized README box, with a 1-10 mark and a comment.
 const readme = fs.readFileSync(new URL('README.md', root), 'utf8').replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
-const entries = [['v0', 'Сейчас (для сравнения)', readme], ...Object.entries(names).map(([k, n]) => [k, n, fs.readFileSync(new URL(`variants/${k}.md`, root), 'utf8')])];
+// Every variants/*.md is shown, including ones other scripts wrote; the first-line comment is its name.
+const files = fs.readdirSync(new URL('variants/', root)).filter((f) => f.endsWith('.md')).sort();
+const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
+  const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');
+  return [f.slice(0, -3), html.match(/^<!-- (.+?) -->/)?.[1] ?? f, html];
+})];
 out('variants/preview.html', fs.readFileSync(new URL('./preview.tpl.html', import.meta.url), 'utf8')
   .replace('/*DATA*/', `const VARIANTS = ${JSON.stringify(entries.map(([id, name, html]) => ({ id, name, html })))};`));
 
