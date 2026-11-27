@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Варианты профиля</title>
+<style>
+  :root { --bg:#0d1117; --box:#0d1117; --line:#30363d; --fg:#e6edf3; --mute:#8b949e; --chip:#21262d; --acc:#2f81f7; }
+  :root[data-theme="light"] { --bg:#f6f8fa; --box:#ffffff; --line:#d0d7de; --fg:#1f2328; --mute:#59636e; --chip:#eaeef2; --acc:#0969da; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; }
+  .bar { position:sticky; top:0; z-index:2; display:flex; gap:8px; align-items:center; flex-wrap:wrap; padding:10px 16px; background:var(--bg); border-bottom:1px solid var(--line); }
+  .bar b { margin-right:auto; }
+  button { font:inherit; color:var(--fg); background:var(--chip); border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
+  button[aria-pressed="true"] { border-color:var(--acc); box-shadow: inset 0 0 0 1px var(--acc); }
+  button:focus-visible, textarea:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  main { max-width: 926px; margin:0 auto; padding:16px; }
+  main.narrow .box { max-width: 375px; }
+  section { margin:28px 0 40px; }
+  h2 { font-size:16px; margin:0 0 8px; display:flex; gap:8px; align-items:baseline; }
+  h2 span { color:var(--mute); font-weight:400; font-size:13px; }
+  .box { margin:0 auto; background:var(--box); border:1px solid var(--line); border-radius:6px; padding:24px; }
+  .box img { max-width:100%; vertical-align:middle; }
+  .box a { text-decoration:none; }
+  .rate { display:flex; gap:4px; flex-wrap:wrap; align-items:center; margin:10px 0 6px; }
+  .rate button { min-width:34px; }
+  textarea { width:100%; min-height:44px; font:inherit; color:var(--fg); background:var(--box); border:1px solid var(--line); border-radius:6px; padding:6px 8px; resize:vertical; }
+  .saved { color:var(--mute); font-size:12px; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>Варианты профиля</b>
+  <button id="theme" aria-pressed="false">Светлая тема</button>
+  <button id="width" aria-pressed="false">Телефон (375px)</button>
+  <button id="copy">Скопировать оценки</button>
+  <span class="saved" id="state">оценки сохраняются в этом браузере</span>
+</div>
+<main id="list"></main>
+<script>
+/*DATA*/
+const KEY = 'profile-variants-marks';
+let marks = {};
+try { marks = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(marks)); document.getElementById('state').textContent = 'сохранено'; } catch { document.getElementById('state').textContent = 'не сохраняется: браузер запретил хранилище'; } };
+const list = document.getElementById('list');
+for (const v of VARIANTS) {
+  const s = document.createElement('section');
+  const m = marks[v.id] || {};
+  s.innerHTML = `<h2>${v.id.toUpperCase()} · ${v.name} <span>${v.id === 'v0' ? 'твоя оценка: 8' : ''}</span></h2><div class="box">${v.html}</div>
+    <div class="rate" role="group" aria-label="Оценка ${v.name}">${Array.from({length:10},(_,i)=>`<button data-n="${i+1}" aria-pressed="${m.score===i+1}">${i+1}</button>`).join('')}</div>
+    <textarea placeholder="Комментарий к ${v.id.toUpperCase()}: что нравится, что убрать">${m.note || ''}</textarea>`;
+  s.querySelectorAll('.rate button').forEach(b => b.onclick = () => {
+    marks[v.id] = { ...marks[v.id], score: +b.dataset.n };
+    s.querySelectorAll('.rate button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    save();
+  });
+  s.querySelector('textarea').oninput = e => { marks[v.id] = { ...marks[v.id], note: e.target.value }; save(); };
+  list.append(s);
+}
+const general = document.createElement('section');
+general.innerHTML = `<h2>Общие заметки</h2><textarea id="general" style="min-height:90px" placeholder="Что взять из разных вариантов, что добавить в стек, шапка и т.д.">${marks.general?.note || ''}</textarea>`;
+general.querySelector('textarea').oninput = e => { marks.general = { note: e.target.value }; save(); };
+list.append(general);
+
+const root = document.documentElement;
+document.getElementById('theme').onclick = e => {
+  const light = root.dataset.theme !== 'light';
+  root.dataset.theme = light ? 'light' : 'dark';
+  e.target.setAttribute('aria-pressed', light);
+};
+document.getElementById('width').onclick = e => {
+  const on = list.classList.toggle('narrow');
+  e.target.setAttribute('aria-pressed', on);
+};
+document.getElementById('copy').onclick = async () => {
+  const lines = VARIANTS.map(v => `${v.id.toUpperCase()} ${v.name}: ${marks[v.id]?.score ?? '-'}${marks[v.id]?.note ? ' — ' + marks[v.id].note : ''}`);
+  if (marks.general?.note) lines.push('Общее: ' + marks.general.note);
+  try { await navigator.clipboard.writeText(lines.join('\n')); document.getElementById('state').textContent = 'скопировано'; }
+  catch { document.getElementById('state').textContent = 'не скопировалось: выдели текст вручную'; }
+};
+</script>
+</body>
+</html>
