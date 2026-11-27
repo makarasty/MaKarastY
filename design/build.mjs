@@ -42,11 +42,15 @@ function v1(W = 840, file = 'stack', phone = false) {
 // base: AI tiles in brand outline, main lighter, tried dashed grey (round-2 winner)
 // mono: one icon colour, the tier is the brightness; tint: tile tinted with the brand colour
 // label: bigger tiles with the name under the icon; round: circles instead of squares
-const V2_DIR = { base: 'v2', mono: 'v2b', tint: 'v2c', label: 'v2d', round: 'v2e' };
+// labelflat (round 4): label tiles with no tier styling at all; AI first, then by kind.
+const V2_DIR = { base: 'v2', mono: 'v2b', tint: 'v2c', label: 'v2d', round: 'v2e', labelflat: 'r4d' };
 function v2(style = 'base', W = 840, file = 'stack', phone = false) {
   const bg = '#161b22', stroke = '#30363d', dir = V2_DIR[style];
-  const all = tiers.flatMap(byTier);
-  const label = style === 'label';
+  const flat = style === 'labelflat';
+  const all = flat
+    ? [...byTier('ai'), ...stack.filter((s) => s.tier !== 'ai').sort((a, b) => lib.CAT_ORDER.indexOf(a.cat) - lib.CAT_ORDER.indexOf(b.cat))]
+    : tiers.flatMap(byTier);
+  const label = style === 'label' || flat;
   const cols = label ? (phone ? 4 : fullCols(all.length, 7, 8, 8))
     : phone ? fullCols(all.length, 6, 8, 7) : fullCols(all.length, 12, 16, 14);
   const gap = 8;
@@ -55,7 +59,7 @@ function v2(style = 'base', W = 840, file = 'stack', phone = false) {
   const is = Math.round((label ? ch * 0.36 : cw * 0.48));
   const tone = { ai: '#e6edf3', main: '#e6edf3', active: '#9da5ae', tried: '#5d646d' };
   const g = grid(all, cols, cw, ch, gx, gx, 0, (it, x, yy, w, h) => {
-    const dim = it.tier === 'tried', main = it.tier === 'main', ai = it.tier === 'ai';
+    const dim = !flat && it.tier === 'tried', main = !flat && it.tier === 'main', ai = it.tier === 'ai';
     const brand = iconColor(it, bg);
     let fill = main || ai ? '#1f262f' : bg, edge = ai ? brand : main ? '#3d444d' : stroke, mono = dim ? '#6e7681' : null, dash = dim;
     if (style === 'mono') { fill = bg; edge = ai ? brand : stroke; mono = ai ? null : tone[it.tier]; dash = false; }
@@ -208,7 +212,7 @@ out('variants/v6.md', `<!-- Переключатель -->\n${header}${center(st
   [more('keyboard', 'v4'), more('periodic table', 'v3'), more('cards', 'v1')].join('\n\n') + `\n\n<br>\n\n${linkRow('v5')}\n`);
 
 // Round 3: the V2 grid drawn four other ways.
-const r3 = { mono: 'Монохром', tint: 'Мягкий цвет', label: 'С подписями', round: 'Круги' };
+const r3 = { mono: 'Монохром', tint: 'Мягкий цвет', label: 'С подписями', round: 'Круги', labelflat: 'С подписями, все равны' };
 for (const [style, name] of Object.entries(r3)) {
   v2(style);
   const k = V2_DIR[style];
@@ -218,14 +222,17 @@ for (const [style, name] of Object.entries(r3)) {
 // Local review page: each variant inside a GitHub-sized README box, with a 1-10 mark and a comment.
 const readme = fs.readFileSync(new URL('README.md', root), 'utf8').replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
 // The page shows the current round only; older variants stay in variants/ and in git.
-const ROUND = ['v2', 'v2b', 'v2c', 'v2d', 'v2e'];
-const files = ROUND.map((k) => `${k}.md`);
+// r4b/r4c come from r4-hex.mjs / r4-iso.mjs, r4a from r4-solar.mjs; a missing one is skipped.
+const ROUND = ['r4a', 'r4b', 'r4c', 'r4d'];
+const files = ROUND.map((k) => `${k}.md`).filter((f) => fs.existsSync(new URL(`variants/${f}`, root)));
 const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
   const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');
   return [f.slice(0, -3), html.match(/^<!-- (.+?) -->/)?.[1] ?? f, html];
 })];
 out('variants/preview.html', fs.readFileSync(new URL('./preview.tpl.html', import.meta.url), 'utf8')
-  .replace('/*DATA*/', `const VARIANTS = ${JSON.stringify(entries.map(([id, name, html]) => ({ id, name, html })))};`));
+  .replace('/*DATA*/', `const VARIANTS = ${JSON.stringify(entries.map(([id, name, html]) => ({ id, name, html })))};\n` +
+    // For the "sort your stack" block: every non-AI item with a small inline icon.
+    `const STACK = ${JSON.stringify(stack.filter((s) => s.tier !== 'ai').map((s) => ({ id: s.id, name: s.name, icon: svg(20, 20, icon(s, 0, 0, 20, '#161b22')) })))};`));
 
 console.log('built', Object.keys(names).join(' '), '|', stack.length, 'stack items,', links.length, 'links |',
   tiers.map((t) => `${t}:${byTier(t).length}`).join(' '));
