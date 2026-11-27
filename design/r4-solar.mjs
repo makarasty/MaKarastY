@@ -1,6 +1,9 @@
 // Round 4, "Солнечная система": the user in the centre, the three AI on the first orbit as equals,
 // categories as planets on the second orbit, each with its technologies as moons.
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar, byScore } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar, byScore, moreBlock, OUT_DIR, SET } from './lib.mjs';
+// Output folder and title follow the selection (env SET / OUT, see lib.mjs).
+const D = OUT_DIR ?? 'r4a';
+const TITLE = 'Солнечная система' + (SET === 'all' ? '' : ' · ' + { top: '8-10', modern: 'без старого' }[SET]);
 
 const BG = '#0d1117', TILE = '#161b22', LINE = '#30363d';
 const ai = stack.filter((s) => s.tier === 'ai');
@@ -79,7 +82,7 @@ function desktop() {
     o2 += system(s, x, y, ringFor(s), MOON_R, 300);
   });
   body += o2 + '</g>' + me(cx, cy, 50);
-  out('variants/r4a/stack.svg', svg(W, H, body, CSS));
+  out(`variants/${D}/stack.svg`, svg(W, H, body, CSS));
 }
 
 // Phone: you and the three AI on top, the eight systems below in a 2 x 4 grid.
@@ -97,11 +100,11 @@ function phone() {
     const x = (i % cols) * (W / cols) + W / cols / 2, y = top + Math.floor(i / cols) * cell + cell / 2;
     body += system(s, x, y, Math.min(62, ringFor(s)), MOON_R);
   });
-  out('variants/r4a/stack-m.svg', svg(W, H, body, CSS));
+  out(`variants/${D}/stack-m.svg`, svg(W, H, body, CSS));
 }
 
 desktop();
 phone();
-linkCards('r4a', { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
-out('variants/r4a.md', `<!-- Солнечная система -->\n${header}<div align="center">\n  ${pic('r4a/stack.svg', 'stack')}\n</div>\n\n<br>\n\n${linkRow('r4a')}\n`);
-console.log('built r4a |', systems.map((s) => `${s.cat}:${s.moons.length}`).join(' '));
+linkCards(D, { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
+out(`variants/${D}.md`, `<!-- ${TITLE} -->\n${header}<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n${moreBlock(D)}\n\n<br>\n\n${linkRow(D)}\n`);
+console.log(`built ${D} |`, systems.map((s) => `${s.cat}:${s.moons.length}`).join(' '));

@@ -1,7 +1,10 @@
 // Variant "Соты": pointy-top hex cells in one big hexagon (5 rings), categories as pie wedges.
 // Centre flower (ring 0-1) = the user's avatar; ring 2 = the three AI on its corners plus a quiet halo;
 // rings 3-5 = the stack, one wedge per category, higher user score on the inner rings.
-import { out, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, me as avatar, byScore } from './lib.mjs';
+import { out, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, me as avatar, byScore, moreBlock, OUT_DIR, SET } from './lib.mjs';
+// Output folder and title follow the selection (env SET / OUT, see lib.mjs).
+const D = OUT_DIR ?? 'r4b';
+const TITLE = 'Соты' + (SET === 'all' ? '' : ' · ' + { top: '8-10', modern: 'без старого' }[SET]);
 
 const BG = '#0d1117', HALO = mix(BG, '#e6edf3', 0.17), HALO_EDGE = mix(BG, '#e6edf3', 0.38);
 const SQ3 = Math.sqrt(3);
@@ -70,11 +73,11 @@ function build(file, width, w, iconRatio) {
     body += hex(x, y, r, mix(BG, col, 0.12), mix(BG, col, 0.4)) + icon(it, x - isz / 2, y - isz / 2, isz, mix(BG, col, 0.12));
   }
   const css = `<style>@media (prefers-reduced-motion: no-preference){.ai{animation:p 5s ease-in-out infinite}@keyframes p{50%{stroke-opacity:.45}}}</style>`;
-  out(`variants/r4b/${file}.svg`, svg(width, height, body, css));
+  out(`variants/${D}/${file}.svg`, svg(width, height, body, css));
 }
 
 build('stack', 840, 74, 0.46);
 build('stack-m', 360, 31.5, 0.62);
-linkCards('r4b', { bg: '#161b22', rx: 10, stroke: '#30363d', fg: '#e6edf3', h: 36 });
-out('variants/r4b.md', `<!-- Соты -->\n${header}<div align="center">\n  ${pic('r4b/stack.svg', 'stack')}\n</div>\n\n<br>\n\n${linkRow('r4b')}\n`);
-console.log(`built r4b | ${cells.length} cells, ${techCount} techs, ${spares} seams after ${[...seamAfter].map((i) => cats[i]).join(', ')}`);
+linkCards(D, { bg: '#161b22', rx: 10, stroke: '#30363d', fg: '#e6edf3', h: 36 });
+out(`variants/${D}.md`, `<!-- ${TITLE} -->\n${header}<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n${moreBlock(D)}\n\n<br>\n\n${linkRow(D)}\n`);
+console.log(`built ${D} | ${cells.length} cells, ${techCount} techs, ${spares} seams after ${[...seamAfter].map((i) => cats[i]).join(', ')}`);

@@ -1,7 +1,10 @@
 // Round 5, "Подсолнух": the user in the centre, everything else on Vogel's phyllotaxis spiral
 // (angle n * 137.508 deg, radius r0 + c * sqrt(n)), so density is even. AI first, then techs by score.
 import assert from 'node:assert/strict';
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar, moreBlock, OUT_DIR, SET } from './lib.mjs';
+// Output folder and title follow the selection (env SET / OUT, see lib.mjs).
+const D = OUT_DIR ?? 'r5d';
+const TITLE = 'Подсолнух' + (SET === 'all' ? '' : ' · ' + { top: '8-10', modern: 'без старого' }[SET]);
 
 const BG = '#0d1117', TILE = '#161b22', LINE = '#30363d';
 const GOLDEN = (137.508 * Math.PI) / 180;
@@ -68,9 +71,9 @@ function build(file, o) {
 }
 
 const res = [
-  build('variants/r5d/stack.svg', { W: 840, H: 680, meR: 48, aiR: 31, tR: 20, icon: 1.2, r0: 100, margin: 14 }),
-  build('variants/r5d/stack-m.svg', { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
+  build(`variants/${D}/stack.svg`, { W: 840, H: 680, meR: 48, aiR: 31, tR: 20, icon: 1.2, r0: 100, margin: 14 }),
+  build(`variants/${D}/stack-m.svg`, { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
 ];
-linkCards('r5d', { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
-out('variants/r5d.md', `<!-- Подсолнух -->\n${header}<div align="center">\n  ${pic('r5d/stack.svg', 'stack')}\n</div>\n\n<br>\n\n${linkRow('r5d')}\n`);
-console.log('built r5d |', order.length, 'items |', res.map((r) => `${r.file} c=${r.c} min gap=${r.gap}`).join(' | '));
+linkCards(D, { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
+out(`variants/${D}.md`, `<!-- ${TITLE} -->\n${header}<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n${moreBlock(D)}\n\n<br>\n\n${linkRow(D)}\n`);
+console.log(`built ${D} |`, order.length, 'items |', res.map((r) => `${r.file} c=${r.c} min gap=${r.gap}`).join(' | '));

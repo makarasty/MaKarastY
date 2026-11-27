@@ -4,8 +4,23 @@ import fs from 'node:fs';
 import opentype from 'opentype.js';
 import * as si from 'simple-icons';
 import * as si9 from 'si9';
-import { stack, links, tiers } from './stack.mjs';
-export { stack, links, tiers };
+import { stack as fullStack, links, tiers } from './stack.mjs';
+export { links, tiers, fullStack };
+
+// Which items go in the main picture (env SET); the rest goes into the collapsed "more" block.
+// Old, per the user (2026-11-27): EJS, MySQL, Pterodactyl, Firebase. Unscored items count as wanted.
+export const OLD = new Set(['ejs', 'mysql', 'pterodactyl', 'firebase']);
+export const SETS = {
+  all: () => true,
+  modern: (s) => !OLD.has(s.id),
+  top: (s) => !OLD.has(s.id) && (s.score == null || s.score >= 8),
+};
+export const SET = process.env.SET ?? 'all';
+if (!SETS[SET]) throw new Error(`unknown SET=${SET}`);
+export const stack = fullStack.filter((s) => s.tier === 'ai' || SETS[SET](s));
+export const rest = fullStack.filter((s) => s.tier !== 'ai' && !SETS[SET](s));
+// Output folder under variants/ (env OUT), so one script can build several selections.
+export const OUT_DIR = process.env.OUT;
 
 export const root = new URL('../', import.meta.url);
 export const out = (p, s) => {
@@ -68,6 +83,11 @@ export const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 
 export const CUSTOM = {
   mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
   lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
+  // round 7 additions with no mark in any icon set (playwright only backs the colour logo below)
+  playwright: { raw: '<circle cx="12" cy="12" r="9" fill="#2EAD33"/>', hex: '#2EAD33' },
+  elysia: { raw: '<rect x="3" y="3" width="18" height="18" rx="5" fill="#6D3BBF"/>' + text(F.bold, 'E', 12, 16.8, 13, { anchor: 'middle', fill: '#F5E1FF' }), hex: '#B07CF0' },
+  grammy: { raw: '<circle cx="12" cy="12" r="9.5" fill="#229ED9"/>' + text(F.bold, 'g', 12, 15.4, 13, { anchor: 'middle', fill: '#FFFFFF' }), hex: '#229ED9' },
+  ytdlp: { raw: '<rect x="2.5" y="5" width="19" height="14" rx="4" fill="#E62117"/><path d="M12 8.2v6.4M9.2 12l2.8 2.9 2.8-2.9" stroke="#FFFFFF" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>', hex: '#E62117' },
   // round 6 additions with no mark in any icon set
   sql: { raw: '<ellipse cx="12" cy="5.5" rx="8" ry="3" fill="#F0A33A"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13c0 1.7-3.6 3-8 3s-8-1.3-8-3z" fill="#C97A1E"/><path d="M4 10c0 1.7 3.6 3 8 3s8-1.3 8-3M4 14.5c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="#F0A33A" stroke-width="1.2" fill="none"/>', hex: '#F0A33A' },
   properties: { raw: '<rect x="3" y="3" width="18" height="18" rx="3" fill="#3B4A5A"/><path d="M7 8h10M7 12h10M7 16h10" stroke="#9DB4C8" stroke-width="1.6"/><circle cx="10" cy="8" r="1.8" fill="#E6EDF3"/><circle cx="15" cy="12" r="1.8" fill="#E6EDF3"/><circle cx="9" cy="16" r="1.8" fill="#E6EDF3"/>', hex: '#9DB4C8' },
@@ -116,6 +136,9 @@ export const LOGOS = {
   figma: 'logos:figma', notion: 'logos:notion-icon', gdrive: 'logos:google-drive', json: 'logos:json', yaml: 'logos:yaml',
   toml: 'logos:toml', telegram: 'logos:telegram', gmail: 'logos:google-gmail', npm: 'logos:npm-icon',
   codewars: 'devicon:codewars', mindustry: 'png:mindustry.png', minecraft: 'vscode:file-type-minecraft',
+  oxc: 'logos:oxc-icon', playwright: 'logos:playwright', vitest: 'logos:vitest', zod: 'logos:zod', prisma: 'logos:prisma',
+  drizzle: 'logos:drizzle-icon', mariadb: 'logos:mariadb-icon', fastify: 'logos:fastify-icon', pinia: 'logos:pinia',
+  ffmpeg: 'logos:ffmpeg-icon', aseprite: 'vscode:file-type-aseprite',
   bash: 'logos:bash-icon', powershell: 'devicon:powershell', glsl: 'devicon:opengl', markdown: 'devicon:markdown',
   xml: 'devicon:xml', svg: 'logos:svg',
 };
@@ -162,7 +185,7 @@ export const svg = (w, h, body, extra = '') =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none">${extra}${body}</svg>\n`;
 
 // Inside a tier, things of one kind sit together; stack.mjs order (usage) decides within a kind.
-export const CAT_ORDER = ['ai', 'lang', 'web', 'data', 'infra', 'editor', 'tool', 'apps', 'ui', 'os', 'game', 'format'];
+export const CAT_ORDER = ['ai', 'lang', 'web', 'data', 'infra', 'editor', 'tool', 'apps', 'ui', 'media', 'os', 'game', 'format'];
 // Higher user score first; unscored last; ties keep stack.mjs order (Array.sort is stable).
 export const byScore = (a, b) => (b.score ?? 0) - (a.score ?? 0);
 export const byTier = (t) =>
@@ -214,6 +237,21 @@ export function linkCards(dir, st) {
 // A <picture> that swaps to the `-m` file on phones.
 export const pic = (src, alt, title = '') =>
   `<picture><source media="${PHONE}" srcset="${src.replace(/\.svg$/, '-m.svg')}"><img alt="${alt}"${title ? ` title="${title}"` : ''} src="${src}"></picture>`;
+
+// What the main picture leaves out, as one row-filling grid of tiles inside a collapsed <details>.
+export function moreBlock(dir) {
+  if (!rest.length) return '';
+  const items = [...rest].sort((a, b) => CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat) || byScore(a, b));
+  const tile = (it, x, y, c) => `<rect x="${r2(x + 0.5)}" y="${r2(y + 0.5)}" width="${r2(c - 1)}" height="${r2(c - 1)}" rx="${r2(c * 0.24)}" fill="#161b22" stroke="#30363d"/>` +
+    icon(it, x + c * 0.25, y + c * 0.25, Math.round(c * 0.5), '#161b22');
+  for (const [file, maxW, lo, hi, cell] of [['more', 840, 6, 14, 46], ['more-m', 360, 4, 7, 44]]) {
+    const cols = Math.min(items.length, fullCols(items.length, lo, hi, hi)), gap = 8;
+    const w = Math.min(maxW, cols * cell + (cols - 1) * gap);
+    const g = grid(items, cols, cell, cell, gap, gap, 0, (it, x, y) => tile(it, x, y, cell), w);
+    out(`variants/${dir}/${file}.svg`, svg(w, r2(g.h), g.body));
+  }
+  return `<details>\n<summary>+${items.length} more</summary>\n<br>\n\n<div align="center">\n  ${pic(`${dir}/more.svg`, 'more')}\n</div>\n\n</details>`;
+}
 export const linkRow = (dir) =>
   `<div align="center">\n` +
   linkGroups.map((g) => g.map((l) => `  <a href="${l.href}">${pic(`${dir}/link-${l.id}.svg`, l.name, l.name)}</a>`).join('\n'))
@@ -225,5 +263,6 @@ export const CAT = {
   ai: ['#D97757', 'ai'], lang: ['#A78BFA', 'languages'], web: ['#34D399', 'web'], data: ['#60A5FA', 'data'],
   tool: ['#FBBF24', 'tools'], os: ['#F472B6', 'platforms'], infra: ['#22D3EE', 'infra'], game: ['#A3E635', 'games'],
   format: ['#94A3B8', 'formats'], editor: ['#FB923C', 'editors'], apps: ['#E879F9', 'apps'], ui: ['#F87171', 'ui'],
+  media: ['#2DD4BF', 'media'],
 };
 export const header = `<div align="center">\n  <a href="https://makarasty.github.io/">\n    <img alt="header" src="../makarasty.png">\n  </a>\n</div>\n\n<br>\n\n`;

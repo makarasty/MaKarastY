@@ -81,6 +81,24 @@ export const stack = [
   { id: 'svg', name: 'SVG', icon: 'siSvg', tier: 'tried', cat: 'format', sym: 'Sv', score: 7 },
   { id: 'webp', name: 'WebP', icon: 'custom:webp', tier: 'tried', cat: 'format', sym: 'Wp', score: 6 },
   { id: 'avif', name: 'AVIF', icon: 'custom:avif', tier: 'tried', cat: 'format', sym: 'Af', score: 4 },
+
+  // Picked by the user 2026-11-27 ("help me remember"); modern tools only, no ESLint/Prettier. No score yet.
+  { id: 'oxc', name: 'oxlint / oxfmt', icon: 'siOxc', tier: 'tried', cat: 'tool', sym: 'Ox' },
+  { id: 'playwright', name: 'Playwright', icon: 'custom:playwright', tier: 'tried', cat: 'tool', sym: 'Pw' },
+  { id: 'vitest', name: 'Vitest', icon: 'siVitest', tier: 'tried', cat: 'tool', sym: 'Vi' },
+  { id: 'zod', name: 'Zod', icon: 'siZod', tier: 'tried', cat: 'tool', sym: 'Zd' },
+  { id: 'prisma', name: 'Prisma', icon: 'siPrisma', tier: 'tried', cat: 'data', sym: 'Pm' },
+  { id: 'drizzle', name: 'Drizzle', icon: 'siDrizzle', tier: 'tried', cat: 'data', sym: 'Dz' },
+  { id: 'mariadb', name: 'MariaDB', icon: 'siMariadb', tier: 'tried', cat: 'data', sym: 'Ma' },
+  { id: 'fastify', name: 'Fastify', icon: 'siFastify', tier: 'tried', cat: 'web', sym: 'Fy' },
+  { id: 'elysia', name: 'Elysia', icon: 'custom:elysia', tier: 'tried', cat: 'web', sym: 'El' },
+  { id: 'grammy', name: 'grammY', icon: 'custom:grammy', tier: 'tried', cat: 'web', sym: 'Gy' },
+  { id: 'pinia', name: 'Pinia', icon: 'siPinia', tier: 'tried', cat: 'web', sym: 'Pi' },
+  { id: 'ffmpeg', name: 'FFmpeg', icon: 'siFfmpeg', tier: 'tried', cat: 'media', sym: 'Ff' },
+  { id: 'ytdlp', name: 'yt-dlp', icon: 'custom:ytdlp', tier: 'tried', cat: 'media', sym: 'Yt' },
+  { id: 'obs', name: 'OBS', icon: 'siObsstudio', tier: 'tried', cat: 'media', sym: 'Ob' },
+  { id: 'davinci', name: 'DaVinci', icon: 'siDavinciresolve', tier: 'tried', cat: 'media', sym: 'Dv' },
+  { id: 'aseprite', name: 'Aseprite', icon: 'siAseprite', tier: 'tried', cat: 'media', sym: 'As' },
 ];
 
 // Clickable cards under the stack, in two groups: how to reach me, and everything else.
