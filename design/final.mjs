@@ -1,20 +1,21 @@
-// Builds the live profile from the round-8 winners: README.md + profile/ at the repo root.
-// Sunflower with every item (SET=all, 9/10), no frame (FRAME=none, 9/10), no header image.
-// Buttons: cards on desktop and icon squares on phones; `node final.mjs icons` uses icon squares everywhere.
+// Builds the live profile: README.md + profile/ at the repo root, from r5-sun.mjs.
+// Sunflower with every item (SET=all, 9/10), no frame (FRAME=none, 9/10), no header image;
+// round 12: grey rings, contacts as cards and the other links as small icons, the stack also as text
+// (TEXT=both: one line under the flower and the whole list folded, short alt). Any env set here can be
+// overridden from the command line, e.g. TEXT=line node design/final.mjs.
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const links = process.argv[2] === 'icons' ? 'icons' : 'cards';
-// r5-sun writes to variants/<OUT>/..., so OUT=../profile lands in <repo>/profile/.
+// r5-sun writes to variants/<OUT>/..., so OUT=../profile lands in <repo>/profile/ and its page in <repo>/profile.md.
 execFileSync(process.execPath, [fileURLToPath(new URL('./r5-sun.mjs', import.meta.url))], {
-  env: { ...process.env, SET: 'all', FRAME: 'none', OUT: '../profile', LINKS: links, NAME: 'profile' },
+  env: { SET: 'all', FRAME: 'none', SIZE: 'equal', PLACE: 'score', RING: 'grey', LINKS: 'contacts', TEXT: 'both', ...process.env, OUT: '../profile', NAME: 'profile' },
   stdio: 'inherit',
 });
 const root = new URL('../', import.meta.url);
-fs.rmSync(new URL('profile.md', root), { force: true }); // r5-sun's own page; README.md replaces it
-
-const { pic, linkRow, stackAlt } = await import('./lib.mjs');
-fs.writeFileSync(new URL('README.md', root),
-  `<div align="center">\n  ${pic('profile/stack.svg', stackAlt)}\n</div>\n\n<br>\n\n${linkRow('profile')}\n`);
-console.log(`README.md written (buttons: ${links})`);
+const page = new URL('profile.md', root);
+// The page links ../profile/... (relative to variants/); from the repo root that is profile/...
+const md = fs.readFileSync(page, 'utf8').replace(/^<!--.*-->\n/, '').replaceAll('../profile/', 'profile/');
+fs.rmSync(page);
+fs.writeFileSync(new URL('README.md', root), md);
+console.log('README.md written');

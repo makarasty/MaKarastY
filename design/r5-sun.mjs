@@ -4,7 +4,7 @@
 // LIVE=1 = every disc is a link (for an HTML page; GitHub shows an SVG as <img>, so links there never work),
 // STACK_HREF = a link around the whole picture in the .md.
 import assert from 'node:assert/strict';
-import { out, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, linkCards, linkRow, pic, r2, me as avatar, OUT_DIR, SET, sizeK, stackAlt } from './lib.mjs';
+import { out, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, linkCards, linkRow, pic, r2, me as avatar, OUT_DIR, SET, sizeK, stackAlt, keyLine, kinds } from './lib.mjs';
 import { hrefs } from './stack.mjs';
 // Output folder and title follow the selection (env SET / OUT, see lib.mjs).
 const D = OUT_DIR ?? 'r5d';
@@ -157,12 +157,24 @@ const LINK_STYLES = {
   small: { bg: TILE, rx: 16, stroke: LINE, h: 32, iconOnly: true },
   combined: { bg: TILE, rx: 16, stroke: LINE, fg: '#e6edf3', h: 32, iconGroups: ['contact'] },
   smallcards: { bg: TILE, rx: 14, stroke: LINE, fg: '#e6edf3', h: 28 },
+  // round 12: "акцент на Телеграме, Протоне и Gmail", npm/Codewars/... small; one height, so the row stays level
+  contacts: { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36, iconGroups: ['other'], cardW: 150 },
 };
 const LINKS = process.env.LINKS ?? 'cards';
 if (!LINK_STYLES[LINKS]) throw new Error(`unknown LINKS=${LINKS}`);
 linkCards(D, LINK_STYLES[LINKS]);
+// env TEXT (round 12, the stack as real text on the page as well as in the alt):
+// line = one small line of the main web stack under the flower, details = the whole stack by kind, folded,
+// both = the two together with a short alt, since the text below then carries the list (screen readers
+// read a long alt in full, and every agent pipeline keeps plain text).
+const TEXT = process.env.TEXT ?? 'none';
+if (!['none', 'line', 'details', 'both'].includes(TEXT)) throw new Error(`unknown TEXT=${TEXT}`);
+const alt = TEXT === 'both' ? `Tech stack of makarasty: ${stack.length} tool icons around their avatar, listed as text below` : stackAlt;
+const text = ['line', 'both'].includes(TEXT) ? `\n  <br>\n  <sub>${keyLine.map((s) => s.name).join(' · ')}</sub>` : '';
+const folded = ['details', 'both'].includes(TEXT) ? `\n\n<details>\n<summary><sub>Stack as text</sub></summary>\n\n` +
+  kinds.map((k) => `**${k.title}:** ${k.items.map((s) => s.name).join(', ')}`).join('<br>\n') + `\n\n</details>` : '';
 // Round 8: no header image and no "+N more" block (the user: "шапку видимо прийдеться убрать", "+21 more фигня").
-const stackPic = pic(`${D}/stack.svg`, stackAlt, process.env.STACK_HREF ? 'stack: click for the clickable version' : '');
+const stackPic = pic(`${D}/stack.svg`, alt, process.env.STACK_HREF ? 'stack: click for the clickable version' : '');
 const top = process.env.STACK_HREF ? `<a href="${process.env.STACK_HREF}">${stackPic}</a>` : stackPic;
-out(`variants/${D}.md`, `<!-- ${process.env.NAME ?? TITLE} -->\n<div align="center">\n  ${top}\n</div>\n\n<br>\n\n${linkRow(D)}\n`);
+out(`variants/${D}.md`, `<!-- ${process.env.NAME ?? TITLE} -->\n<div align="center">\n  ${top}${text}\n</div>\n\n<br>\n\n${linkRow(D)}${folded}\n`);
 console.log(`built ${D} | SIZE=${SIZE} PLACE=${PLACE} |`, stack.length, 'items |', res.map((r) => `${r.file} scale=${r.s} min gap=${r.gap}`).join(' | '));

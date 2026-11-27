@@ -1,5 +1,7 @@
 <div align="center">
-  <picture><source media="(max-width: 600px)" srcset="profile/stack-m.svg"><img alt="Tech stack of makarasty around the avatar. AI: Claude, Gemini, ChatGPT. Every day: Windows, VS Code, TypeScript, JavaScript, Node.js, Bun, Vue, Nuxt, Java, Git, Actions, Obsidian, Kotlin, Gradle. Actively: Docker, C#, Python, React, HTML, CSS, Sass, PostgreSQL, Redis, SQLite, Nginx, Debian, IntelliJ, Go, Rust, LMDB, Vite, Tailwind, discord.js, Mindustry, Minecraft, Lavalink. And 44 more tools." src="profile/stack.svg"></picture>
+  <picture><source media="(max-width: 600px)" srcset="profile/stack-m.svg"><img alt="Tech stack of makarasty: 83 tool icons around their avatar, listed as text below" src="profile/stack.svg"></picture>
+  <br>
+  <sub>Bun · Nuxt · TypeScript · JavaScript · Node.js · Vue · HTML · Tailwind · discord.js · PostgreSQL · SQLite · LMDB</sub>
 </div>
 
 <br>
@@ -14,3 +16,22 @@
   <a href="https://monkeytype.com/profile/MaKarastY"><picture><source media="(max-width: 600px)" srcset="profile/link-monkeytype-m.svg"><img alt="Monkeytype" title="Monkeytype" src="profile/link-monkeytype.svg"></picture></a>
   <a href="https://stats.uptimerobot.com/knqRXIY3qY"><picture><source media="(max-width: 600px)" srcset="profile/link-services-m.svg"><img alt="Services" title="Services" src="profile/link-services.svg"></picture></a>
 </div>
+
+<details>
+<summary><sub>Stack as text</sub></summary>
+
+**AI:** Claude, Gemini, ChatGPT<br>
+**Languages:** PowerShell, TypeScript, JavaScript, Go, Rust, Python, Bash, Batch, Java, C#, Kotlin, GLSL<br>
+**Web:** Bun, Nuxt, HTML, Tailwind, discord.js, Node.js, Vue, Vite, Fastify, CSS, Sass, Elysia, React, EJS<br>
+**Data:** PostgreSQL, SQLite, LMDB, Redis, Firebase, MongoDB, MySQL, SQL, Prisma, MariaDB, Drizzle<br>
+**Infra:** Nginx, Lavalink, Actions, Pterodactyl, Docker<br>
+**Editors:** VS Code, Sublime, IntelliJ<br>
+**Tools:** Git, Diff, oxlint / oxfmt, Vitest, Zod, Gradle, Playwright<br>
+**Apps:** Obsidian, Figma, Notion, draw.io, Drive<br>
+**UI:** Slint, Avalonia<br>
+**Media:** yt-dlp, FFmpeg, Aseprite, OBS, DaVinci<br>
+**Platforms:** Windows, Debian, Ubuntu, Android<br>
+**Games:** Mindustry, Minecraft, Unity<br>
+**Formats:** YAML, CSV, .env, Markdown, JSON, TOML, XML, Properties, SVG
+
+</details>

@@ -234,8 +234,8 @@ const liveReadme = (() => {
 const readme = liveReadme.replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
 // The page shows the current round only; older variants stay in variants/ and in git.
 // r4b/r4c come from r4-hex.mjs / r4-iso.mjs, r4a from r4-solar.mjs; a missing one is skipped.
-// Round 11 comes from r11.mjs (round 10, r10.mjs, is rated and kept in variants/).
-const ROUND = ['r11-a', 'r11-b', 'r11-c', 'r11-d', 'r11-e'];
+// Round 12 comes from r12.mjs (rounds 10-11 are rated and kept in variants/ and git).
+const ROUND = ['r12-a', 'r12-b', 'r12-c', 'r12-d'];
 const files = ROUND.map((k) => `${k}.md`).filter((f) => fs.existsSync(new URL(`variants/${f}`, root)));
 const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
   const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');

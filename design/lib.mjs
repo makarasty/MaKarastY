@@ -262,7 +262,7 @@ export const PHONE = '(max-width: 600px)';
 const linkGroups = [...new Set(links.map((l) => l.group))].map((g) => links.filter((l) => l.group === g));
 export function linkCards(dir, st) {
   const n = links.length, gap = 4, sepW = 20; // gap: the space GitHub leaves between inline images
-  const w = Math.floor((W - sepW * (linkGroups.length - 1) - (n + linkGroups.length - 2) * gap) / n), h = st.h ?? 32;
+  const w = st.cardW ?? Math.floor((W - sepW * (linkGroups.length - 1) - (n + linkGroups.length - 2) * gap) / n), h = st.h ?? 32;
   const maxLabel = Math.max(...links.map((l) => measure(F.bold, l.name.toUpperCase(), 10, 0.9)));
   const size = Math.min(10, (10 * (w - 44)) / maxLabel);
   const m = 36; // 7 tiles + divider + GitHub's inline gaps fit a 294px-wide phone column
@@ -309,8 +309,8 @@ export const linkRow = (dir) =>
 // ---------- disc size (round 10) ----------
 // The three AI differ by how much the user uses them (stack.mjs tag main / second / images):
 // "отношения к ним разные" (2026-11-27) replaced the earlier "three AI equal".
-// ChatGPT "хотя бы такой же, как у Gemini" (2026-11-27).
-export const AI_K = { claude: 1.12, gemini: 0.86, chatgpt: 0.86 };
+// ChatGPT "хотя бы такой же, как у Gemini"; Claude still first but "можно немного уменьшить" (2026-11-27).
+export const AI_K = { claude: 0.98, gemini: 0.86, chatgpt: 0.86 };
 // Tech size by the user's 1-10 score.
 export const SIZES = {
   equal: () => 1,
@@ -323,16 +323,25 @@ export function sizeK(it, size) {
 }
 
 // ---------- text for readers that cannot see the pictures (screen readers, AI agents, search) ----------
-// The whole profile is images, so the alt text says what the picture shows. No hidden text or comments aimed
-// at AI: screeners flag hidden prompts in resumes and recruiters reject them (Duke/hireEZ study, NYT 2025),
-// and a long keyword list reads as padding, so the alt names the main tools and counts the rest.
-const tierName = { ai: 'AI', main: 'every day', active: 'actively', tried: 'have used' };
-// What the user called old (OLD above) is listed under "have used", whatever its tier.
-export const groups = tiers.map((t) => ({ t, title: tierName[t], items: fullStack.filter((s) => (OLD.has(s.id) ? 'tried' : s.tier) === t) }));
-const names = (t) => groups.find((g) => g.t === t).items.map((s) => s.name).join(', ');
-const tried = groups.find((g) => g.t === 'tried').items.length;
-export const stackAlt = `Tech stack of makarasty around the avatar. AI: ${names('ai')}. Every day: ${names('main')}. ` +
-  `Actively: ${names('active')}. And ${tried} more tools.`;
+// The whole profile is images, so the alt text says everything the picture shows (the user: the agent must
+// not be blind to the stack). No hidden text or comments aimed at AI: screeners flag hidden prompts in
+// resumes and recruiters reject them (Duke/hireEZ study, NYT 2025).
+// Grouped by kind, not by how often it is used: kind is a fact anyone can check, and it is how skill
+// lists are read. Inside a kind, the user's score decides (higher first).
+const KIND = { ai: 'AI', lang: 'Languages', web: 'Web', data: 'Data', infra: 'Infra', editor: 'Editors', tool: 'Tools',
+  apps: 'Apps', ui: 'UI', media: 'Media', os: 'Platforms', game: 'Games', format: 'Formats' };
+export const kinds = CAT_ORDER.map((c) => ({ c, title: KIND[c],
+  items: fullStack.filter((s) => s.cat === c).sort((a, b) => (b.score ?? 0) - (a.score ?? 0)) })).filter((k) => k.items.length);
+for (const s of fullStack) if (!KIND[s.cat]) throw new Error(`no kind title for ${s.cat} (${s.id})`);
+// The one visible line (TEXT=line): the main web stack, from the data, not hand-picked. Languages, web, data
+// and infra with the user's score 9+, not old; tier first (every day before active), then score, then kind.
+const TIER_RANK = { ai: 0, main: 1, active: 2, tried: 3 };
+export const keyLine = fullStack
+  .filter((s) => ['lang', 'web', 'data', 'infra'].includes(s.cat) && (s.score ?? 0) >= 9 && !OLD.has(s.id))
+  .sort((a, b) => TIER_RANK[a.tier] - TIER_RANK[b.tier] || b.score - a.score || CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat))
+  .slice(0, 12);
+export const stackAlt = `Tech stack of makarasty around their avatar. ` +
+  kinds.map((k) => `${k.title}: ${k.items.map((s) => s.name).join(', ')}.`).join(' ');
 
 // ---------- shared by the variants ----------
 export const CAT = {
