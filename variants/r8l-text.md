@@ -1,0 +1,2 @@
+<!-- Кнопки: просто текст -->
+<p align="center"><a href="https://t.me/makarasty/">Telegram</a> · <a href="mailto:makarasty@proton.me">Proton</a> · <a href="mailto:makarastydev@gmail.com">Gmail</a> &nbsp;|&nbsp; <a href="https://www.npmjs.com/~makarasty">npm</a> · <a href="https://www.codewars.com/users/MaKarastY">Codewars</a> · <a href="https://monkeytype.com/profile/MaKarastY">Monkeytype</a> · <a href="https://stats.uptimerobot.com/knqRXIY3qY">Services</a></p>

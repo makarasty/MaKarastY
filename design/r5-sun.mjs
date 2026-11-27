@@ -1,7 +1,7 @@
 // Round 5, "Подсолнух": the user in the centre, everything else on Vogel's phyllotaxis spiral
 // (angle n * 137.508 deg, radius r0 + c * sqrt(n)), so density is even. AI first, then techs by score.
 import assert from 'node:assert/strict';
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar, moreBlock, OUT_DIR, SET } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, linkCards, linkRow, pic, r2, me as avatar, OUT_DIR, SET } from './lib.mjs';
 // Output folder and title follow the selection (env SET / OUT, see lib.mjs).
 const D = OUT_DIR ?? 'r5d';
 const TITLE = 'Подсолнух' + (SET === 'all' ? '' : ' · ' + { top: '8-10', modern: 'без старого' }[SET]);
@@ -23,9 +23,21 @@ const CSS = `<style>
 </style>`;
 const SEC = 240;
 const upright = `class="up" style="animation:ccw ${SEC}s linear infinite"`;
-const panel = (w, h) => `<rect width="${w}" height="${h}" rx="16" fill="${BG}"/><rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="15.5" stroke="#21262d"/>`;
+// Frame around the spiral (env FRAME): box = dark card with an edge, flat = card without the edge,
+// circle = one dark disc behind the spiral, none = no background at all.
+const FRAME = process.env.FRAME ?? 'box';
+const panel = (w, h) => {
+  const r = Math.min(w, h) / 2;
+  const frames = {
+    box: `<rect width="${w}" height="${h}" rx="16" fill="${BG}"/><rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="15.5" stroke="#21262d"/>`,
+    flat: `<rect width="${w}" height="${h}" rx="16" fill="${BG}"/>`,
+    circle: `<circle cx="${w / 2}" cy="${h / 2}" r="${r}" fill="${BG}"/><circle cx="${w / 2}" cy="${h / 2}" r="${r - 0.5}" stroke="#21262d"/>`,
+    none: '',
+  };
+  if (!(FRAME in frames)) throw new Error(`unknown FRAME=${FRAME}`);
+  return frames[FRAME];
+};
 
-// The user. One function so it can become an avatar later.
 // The user: GitHub avatar in a ring.
 function me(cx, cy, r) {
   return `<circle cx="${cx}" cy="${cy}" r="${r + 9}" stroke="#e6edf3" stroke-opacity="0.08"/>` +
@@ -75,5 +87,6 @@ const res = [
   build(`variants/${D}/stack-m.svg`, { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
 ];
 linkCards(D, { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
-out(`variants/${D}.md`, `<!-- ${TITLE} -->\n${header}<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n${moreBlock(D)}\n\n<br>\n\n${linkRow(D)}\n`);
+// Round 8: no header image and no "+N more" block (the user: "шапку видимо прийдеться убрать", "+21 more фигня").
+out(`variants/${D}.md`, `<!-- ${process.env.NAME ?? TITLE} -->\n<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n<br>\n\n${linkRow(D)}\n`);
 console.log(`built ${D} |`, order.length, 'items |', res.map((r) => `${r.file} c=${r.c} min gap=${r.gap}`).join(' | '));

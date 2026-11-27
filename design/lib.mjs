@@ -83,6 +83,8 @@ export const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 
 export const CUSTOM = {
   mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
   lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
+  // GLSL: the only set marks are the OpenGL wordmark, unreadable at 20px
+  glsl: { raw: '<rect x="1.5" y="5" width="21" height="14" rx="3.5" fill="#5586A4"/>' + text(F.bold, 'GLSL', 12, 14.6, 7.6, { anchor: 'middle', fill: '#FFFFFF' }), hex: '#5586A4' },
   // round 7 additions with no mark in any icon set (playwright only backs the colour logo below)
   playwright: { raw: '<circle cx="12" cy="12" r="9" fill="#2EAD33"/>', hex: '#2EAD33' },
   elysia: { raw: '<rect x="3" y="3" width="18" height="18" rx="5" fill="#6D3BBF"/>' + text(F.bold, 'E', 12, 16.8, 13, { anchor: 'middle', fill: '#F5E1FF' }), hex: '#B07CF0' },
@@ -130,17 +132,26 @@ export const LOGOS = {
   obsidian: 'logos:obsidian-icon', csharp: 'logos:c-sharp', python: 'logos:python', go: 'logos:go', rust: 'logos:rust',
   react: 'logos:react', html: 'logos:html-5', css: 'logos:css-3', sass: 'logos:sass', vite: 'logos:vitejs',
   tailwind: 'logos:tailwindcss-icon', discordjs: 'devicon:discordjs', postgresql: 'logos:postgresql', redis: 'logos:redis',
-  sqlite: 'logos:sqlite', firebase: 'logos:firebase-icon', mysql: 'logos:mysql-icon', mongodb: 'logos:mongodb-icon',
+  firebase: 'logos:firebase-icon', mongodb: 'logos:mongodb-icon',
   docker: 'logos:docker-icon', nginx: 'logos:nginx', intellij: 'logos:intellij-idea', debian: 'logos:debian',
   ubuntu: 'logos:ubuntu', android: 'logos:android-icon', unity: 'logos:unity', sublime: 'logos:sublimetext-icon',
-  figma: 'logos:figma', notion: 'logos:notion-icon', gdrive: 'logos:google-drive', json: 'logos:json', yaml: 'logos:yaml',
+  figma: 'logos:figma', notion: 'logos:notion-icon', gdrive: 'logos:google-drive', 
   toml: 'logos:toml', telegram: 'logos:telegram', gmail: 'logos:google-gmail', npm: 'logos:npm-icon',
   codewars: 'devicon:codewars', mindustry: 'png:mindustry.png', minecraft: 'vscode:file-type-minecraft',
   oxc: 'logos:oxc-icon', playwright: 'logos:playwright', vitest: 'logos:vitest', zod: 'logos:zod', prisma: 'logos:prisma',
-  drizzle: 'logos:drizzle-icon', mariadb: 'logos:mariadb-icon', fastify: 'logos:fastify-icon', pinia: 'logos:pinia',
+  mariadb: 'logos:mariadb-icon', fastify: 'logos:fastify-icon', pinia: 'logos:pinia',
   ffmpeg: 'logos:ffmpeg-icon', aseprite: 'vscode:file-type-aseprite',
-  bash: 'logos:bash-icon', powershell: 'devicon:powershell', glsl: 'devicon:opengl', markdown: 'devicon:markdown',
-  xml: 'devicon:xml', svg: 'logos:svg',
+  // round 8: official logos fetched from each project's own repo / Wikimedia (sources in assets/logos/SOURCES.md)
+  lavalink: 'file:logos/lavalink.svg', elysia: 'file:logos/elysia.svg', grammy: 'file:logos/grammy.svg',
+  ytdlp: 'png:logos/ytdlp.png', davinci: 'file:logos/davinci.svg',
+  // round 8 icon review: these read better as the VS Code file-type marks (the user: "некоторые кринж")
+  json: 'vscode:file-type-json', yaml: 'vscode:file-type-yaml', xml: 'vscode:file-type-xml',
+  sqlite: 'vscode:file-type-sqlite', sql: 'vscode:file-type-sql',
+  properties: 'vscode:file-type-config', webp: 'vscode:file-type-webp',
+  avif: 'vscode:file-type-avif', drizzle: 'vscode:file-type-drizzle-orm',
+  ejs: 'vscode:file-type-ejs', csv: 'vscode:file-type-csv', diff: 'vscode:file-type-diff',
+  bash: 'logos:bash-icon', powershell: 'devicon:powershell', markdown: 'devicon:markdown',
+  svg: 'logos:svg',
 };
 const LIGHT = '#E6EDF3';
 function colourLogo(id) {
@@ -148,6 +159,18 @@ function colourLogo(id) {
   if (!ref) return null;
   const [set, name] = ref.split(':');
   if (set === 'png') return { raw: `<image href="${dataUri(name, 'image/png')}" width="24" height="24"/>`, vb: '0 0 24 24' };
+  if (set === 'file') {
+    // Official logo saved under assets/ (see assets/logos/SOURCES.md). Editor metadata is cut so the
+    // inner markup stays valid without the inkscape/sodipodi namespaces.
+    const src = fs.readFileSync(new URL(`./assets/${name}`, import.meta.url), 'utf8');
+    const open = src.match(/<svg\b[^>]*>/);
+    const vb = open[0].match(/viewBox="([^"]+)"/)?.[1];
+    if (!vb) throw new Error(`no viewBox in ${name}`);
+    const inner = src.slice(open.index + open[0].length, src.lastIndexOf('</svg>'))
+      .replace(/<metadata[\s\S]*?<\/metadata>/g, '').replace(/<sodipodi:[\s\S]*?(\/>|<\/sodipodi:[a-z]+>)/g, '')
+      .replace(/\s(inkscape|sodipodi):[\w-]+="[^"]*"/g, '').replace(/xlink:href=/g, 'href=');
+    return { raw: inner, vb };
+  }
   const s = ICON_SETS[set], ic = s.icons[name];
   if (!ic) throw new Error(`no ${ref} for ${id}`);
   let body = ic.body;
@@ -222,13 +245,17 @@ export function linkCards(dir, st) {
   const w = Math.floor((W - sepW * (linkGroups.length - 1) - (n + linkGroups.length - 2) * gap) / n), h = st.h ?? 32;
   const maxLabel = Math.max(...links.map((l) => measure(F.bold, l.name.toUpperCase(), 10, 0.9)));
   const size = Math.min(10, (10 * (w - 44)) / maxLabel);
-  const frame = (fw, fh) => `<rect x="0.5" y="0.5" width="${fw - 1}" height="${fh - 1}" rx="${st.rx}" fill="${st.bg}"${st.stroke ? ` stroke="${st.stroke}"` : ''}/>`;
   const m = 36; // 7 tiles + divider + GitHub's inline gaps fit a 294px-wide phone column
+  // st.iconOnly: square icon tiles on desktop too; st.brand: each card filled with its brand colour.
+  const brandBg = (l) => mix(iconColor(l, '#0d1117'), '#000000', 0.35);
   for (const l of links) {
-    out(`variants/${dir}/link-${l.id}.svg`, svg(w, h,
-      frame(w, h) + icon(l, 11, (h - 15) / 2, 15, st.bg) +
-      text(F.bold, l.name.toUpperCase(), 33, h / 2 + size * 0.36, size, { ls: 0.9, fill: st.fg })));
-    out(`variants/${dir}/link-${l.id}-m.svg`, svg(m, m, frame(m, m) + icon(l, 10, 10, 16, st.bg)));
+    const bg = st.brand ? brandBg(l) : st.bg;
+    const card = (fw, fh) => `<rect x="0.5" y="0.5" width="${fw - 1}" height="${fh - 1}" rx="${st.rx}" fill="${bg}"${st.stroke && !st.brand ? ` stroke="${st.stroke}"` : ''}/>`;
+    out(`variants/${dir}/link-${l.id}.svg`, st.iconOnly
+      ? svg(h, h, card(h, h) + icon(l, h * 0.27, h * 0.27, Math.round(h * 0.46), bg))
+      : svg(w, h, card(w, h) + icon(l, 11, (h - 15) / 2, 15, bg, st.brand ? '#FFFFFF' : null) +
+        text(F.bold, l.name.toUpperCase(), 33, h / 2 + size * 0.36, size, { ls: 0.9, fill: st.brand ? '#FFFFFF' : st.fg })));
+    out(`variants/${dir}/link-${l.id}-m.svg`, svg(m, m, card(m, m) + icon(l, 10, 10, 16, bg, st.brand ? '#FFFFFF' : null)));
   }
   const line = (sw, sh) => `<rect x="${sw / 2 - 0.5}" y="${sh * 0.2}" width="1" height="${sh * 0.6}" fill="${st.stroke ?? '#4a4a48'}"/>`;
   out(`variants/${dir}/link-sep.svg`, svg(sepW, h, line(sepW, h)));
