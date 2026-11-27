@@ -147,7 +147,7 @@ export const LOGOS = {
   ffmpeg: 'logos:ffmpeg-icon', aseprite: 'vscode:file-type-aseprite',
   // round 8: official logos fetched from each project's own repo / Wikimedia (sources in assets/logos/SOURCES.md)
   lavalink: 'file:logos/lavalink.svg', elysia: 'file:logos/elysia.svg', grammy: 'file:logos/grammy.svg',
-  ytdlp: 'png:logos/ytdlp.png', davinci: 'file:logos/davinci.svg',
+  ytdlp: 'png:logos/ytdlp.png', davinci: 'file:logos/davinci.svg', site: 'pngpx:logos/site.png',
   // round 8 icon review: these read better as the VS Code file-type marks (the user: "некоторые кринж")
   json: 'vscode:file-type-json', yaml: 'vscode:file-type-yaml', xml: 'vscode:file-type-xml',
   sqlite: 'vscode:file-type-sqlite', sql: 'vscode:file-type-sql',
@@ -170,6 +170,8 @@ function colourLogo(id) {
 export function logoFromRef(ref, id = ref) {
   const [set, name] = [ref.slice(0, ref.indexOf(':')), ref.slice(ref.indexOf(':') + 1)];
   if (set === 'custom') return { raw: CUSTOM[name].raw, vb: '0 0 24 24' };
+  // pixel art (the site's 32px favicon): scale with hard pixels, not blur
+  if (set === 'pngpx') return { raw: `<image href="${dataUri(name, 'image/png')}" width="24" height="24" style="image-rendering:pixelated"/>`, vb: '0 0 24 24' };
   if (set === 'si') {
     const s = si[name] ?? si9[name];
     if (!s) throw new Error(`no ${ref} for ${id}`);

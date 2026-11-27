@@ -12,3 +12,4 @@ Fetched 2026-11-27 from each project's own sources; SVGs checked for scripts, ev
 
 ../mindustry.png is the Mindustry app icon from the user's MindustryX checkout (work/ios/.../icon-128.png).
 ../avatar.jpg is the user's GitHub avatar (https://github.com/makarasty.png?size=240), used with their OK.
+| site.png | the user's own site favicon, makarasty.github.io/common/icons/mky.png (local checkout) | the user's own |

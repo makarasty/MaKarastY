@@ -79,8 +79,6 @@ export const stack = [
   { id: 'xml', name: 'XML', icon: 'siXml', tier: 'tried', cat: 'format', sym: 'Xm', score: 9 },
   { id: 'properties', name: 'Properties', icon: 'custom:properties', tier: 'tried', cat: 'format', sym: 'Pr', score: 9 },
   { id: 'svg', name: 'SVG', icon: 'siSvg', tier: 'tried', cat: 'format', sym: 'Sv', score: 7 },
-  { id: 'webp', name: 'WebP', icon: 'custom:webp', tier: 'tried', cat: 'format', sym: 'Wp', score: 6 },
-  { id: 'avif', name: 'AVIF', icon: 'custom:avif', tier: 'tried', cat: 'format', sym: 'Af', score: 4 },
 
   // Picked by the user 2026-11-27 ("help me remember"); modern tools only, no ESLint/Prettier. No score yet.
   { id: 'oxc', name: 'oxlint / oxfmt', icon: 'siOxc', tier: 'tried', cat: 'tool', sym: 'Ox', score: 10 },
@@ -92,8 +90,6 @@ export const stack = [
   { id: 'mariadb', name: 'MariaDB', icon: 'siMariadb', tier: 'tried', cat: 'data', sym: 'Ma', score: 8 },
   { id: 'fastify', name: 'Fastify', icon: 'siFastify', tier: 'tried', cat: 'web', sym: 'Fy', score: 9 },
   { id: 'elysia', name: 'Elysia', icon: 'custom:elysia', tier: 'tried', cat: 'web', sym: 'El', score: 8 },
-  { id: 'grammy', name: 'grammY', icon: 'custom:grammy', tier: 'tried', cat: 'web', sym: 'Gy', score: 8 },
-  { id: 'pinia', name: 'Pinia', icon: 'siPinia', tier: 'tried', cat: 'web', sym: 'Pi', score: 7 },
   { id: 'ffmpeg', name: 'FFmpeg', icon: 'siFfmpeg', tier: 'tried', cat: 'media', sym: 'Ff', score: 8 },
   { id: 'ytdlp', name: 'yt-dlp', icon: 'custom:ytdlp', tier: 'tried', cat: 'media', sym: 'Yt', score: 9 },
   { id: 'obs', name: 'OBS', icon: 'siObsstudio', tier: 'tried', cat: 'media', sym: 'Ob', score: 6 },
