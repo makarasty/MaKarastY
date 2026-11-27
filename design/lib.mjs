@@ -133,12 +133,12 @@ export function linkCards(dir, st) {
   const maxLabel = Math.max(...links.map((l) => measure(F.bold, l.name.toUpperCase(), 10, 0.9)));
   const size = Math.min(10, (10 * (w - 44)) / maxLabel);
   const frame = (fw, fh) => `<rect x="0.5" y="0.5" width="${fw - 1}" height="${fh - 1}" rx="${st.rx}" fill="${st.bg}"${st.stroke ? ` stroke="${st.stroke}"` : ''}/>`;
-  const m = 40;
+  const m = 36; // 7 tiles + divider + GitHub's inline gaps fit a 294px-wide phone column
   for (const l of links) {
     out(`variants/${dir}/link-${l.id}.svg`, svg(w, h,
       frame(w, h) + icon(l, 11, (h - 15) / 2, 15, st.bg) +
       text(F.bold, l.name.toUpperCase(), 33, h / 2 + size * 0.36, size, { ls: 0.9, fill: st.fg })));
-    out(`variants/${dir}/link-${l.id}-m.svg`, svg(m, m, frame(m, m) + icon(l, 11, 11, 18, st.bg)));
+    out(`variants/${dir}/link-${l.id}-m.svg`, svg(m, m, frame(m, m) + icon(l, 10, 10, 16, st.bg)));
   }
   const line = (sw, sh) => `<rect x="${sw / 2 - 0.5}" y="${sh * 0.2}" width="1" height="${sh * 0.6}" fill="${st.stroke ?? '#4a4a48'}"/>`;
   out(`variants/${dir}/link-sep.svg`, svg(sepW, h, line(sepW, h)));
