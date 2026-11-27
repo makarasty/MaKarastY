@@ -201,22 +201,26 @@ const names = { v1: 'Ровная сетка', v2: 'Иконки', v3: 'Табл
 const phoneCopy = new Set(['v1', 'v2']);
 const stackImg = (k) => (phoneCopy.has(k) ? pic(`${k}/stack.svg`, 'stack') : `<img alt="stack" src="${k}/stack.svg">`);
 const center = (inner) => `<div align="center">\n  ${inner}\n</div>`;
-for (const [k, fn] of Object.entries({ v1, v2, v3, v4, v5 })) {
-  fn();
-  out(`variants/${k}.md`, `<!-- ${names[k]} -->\n${header}${center(stackImg(k))}\n\n<br>\n\n${linkRow(k)}\n`);
-}
+// Rounds 1-3 are retired from the page; their layouts were sized for the old stack.
+// `node build.mjs --all` rebuilds them anyway (the keyboard no longer has a key for every item).
+if (process.argv.includes('--all')) {
+  for (const [k, fn] of Object.entries({ v1, v2, v3, v4, v5 })) {
+    fn();
+    out(`variants/${k}.md`, `<!-- ${names[k]} -->\n${header}${center(stackImg(k))}\n\n<br>\n\n${linkRow(k)}\n`);
+  }
 
-// V6: orbits always shown, the other views one click away (GitHub keeps <details>).
-const more = (label, k) => `<details>\n<summary>${label}</summary>\n<br>\n\n${center(stackImg(k))}\n\n</details>`;
-out('variants/v6.md', `<!-- Переключатель -->\n${header}${center(stackImg('v5'))}\n\n` +
-  [more('keyboard', 'v4'), more('periodic table', 'v3'), more('cards', 'v1')].join('\n\n') + `\n\n<br>\n\n${linkRow('v5')}\n`);
+  // V6: orbits always shown, the other views one click away (GitHub keeps <details>).
+  const more = (label, k) => `<details>\n<summary>${label}</summary>\n<br>\n\n${center(stackImg(k))}\n\n</details>`;
+  out('variants/v6.md', `<!-- Переключатель -->\n${header}${center(stackImg('v5'))}\n\n` +
+    [more('keyboard', 'v4'), more('periodic table', 'v3'), more('cards', 'v1')].join('\n\n') + `\n\n<br>\n\n${linkRow('v5')}\n`);
 
-// Round 3: the V2 grid drawn four other ways.
-const r3 = { mono: 'Монохром', tint: 'Мягкий цвет', label: 'С подписями', round: 'Круги', labelflat: 'С подписями, все равны' };
-for (const [style, name] of Object.entries(r3)) {
-  v2(style);
-  const k = V2_DIR[style];
-  out(`variants/${k}.md`, `<!-- ${name} -->\n${header}${center(pic(`${k}/stack.svg`, 'stack'))}\n\n<br>\n\n${linkRow(k)}\n`);
+  // Round 3: the V2 grid drawn four other ways.
+  const r3 = { mono: 'Монохром', tint: 'Мягкий цвет', label: 'С подписями', round: 'Круги', labelflat: 'С подписями, все равны' };
+  for (const [style, name] of Object.entries(r3)) {
+    v2(style);
+    const k = V2_DIR[style];
+    out(`variants/${k}.md`, `<!-- ${name} -->\n${header}${center(pic(`${k}/stack.svg`, 'stack'))}\n\n<br>\n\n${linkRow(k)}\n`);
+  }
 }
 
 // Local review page: each variant inside a GitHub-sized README box, with a 1-10 mark and a comment.
@@ -234,5 +238,5 @@ out('variants/preview.html', fs.readFileSync(new URL('./preview.tpl.html', impor
     // For the "sort your stack" block: every non-AI item with a small inline icon.
     `const STACK = ${JSON.stringify(stack.filter((s) => s.tier !== 'ai').map((s) => ({ id: s.id, name: s.name, score: s.score, icon: svg(20, 20, icon(s, 0, 0, 20, '#161b22')) })))};`));
 
-console.log('built', Object.keys(names).join(' '), '|', stack.length, 'stack items,', links.length, 'links |',
+console.log('built page', ROUND.join(' '), '|', stack.length, 'stack items,', links.length, 'links |',
   tiers.map((t) => `${t}:${byTier(t).length}`).join(' '));

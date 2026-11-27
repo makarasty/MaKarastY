@@ -69,7 +69,7 @@ function build(file, o) {
 
 const res = [
   build('variants/r5d/stack.svg', { W: 840, H: 680, meR: 48, aiR: 31, tR: 20, icon: 1.2, r0: 100, margin: 14 }),
-  build('variants/r5d/stack-m.svg', { W: 360, H: 360, meR: 27, aiR: 19, tR: 13, icon: 1.45, r0: 58, margin: 4 }),
+  build('variants/r5d/stack-m.svg', { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
 ];
 linkCards('r5d', { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
 out('variants/r5d.md', `<!-- Подсолнух -->\n${header}<div align="center">\n  ${pic('r5d/stack.svg', 'stack')}\n</div>\n\n<br>\n\n${linkRow('r5d')}\n`);

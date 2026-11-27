@@ -68,6 +68,14 @@ export const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 
 export const CUSTOM = {
   mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
   lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
+  // round 6 additions with no mark in any icon set
+  sql: { raw: '<ellipse cx="12" cy="5.5" rx="8" ry="3" fill="#F0A33A"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13c0 1.7-3.6 3-8 3s-8-1.3-8-3z" fill="#C97A1E"/><path d="M4 10c0 1.7 3.6 3 8 3s8-1.3 8-3M4 14.5c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="#F0A33A" stroke-width="1.2" fill="none"/>', hex: '#F0A33A' },
+  properties: { raw: '<rect x="3" y="3" width="18" height="18" rx="3" fill="#3B4A5A"/><path d="M7 8h10M7 12h10M7 16h10" stroke="#9DB4C8" stroke-width="1.6"/><circle cx="10" cy="8" r="1.8" fill="#E6EDF3"/><circle cx="15" cy="12" r="1.8" fill="#E6EDF3"/><circle cx="9" cy="16" r="1.8" fill="#E6EDF3"/>', hex: '#9DB4C8' },
+  batch: { raw: '<rect x="2.5" y="4" width="19" height="16" rx="2.5" fill="#1E1E1E" stroke="#9DA5AE" stroke-width="1.2"/><path d="M6 9l3.5 3L6 15" stroke="#7EE787" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 15.5h6" stroke="#E6EDF3" stroke-width="1.8" stroke-linecap="round"/>', hex: '#7EE787' },
+  diff: { raw: '<rect x="3" y="3" width="18" height="8.2" rx="2" fill="#1A3D24"/><rect x="3" y="12.8" width="18" height="8.2" rx="2" fill="#4A1C1C"/><path d="M12 4.6v5M9.5 7.1h5" stroke="#7EE787" stroke-width="1.8" stroke-linecap="round"/><path d="M9.5 16.9h5" stroke="#FF7B72" stroke-width="1.8" stroke-linecap="round"/>', hex: '#7EE787' },
+  // picture frame + a letter, so the two image formats do not look alike
+  webp: { raw: '<rect x="2.5" y="3.5" width="19" height="17" rx="2.5" fill="#1F4D2E"/><path d="M4.5 18l5-6 3.5 4 2.5-3 4 5z" fill="#57C26A"/>' + text(F.bold, 'W', 16.5, 10.6, 7, { anchor: 'middle', fill: '#E6EDF3' }), hex: '#57C26A' },
+  avif: { raw: '<rect x="2.5" y="3.5" width="19" height="17" rx="2.5" fill="#3D2357"/><path d="M4.5 18l5-6 3.5 4 2.5-3 4 5z" fill="#B57EDC"/>' + text(F.bold, 'A', 16.5, 10.6, 7, { anchor: 'middle', fill: '#E6EDF3' }), hex: '#B57EDC' },
   // no icon set has a CSV mark: a small sheet with a header row
   csv: { raw: '<rect x="3" y="4" width="18" height="16" rx="2" fill="#1F7A4D"/><path d="M3 9h18M9 4v16M15 4v16M3 14.5h18" stroke="#E6EDF3" stroke-width="1.4"/>', hex: '#1F7A4D' },
   // grass block: the simple-icons Minecraft mark is a wordmark and turns into a line at 16px
@@ -107,6 +115,8 @@ export const LOGOS = {
   figma: 'logos:figma', notion: 'logos:notion-icon', gdrive: 'logos:google-drive', json: 'logos:json', yaml: 'logos:yaml',
   toml: 'logos:toml', telegram: 'logos:telegram', gmail: 'logos:google-gmail', npm: 'logos:npm-icon',
   codewars: 'devicon:codewars', mindustry: 'png:mindustry.png',
+  bash: 'logos:bash-icon', powershell: 'devicon:powershell', glsl: 'devicon:opengl', markdown: 'devicon:markdown',
+  xml: 'devicon:xml', svg: 'logos:svg',
 };
 const LIGHT = '#E6EDF3';
 function colourLogo(id) {

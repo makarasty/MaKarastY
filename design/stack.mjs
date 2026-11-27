@@ -65,6 +65,22 @@ export const stack = [
   { id: 'toml', name: 'TOML', icon: 'siToml', color: '#C9693B', tier: 'tried', cat: 'format', sym: 'Tm', score: 9 },
   { id: 'csv', name: 'CSV', icon: 'custom:csv', tier: 'tried', cat: 'format', sym: 'Cv' },
   { id: 'env', name: '.env', icon: 'siDotenv', tier: 'tried', cat: 'format', sym: 'Ev', score: 10 },
+
+  // Picked by the user 2026-11-27 from file counts across LiveProjects (no score yet).
+  { id: 'bash', name: 'Bash', icon: 'siGnubash', tier: 'tried', cat: 'lang', sym: 'Sh' },
+  { id: 'powershell', name: 'PowerShell', icon: 'siGnubash', tier: 'tried', cat: 'lang', sym: 'Ps' },
+  { id: 'batch', name: 'Batch', icon: 'custom:batch', tier: 'tried', cat: 'lang', sym: 'Bt' },
+  { id: 'glsl', name: 'GLSL', icon: 'siOpengl', tier: 'tried', cat: 'lang', sym: 'Gl' },
+  { id: 'sql', name: 'SQL', icon: 'custom:sql', tier: 'tried', cat: 'data', sym: 'Sl' },
+  { id: 'slint', name: 'Slint', icon: 'siSlint', tier: 'tried', cat: 'tool', sym: 'Si' },
+  { id: 'avalonia', name: 'Avalonia', icon: 'siAvaloniaui', tier: 'tried', cat: 'tool', sym: 'Av' },
+  { id: 'diff', name: 'Diff', icon: 'custom:diff', tier: 'tried', cat: 'tool', sym: 'Df' },
+  { id: 'markdown', name: 'Markdown', icon: 'siMarkdown', tier: 'tried', cat: 'format', sym: 'Md' },
+  { id: 'xml', name: 'XML', icon: 'siXml', tier: 'tried', cat: 'format', sym: 'Xm' },
+  { id: 'properties', name: 'Properties', icon: 'custom:properties', tier: 'tried', cat: 'format', sym: 'Pr' },
+  { id: 'svg', name: 'SVG', icon: 'siSvg', tier: 'tried', cat: 'format', sym: 'Sv' },
+  { id: 'webp', name: 'WebP', icon: 'custom:webp', tier: 'tried', cat: 'format', sym: 'Wp' },
+  { id: 'avif', name: 'AVIF', icon: 'custom:avif', tier: 'tried', cat: 'format', sym: 'Af' },
 ];
 
 // Clickable cards under the stack, in two groups: how to reach me, and everything else.
