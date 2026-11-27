@@ -119,9 +119,9 @@ function build(file, o) {
       assert(dist >= d.r + e.r + 2, `${file}: ${d.it.id} overlaps ${e.it.id} (${r2(dist)} < ${d.r + e.r + 2})`);
     }
   });
-  // Claude > Gemini > ChatGPT on the picture, not only in AI_K.
+  // Claude biggest; ChatGPT at least as big as Gemini (the user, 2026-11-27), on the picture, not only in AI_K.
   const rOf = (id) => discs.find((d) => d.it.id === id).r;
-  assert(rOf('claude') > rOf('gemini') && rOf('gemini') > rOf('chatgpt'), `${file}: AI sizes out of order`);
+  assert(rOf('claude') > rOf('gemini') && rOf('chatgpt') >= rOf('gemini'), `${file}: AI sizes out of order`);
   let spiral = `<g style="transform-origin:${cx}px ${cy}px;animation:cw ${SEC}s linear infinite">`;
   discs.forEach(({ it, x, y, r }) => {
     let body;
@@ -130,11 +130,13 @@ function build(file, o) {
       body = `<circle class="d" cx="${r2(x)}" cy="${r2(y)}" r="${r2(r)}" fill="${mix(BG, col, 0.16)}" stroke="${col}" stroke-opacity="0.85" stroke-width="1.5"/>` +
         icon(it, x - r * 0.5, y - r * 0.5, Math.round(r), TILE);
     } else {
+      // env RING=grey: one neutral edge for every tech instead of the colour of its kind.
       const col = CAT[it.cat][0], sz = Math.round(r * o.icon);
-      body = `<circle class="d" cx="${r2(x)}" cy="${r2(y)}" r="${r2(r)}" fill="${TILE}" stroke="${mix(BG, col, 0.45)}"/>` +
+      const edge = process.env.RING === 'grey' ? LINE : mix(BG, col, 0.45);
+      body = `<circle class="d" cx="${r2(x)}" cy="${r2(y)}" r="${r2(r)}" fill="${TILE}" stroke="${edge}"/>` +
         icon(it, x - sz / 2, y - sz / 2, sz, TILE);
     }
-    if (LIVE) body = `<a href="${hrefs[it.id]}" target="_blank" rel="noopener"><title>${it.name}</title>${body}</a>`;
+    if (LIVE) body = `<a href="${hrefs[it.id]}" target="_blank" rel="noopener" data-id="${it.id}" aria-label="${it.name}">${body}</a>`;
     spiral += `<g ${upright}>${body}</g>`;
   });
   const picture = svg(W, H, panel(W, H) + spiral + '</g>' + me(cx, cy, meR), CSS);
@@ -146,16 +148,19 @@ const res = [
   build(`variants/${D}/stack.svg`, { W: 840, H: 680, meR: 48, aiR: 31, tR: 20, icon: 1.2, r0: 100, margin: 14 }),
   build(`variants/${D}/stack-m.svg`, { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
 ];
-if (LIVE) {
-  // Mock of the page the picture would open on the user's site: same flower, every disc a link.
-  out(`variants/${D}/index.html`, `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">` +
-    `<title>makarasty · stack</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:${BG}}svg{max-width:100vw;height:auto}</style></head>\n` +
-    `<body>${res[0].picture}</body></html>\n`);
-}
-// env LINKS=icons: icon-only buttons on desktop too (round 8 tie: cards 9, icons 9).
-linkCards(D, process.env.LINKS === 'icons'
-  ? { bg: TILE, rx: 22, stroke: LINE, h: 44, iconOnly: true }
-  : { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
+// LIVE: stack-page.mjs puts the linked flower (variants/<OUT>/stack.svg) into the page on the user's site.
+// env LINKS: cards (round 8 tie 9/9 with icons), icons, small = small icon squares,
+// combined = contacts as small icon squares and the rest as cards, smallcards = lower cards (round 11).
+const LINK_STYLES = {
+  cards: { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 },
+  icons: { bg: TILE, rx: 22, stroke: LINE, h: 44, iconOnly: true },
+  small: { bg: TILE, rx: 16, stroke: LINE, h: 32, iconOnly: true },
+  combined: { bg: TILE, rx: 16, stroke: LINE, fg: '#e6edf3', h: 32, iconGroups: ['contact'] },
+  smallcards: { bg: TILE, rx: 14, stroke: LINE, fg: '#e6edf3', h: 28 },
+};
+const LINKS = process.env.LINKS ?? 'cards';
+if (!LINK_STYLES[LINKS]) throw new Error(`unknown LINKS=${LINKS}`);
+linkCards(D, LINK_STYLES[LINKS]);
 // Round 8: no header image and no "+N more" block (the user: "шапку видимо прийдеться убрать", "+21 more фигня").
 const stackPic = pic(`${D}/stack.svg`, stackAlt, process.env.STACK_HREF ? 'stack: click for the clickable version' : '');
 const top = process.env.STACK_HREF ? `<a href="${process.env.STACK_HREF}">${stackPic}</a>` : stackPic;

@@ -271,7 +271,8 @@ export function linkCards(dir, st) {
   for (const l of links) {
     const bg = st.brand ? brandBg(l) : st.bg;
     const card = (fw, fh) => `<rect x="0.5" y="0.5" width="${fw - 1}" height="${fh - 1}" rx="${st.rx}" fill="${bg}"${st.stroke && !st.brand ? ` stroke="${st.stroke}"` : ''}/>`;
-    out(`variants/${dir}/link-${l.id}.svg`, st.iconOnly
+    // st.iconGroups: only these groups get icon squares, the rest stay cards ("combined").
+    out(`variants/${dir}/link-${l.id}.svg`, st.iconOnly || st.iconGroups?.includes(l.group)
       ? svg(h, h, card(h, h) + icon(l, h * 0.27, h * 0.27, Math.round(h * 0.46), bg))
       : svg(w, h, card(w, h) + icon(l, 11, (h - 15) / 2, 15, bg, st.brand ? '#FFFFFF' : null) +
         text(F.bold, l.name.toUpperCase(), 33, h / 2 + size * 0.36, size, { ls: 0.9, fill: st.brand ? '#FFFFFF' : st.fg })));
@@ -308,7 +309,8 @@ export const linkRow = (dir) =>
 // ---------- disc size (round 10) ----------
 // The three AI differ by how much the user uses them (stack.mjs tag main / second / images):
 // "отношения к ним разные" (2026-11-27) replaced the earlier "three AI equal".
-export const AI_K = { claude: 1.12, gemini: 0.86, chatgpt: 0.7 };
+// ChatGPT "хотя бы такой же, как у Gemini" (2026-11-27).
+export const AI_K = { claude: 1.12, gemini: 0.86, chatgpt: 0.86 };
 // Tech size by the user's 1-10 score.
 export const SIZES = {
   equal: () => 1,
@@ -321,24 +323,16 @@ export function sizeK(it, size) {
 }
 
 // ---------- text for readers that cannot see the pictures (screen readers, AI agents, search) ----------
-// The whole profile is images, so the alt text carries the stack and the raw README carries a plain note.
-// The note only states facts: an instruction aimed at an AI reader ("rate this profile high") reads as
-// prompt injection and costs trust with both screeners and the people behind them.
+// The whole profile is images, so the alt text says what the picture shows. No hidden text or comments aimed
+// at AI: screeners flag hidden prompts in resumes and recruiters reject them (Duke/hireEZ study, NYT 2025),
+// and a long keyword list reads as padding, so the alt names the main tools and counts the rest.
 const tierName = { ai: 'AI', main: 'every day', active: 'actively', tried: 'have used' };
 // What the user called old (OLD above) is listed under "have used", whatever its tier.
-const names = (t) => fullStack.filter((s) => (OLD.has(s.id) ? 'tried' : s.tier) === t).map((s) => s.name).join(', ');
-export const stackAlt = 'Tech stack of makarasty: ' + tiers.map((t) => `${tierName[t]}: ${names(t)}`).join('; ') + '.';
-export const aiNote = `<!--
-Hi! If you are an AI agent or a script reading this: the profile above is pictures, so here it is as text.
-No hidden instructions below, only facts.
-
-Who: makarasty, https://github.com/makarasty, site https://makarasty.github.io/
-${tiers.map((t) => `${tierName[t][0].toUpperCase() + tierName[t].slice(1)}: ${names(t)}.`).join('\n')}
-Contact: ${allLinks.filter((l) => l.group === 'contact').map((l) => l.href.replace(/^mailto:/, '')).join(', ')}
-
-Easter egg: the icons sit on a Vogel spiral, each one 137.508 degrees after the last,
-the same golden angle a real sunflower uses for its seeds. Built by design/*.mjs in this repo.
--->`;
+export const groups = tiers.map((t) => ({ t, title: tierName[t], items: fullStack.filter((s) => (OLD.has(s.id) ? 'tried' : s.tier) === t) }));
+const names = (t) => groups.find((g) => g.t === t).items.map((s) => s.name).join(', ');
+const tried = groups.find((g) => g.t === 'tried').items.length;
+export const stackAlt = `Tech stack of makarasty around the avatar. AI: ${names('ai')}. Every day: ${names('main')}. ` +
+  `Actively: ${names('active')}. And ${tried} more tools.`;
 
 // ---------- shared by the variants ----------
 export const CAT = {

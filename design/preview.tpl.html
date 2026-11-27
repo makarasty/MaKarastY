@@ -46,7 +46,7 @@
 <main id="list"></main>
 <script>
 /*DATA*/
-const KEY = 'profile-variants-marks-r10';
+const KEY = 'profile-variants-marks-r11';
 let marks = {};
 try { marks = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(marks)); document.getElementById('state').textContent = 'сохранено'; } catch { document.getElementById('state').textContent = 'не сохраняется: браузер запретил хранилище'; } };
