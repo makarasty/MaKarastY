@@ -111,4 +111,6 @@ export const links = [
   { id: 'codewars', group: 'other', name: 'Codewars', icon: 'siCodewars', href: 'https://www.codewars.com/users/MaKarastY' },
   { id: 'monkeytype', group: 'other', name: 'Monkeytype', icon: 'siMonkeytype', href: 'https://monkeytype.com/profile/MaKarastY' },
   { id: 'services', group: 'other', name: 'Services', icon: 'siUptimekuma', color: '#5CDD8B', href: 'https://stats.uptimerobot.com/knqRXIY3qY' },
+  // The old header image linked here; shown only with env SITE=1 until the user picks.
+  { id: 'site', group: 'other', name: 'Site', icon: 'custom:site', href: 'https://makarasty.github.io/', optional: true },
 ];

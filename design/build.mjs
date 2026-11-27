@@ -1,5 +1,7 @@
 // Builds my variants (v1..v5) and the review page from stack.mjs.
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import * as lib from './lib.mjs';
 const { F, W, root, out, text, measure, mix, icon, iconColor, svg, byTier, fullCols, grid, linkCards, linkRow, header, CAT, stack, links, tiers, r2, pic } = lib;
 
@@ -224,10 +226,15 @@ if (process.argv.includes('--all')) {
 }
 
 // Local review page: each variant inside a GitHub-sized README box, with a 1-10 mark and a comment.
-const readme = fs.readFileSync(new URL('README.md', root), 'utf8').replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
+// "Сейчас" = the profile that is live on main, not the new README in this branch.
+const liveReadme = (() => {
+  try { return execFileSync('git', ['show', 'main:README.md'], { cwd: fileURLToPath(root), encoding: 'utf8' }); }
+  catch { return fs.readFileSync(new URL('README.md', root), 'utf8'); }
+})();
+const readme = liveReadme.replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
 // The page shows the current round only; older variants stay in variants/ and in git.
 // r4b/r4c come from r4-hex.mjs / r4-iso.mjs, r4a from r4-solar.mjs; a missing one is skipped.
-const ROUND = ['r8f-box', 'r8f-flat', 'r8f-circle', 'r8f-none', 'r8l-cards', 'r8l-classic', 'r8l-icons', 'r8l-brand', 'r8l-text'];
+const ROUND = ['r9-cards', 'r9-icons', 'r9-cards-site', 'r9-icons-site'];
 const files = ROUND.map((k) => `${k}.md`).filter((f) => fs.existsSync(new URL(`variants/${f}`, root)));
 const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
   const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');

@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import opentype from 'opentype.js';
 import * as si from 'simple-icons';
 import * as si9 from 'si9';
-import { stack as fullStack, links, tiers } from './stack.mjs';
-export { links, tiers, fullStack };
+import { stack as fullStack, links as allLinks, tiers } from './stack.mjs';
+export { tiers, fullStack };
+// Optional links (the Site button) only with env SITE=1.
+export const links = allLinks.filter((l) => !l.optional || process.env.SITE === '1');
 
 // Which items go in the main picture (env SET); the rest goes into the collapsed "more" block.
 // Old, per the user (2026-11-27): EJS, MySQL, Pterodactyl, Firebase. Unscored items count as wanted.
@@ -83,6 +85,8 @@ export const JAVA = fs.readFileSync(new URL('./java.svg.txt', import.meta.url), 
 export const CUSTOM = {
   mindustry: { raw: '<path d="M3 3h18v18H3zM6.5 6.5v11h11v-11zM10 10h4v4h-4z" fill="#D99D73" fill-rule="evenodd"/>', hex: '#D99D73' },
   lavalink: { raw: '<path d="M3.5 11h3.5v9H3.5zM10.25 4h3.5v16h-3.5zM17 8h3.5v12H17z" fill="#F25C54"/>', hex: '#F25C54' },
+  // Site button: a plain globe (the GitHub Pages mark reads as text at 16px)
+  site: { raw: '<circle cx="12" cy="12" r="9" stroke="#58A6FF" stroke-width="1.8" fill="none"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" stroke="#58A6FF" stroke-width="1.6" fill="none"/>', hex: '#58A6FF' },
   // GLSL: the only set marks are the OpenGL wordmark, unreadable at 20px
   glsl: { raw: '<rect x="1.5" y="5" width="21" height="14" rx="3.5" fill="#5586A4"/>' + text(F.bold, 'GLSL', 12, 14.6, 7.6, { anchor: 'middle', fill: '#FFFFFF' }), hex: '#5586A4' },
   // round 7 additions with no mark in any icon set (playwright only backs the colour logo below)
