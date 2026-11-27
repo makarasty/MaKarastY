@@ -14,7 +14,7 @@ execFileSync(process.execPath, [fileURLToPath(new URL('./r5-sun.mjs', import.met
 const root = new URL('../', import.meta.url);
 fs.rmSync(new URL('profile.md', root), { force: true }); // r5-sun's own page; README.md replaces it
 
-const { pic, linkRow } = await import('./lib.mjs');
+const { pic, linkRow, stackAlt, aiNote } = await import('./lib.mjs');
 fs.writeFileSync(new URL('README.md', root),
-  `<div align="center">\n  ${pic('profile/stack.svg', 'stack')}\n</div>\n\n<br>\n\n${linkRow('profile')}\n`);
+  `<div align="center">\n  ${pic('profile/stack.svg', stackAlt)}\n</div>\n\n<br>\n\n${linkRow('profile')}\n\n${aiNote}\n`);
 console.log(`README.md written (buttons: ${links})`);

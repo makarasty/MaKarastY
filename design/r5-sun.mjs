@@ -1,7 +1,11 @@
 // Round 5, "Подсолнух": the user in the centre, everything else on Vogel's phyllotaxis spiral
-// (angle n * 137.508 deg, radius r0 + c * sqrt(n)), so density is even. AI first, then techs by score.
+// (angle n * 137.508 deg), so density is even. AI first, then techs in the PLACE order.
+// Round 10 (env): SIZE = disc size per tech by the user's score, PLACE = where each tech sits,
+// LIVE=1 = every disc is a link (for an HTML page; GitHub shows an SVG as <img>, so links there never work),
+// STACK_HREF = a link around the whole picture in the .md.
 import assert from 'node:assert/strict';
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, linkCards, linkRow, pic, r2, me as avatar, OUT_DIR, SET } from './lib.mjs';
+import { out, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, linkCards, linkRow, pic, r2, me as avatar, OUT_DIR, SET, sizeK, stackAlt } from './lib.mjs';
+import { hrefs } from './stack.mjs';
 // Output folder and title follow the selection (env SET / OUT, see lib.mjs).
 const D = OUT_DIR ?? 'r5d';
 const TITLE = 'Подсолнух' + (SET === 'all' ? '' : ' · ' + { top: '8-10', modern: 'без старого' }[SET]);
@@ -9,16 +13,35 @@ const TITLE = 'Подсолнух' + (SET === 'all' ? '' : ' · ' + { top: '8-10
 const BG = '#0d1117', TILE = '#161b22', LINE = '#30363d';
 const GOLDEN = (137.508 * Math.PI) / 180;
 const idx = new Map(stack.map((s, i) => [s, i]));
-const order = [
-  ...stack.filter((s) => s.tier === 'ai'),
-  ...stack.filter((s) => s.tier !== 'ai').sort((a, b) =>
-    (b.score ?? 0) - (a.score ?? 0) || CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat) || idx.get(a) - idx.get(b)),
-];
-const nAi = stack.filter((s) => s.tier === 'ai').length;
+const ai = stack.filter((s) => s.tier === 'ai'), techs = stack.filter((s) => s.tier !== 'ai');
+const nAi = ai.length;
+
+const SIZE = process.env.SIZE ?? 'equal', PLACE = process.env.PLACE ?? 'score', LIVE = process.env.LIVE === '1';
+const kOf = (it) => sizeK(it, SIZE);
+
+const byScore = (a, b) => (b.score ?? 0) - (a.score ?? 0) || CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat) || idx.get(a) - idx.get(b);
+// Fixed seed, so "mixed" is the same picture on every build.
+function shuffled(list, seed = 7) {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    seed = (seed * 1103515245 + 12345) % 2147483648;
+    const j = seed % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const ORDERS = {
+  score: () => [...techs].sort(byScore), // higher score = closer to the centre
+  kind: () => [...techs].sort((a, b) => CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat) || byScore(a, b)), // one band per kind
+  mixed: () => shuffled(techs), // big and small spread over the whole flower
+  sector: () => [...techs].sort((a, b) => kOf(b) - kOf(a) || byScore(a, b)), // slots only; items go to wedges below
+};
+if (!ORDERS[PLACE]) throw new Error(`unknown PLACE=${PLACE}`);
 
 const CSS = `<style>
 @keyframes cw{to{transform:rotate(360deg)}}@keyframes ccw{to{transform:rotate(-360deg)}}
 .up{transform-box:fill-box;transform-origin:center}
+${LIVE ? 'a{cursor:pointer}a:hover .d,a:focus .d{stroke:#e6edf3;stroke-opacity:1;stroke-width:2}' : ''}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>`;
 const SEC = 240;
@@ -48,12 +71,44 @@ function me(cx, cy, r) {
 function build(file, o) {
   const { W, H, meR, aiR, tR, r0 } = o, cx = W / 2, cy = H / 2;
   const rMax = Math.min(W, H) / 2 - o.margin - aiR; // keeps the whole turning spiral inside the panel
-  const c = (rMax - r0) / Math.sqrt(order.length - 1);
-  const discs = order.map((it, n) => {
-    const a = n * GOLDEN, r = r0 + c * Math.sqrt(n);
-    return { it, x: cx + r * Math.cos(a), y: cy + r * Math.sin(a), r: n < nAi ? aiR : tR, r0: r };
+  const seq = [...ai, ...ORDERS[PLACE]()];
+  const base = (it) => (it.tier === 'ai' ? aiR : tR) * kOf(it);
+  // Each slot takes ring area in proportion to its disc's area; with equal sizes this is r0 + c * sqrt(n).
+  const cum = [0];
+  seq.forEach((it, n) => n && cum.push(cum[n - 1] + (base(seq[n - 1]) ** 2 + base(it) ** 2) / 2));
+  const slots = seq.map((it, n) => {
+    const a = n * GOLDEN, r = r0 + (rMax - r0) * Math.sqrt(cum[n] / cum[seq.length - 1]);
+    return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a), r0: r, a: ((a % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI) };
   });
+  let items = seq;
+  if (PLACE === 'sector') {
+    // One wedge per kind, sized by how many items it has; inside a wedge, higher score sits closer to the centre.
+    items = [...ai];
+    const free = slots.slice(nAi).map((s, i) => ({ s, i: i + nAi })).sort((p, q) => p.s.a - q.s.a);
+    const assigned = [];
+    let at = 0;
+    for (const cat of CAT_ORDER) {
+      const group = techs.filter((t) => t.cat === cat).sort(byScore);
+      const wedge = free.slice(at, at + group.length).sort((p, q) => p.s.r0 - q.s.r0);
+      wedge.forEach((w, k) => (assigned[w.i] = group[k]));
+      at += group.length;
+    }
+    items = seq.map((it, n) => (n < nAi ? it : assigned[n]));
+    assert.equal(new Set(items).size, seq.length, `${file}: sector lost an item`);
+  }
+  const place = (s) => items.map((it, n) => ({ it, ...slots[n], r: base(it) * s }));
   // No overlaps (2px gap) with each other and with the avatar ring; always inside the panel, at any rotation.
+  const fits = (discs) => discs.every((d, i) =>
+    d.r0 + d.r <= Math.min(W, H) / 2 - 4 && Math.hypot(d.x - cx, d.y - cy) >= d.r + meR + 9 + 2 &&
+    discs.slice(i + 1).every((e) => Math.hypot(d.x - e.x, d.y - e.y) >= d.r + e.r + 2));
+  // The largest scale that still fits; equal sizes never grow past the rated layout (scale 1).
+  let s = 1;
+  if (SIZE !== 'equal' || !fits(place(1))) {
+    let lo = 0.3, hi = SIZE === 'equal' ? 1 : 1.3;
+    for (let k = 0; k < 30; k++) { const m = (lo + hi) / 2; if (fits(place(m))) lo = m; else hi = m; }
+    s = Math.floor(lo * 1000) / 1000;
+  }
+  const discs = place(s);
   let min = Infinity;
   discs.forEach((d, i) => {
     assert(d.r0 + d.r <= Math.min(W, H) / 2 - 4, `${file}: disc ${d.it.id} leaves the panel`);
@@ -64,32 +119,45 @@ function build(file, o) {
       assert(dist >= d.r + e.r + 2, `${file}: ${d.it.id} overlaps ${e.it.id} (${r2(dist)} < ${d.r + e.r + 2})`);
     }
   });
+  // Claude > Gemini > ChatGPT on the picture, not only in AI_K.
+  const rOf = (id) => discs.find((d) => d.it.id === id).r;
+  assert(rOf('claude') > rOf('gemini') && rOf('gemini') > rOf('chatgpt'), `${file}: AI sizes out of order`);
   let spiral = `<g style="transform-origin:${cx}px ${cy}px;animation:cw ${SEC}s linear infinite">`;
-  discs.forEach(({ it, x, y, r }, n) => {
+  discs.forEach(({ it, x, y, r }) => {
     let body;
-    if (n < nAi) {
+    if (it.tier === 'ai') {
       const col = iconColor(it, TILE);
-      body = `<circle cx="${r2(x)}" cy="${r2(y)}" r="${r}" fill="${mix(BG, col, 0.16)}" stroke="${col}" stroke-opacity="0.85" stroke-width="1.5"/>` +
+      body = `<circle class="d" cx="${r2(x)}" cy="${r2(y)}" r="${r2(r)}" fill="${mix(BG, col, 0.16)}" stroke="${col}" stroke-opacity="0.85" stroke-width="1.5"/>` +
         icon(it, x - r * 0.5, y - r * 0.5, Math.round(r), TILE);
     } else {
-      const col = CAT[it.cat][0], s = Math.round(r * o.icon);
-      body = `<circle cx="${r2(x)}" cy="${r2(y)}" r="${r}" fill="${TILE}" stroke="${mix(BG, col, 0.45)}"/>` +
-        icon(it, x - s / 2, y - s / 2, s, TILE);
+      const col = CAT[it.cat][0], sz = Math.round(r * o.icon);
+      body = `<circle class="d" cx="${r2(x)}" cy="${r2(y)}" r="${r2(r)}" fill="${TILE}" stroke="${mix(BG, col, 0.45)}"/>` +
+        icon(it, x - sz / 2, y - sz / 2, sz, TILE);
     }
+    if (LIVE) body = `<a href="${hrefs[it.id]}" target="_blank" rel="noopener"><title>${it.name}</title>${body}</a>`;
     spiral += `<g ${upright}>${body}</g>`;
   });
-  out(file, svg(W, H, panel(W, H) + spiral + '</g>' + me(cx, cy, meR), CSS));
-  return { file, c: r2(c), gap: r2(min) };
+  const picture = svg(W, H, panel(W, H) + spiral + '</g>' + me(cx, cy, meR), CSS);
+  out(file, picture);
+  return { file, picture, s, gap: r2(min) };
 }
 
 const res = [
   build(`variants/${D}/stack.svg`, { W: 840, H: 680, meR: 48, aiR: 31, tR: 20, icon: 1.2, r0: 100, margin: 14 }),
   build(`variants/${D}/stack-m.svg`, { W: 360, H: 360, meR: 25, aiR: 18, tR: 11, icon: 1.55, r0: 55, margin: 4 }),
 ];
+if (LIVE) {
+  // Mock of the page the picture would open on the user's site: same flower, every disc a link.
+  out(`variants/${D}/index.html`, `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">` +
+    `<title>makarasty · stack</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:${BG}}svg{max-width:100vw;height:auto}</style></head>\n` +
+    `<body>${res[0].picture}</body></html>\n`);
+}
 // env LINKS=icons: icon-only buttons on desktop too (round 8 tie: cards 9, icons 9).
 linkCards(D, process.env.LINKS === 'icons'
   ? { bg: TILE, rx: 22, stroke: LINE, h: 44, iconOnly: true }
   : { bg: TILE, rx: 18, stroke: LINE, fg: '#e6edf3', h: 36 });
 // Round 8: no header image and no "+N more" block (the user: "шапку видимо прийдеться убрать", "+21 more фигня").
-out(`variants/${D}.md`, `<!-- ${process.env.NAME ?? TITLE} -->\n<div align="center">\n  ${pic(`${D}/stack.svg`, 'stack')}\n</div>\n\n<br>\n\n${linkRow(D)}\n`);
-console.log(`built ${D} |`, order.length, 'items |', res.map((r) => `${r.file} c=${r.c} min gap=${r.gap}`).join(' | '));
+const stackPic = pic(`${D}/stack.svg`, stackAlt, process.env.STACK_HREF ? 'stack: click for the clickable version' : '');
+const top = process.env.STACK_HREF ? `<a href="${process.env.STACK_HREF}">${stackPic}</a>` : stackPic;
+out(`variants/${D}.md`, `<!-- ${process.env.NAME ?? TITLE} -->\n<div align="center">\n  ${top}\n</div>\n\n<br>\n\n${linkRow(D)}\n`);
+console.log(`built ${D} | SIZE=${SIZE} PLACE=${PLACE} |`, stack.length, 'items |', res.map((r) => `${r.file} scale=${r.s} min gap=${r.gap}`).join(' | '));

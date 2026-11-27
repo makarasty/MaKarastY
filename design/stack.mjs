@@ -97,6 +97,39 @@ export const stack = [
   { id: 'aseprite', name: 'Aseprite', icon: 'siAseprite', tier: 'tried', cat: 'media', sym: 'As', score: 8 },
 ];
 
+// Where each stack item links to (round 10, clickable techs). The ones the old README on main had are
+// kept as they were there; the rest point at the project's own site.
+export const hrefs = {
+  claude: 'https://claude.ai/', gemini: 'https://gemini.google.com/', chatgpt: 'https://chatgpt.com/',
+  windows: 'https://www.microsoft.com/', vscode: 'https://code.visualstudio.com/', typescript: 'https://www.typescriptlang.org/',
+  javascript: 'https://developer.mozilla.org/ru/docs/Learn/JavaScript/First_steps/What_is_JavaScript/',
+  nodejs: 'https://nodejs.org/en/', bun: 'https://bun.sh/', vue: 'https://vuejs.org/', nuxt: 'https://nuxt.com/',
+  java: 'https://en.wikipedia.org/wiki/Java_(programming_language)', git: 'https://git-scm.com/',
+  actions: 'https://github.com/features/actions', obsidian: 'https://obsidian.md/about', kotlin: 'https://kotlinlang.org/',
+  gradle: 'https://gradle.org/', docker: 'https://www.docker.com/', csharp: 'https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29',
+  python: 'https://www.python.org/', react: 'https://react.dev/', html: 'https://ru.wikipedia.org/wiki/HTML5/',
+  css: 'https://developer.mozilla.org/ru/docs/Web/CSS/Reference/', sass: 'https://sass-lang.com/',
+  postgresql: 'https://www.postgresql.org/', redis: 'https://redis.io/', sqlite: 'https://www.sqlite.org/', nginx: 'https://nginx.org/',
+  debian: 'https://www.debian.org/', intellij: 'https://www.jetbrains.com/idea/', go: 'https://go.dev/', rust: 'https://www.rust-lang.org/',
+  firebase: 'https://firebase.google.com/', mysql: 'https://www.mysql.com/', lmdb: 'https://www.npmjs.com/package/lmdb/',
+  vite: 'https://vite.dev/', tailwind: 'https://tailwindcss.com/', discordjs: 'https://discord.js.org/',
+  mindustry: 'https://mindustrygame.github.io/', minecraft: 'https://www.minecraft.net/', lavalink: 'https://lavalink.dev/',
+  mongodb: 'https://www.mongodb.com/', ubuntu: 'https://ubuntu.com/', android: 'https://www.android.com/', unity: 'https://unity.com/',
+  sublime: 'https://www.sublimetext.com/', ejs: 'https://ejs.co/', figma: 'https://www.figma.com/', drawio: 'https://www.drawio.com/',
+  notion: 'https://www.notion.com/', gdrive: 'https://drive.google.com/', pterodactyl: 'https://pterodactyl.io/',
+  json: 'https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/JSON/', yaml: 'https://ru.wikipedia.org/wiki/YAML/',
+  toml: 'https://toml.io/en/', csv: 'https://en.wikipedia.org/wiki/Comma-separated_values', env: 'https://www.dotenv.org/docs/security/env.html',
+  bash: 'https://www.gnu.org/software/bash/', powershell: 'https://learn.microsoft.com/powershell/', batch: 'https://en.wikipedia.org/wiki/Batch_file',
+  glsl: 'https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language', sql: 'https://en.wikipedia.org/wiki/SQL', slint: 'https://slint.dev/',
+  avalonia: 'https://avaloniaui.net/', diff: 'https://en.wikipedia.org/wiki/Diff', markdown: 'https://commonmark.org/',
+  xml: 'https://en.wikipedia.org/wiki/XML', properties: 'https://en.wikipedia.org/wiki/.properties', svg: 'https://developer.mozilla.org/ru/docs/Web/SVG',
+  oxc: 'https://oxc.rs/', playwright: 'https://playwright.dev/', vitest: 'https://vitest.dev/', zod: 'https://zod.dev/',
+  prisma: 'https://www.prisma.io/', drizzle: 'https://orm.drizzle.team/', mariadb: 'https://mariadb.org/', fastify: 'https://fastify.dev/',
+  elysia: 'https://elysiajs.com/', ffmpeg: 'https://ffmpeg.org/', ytdlp: 'https://github.com/yt-dlp/yt-dlp', obs: 'https://obsproject.com/',
+  davinci: 'https://www.blackmagicdesign.com/products/davinciresolve', aseprite: 'https://www.aseprite.org/',
+};
+for (const s of stack) if (!hrefs[s.id]) throw new Error(`no href for ${s.id}`);
+
 // Clickable cards under the stack, in two groups: how to reach me, and everything else.
 // Services link is kept as it is in README.md.
 export const links = [

@@ -46,7 +46,7 @@
 <main id="list"></main>
 <script>
 /*DATA*/
-const KEY = 'profile-variants-marks-r9';
+const KEY = 'profile-variants-marks-r10';
 let marks = {};
 try { marks = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(marks)); document.getElementById('state').textContent = 'сохранено'; } catch { document.getElementById('state').textContent = 'не сохраняется: браузер запретил хранилище'; } };
@@ -54,7 +54,7 @@ const list = document.getElementById('list');
 for (const v of VARIANTS) {
   const s = document.createElement('section');
   const m = marks[v.id] || {};
-  s.innerHTML = `<h2>${v.id.toUpperCase()} · ${v.name} <span>${({ v0: 'живой профиль из main', 'r9-cards': 'то, что сейчас в README ветки' })[v.id] ?? ''}</span></h2><div class="box">${v.html}</div>
+  s.innerHTML = `<h2>${v.id.toUpperCase()} · ${v.name} <span>${({ v0: 'живой профиль из main' })[v.id] ?? ''}</span></h2><div class="box">${v.html}</div>
     <div class="rate" role="group" aria-label="Оценка ${v.name}">${Array.from({length:10},(_,i)=>`<button data-n="${i+1}" aria-pressed="${m.score===i+1}">${i+1}</button>`).join('')}</div>
     <textarea placeholder="Комментарий к ${v.id.toUpperCase()}: что нравится, что убрать">${m.note || ''}</textarea>`;
   s.querySelectorAll('.rate button').forEach(b => b.onclick = () => {
