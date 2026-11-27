@@ -232,7 +232,7 @@ const entries = [['v0', 'Сейчас (для сравнения)', readme], ...
 out('variants/preview.html', fs.readFileSync(new URL('./preview.tpl.html', import.meta.url), 'utf8')
   .replace('/*DATA*/', `const VARIANTS = ${JSON.stringify(entries.map(([id, name, html]) => ({ id, name, html })))};\n` +
     // For the "sort your stack" block: every non-AI item with a small inline icon.
-    `const STACK = ${JSON.stringify(stack.filter((s) => s.tier !== 'ai').map((s) => ({ id: s.id, name: s.name, icon: svg(20, 20, icon(s, 0, 0, 20, '#161b22')) })))};`));
+    `const STACK = ${JSON.stringify(stack.filter((s) => s.tier !== 'ai').map((s) => ({ id: s.id, name: s.name, score: s.score, icon: svg(20, 20, icon(s, 0, 0, 20, '#161b22')) })))};`));
 
 console.log('built', Object.keys(names).join(' '), '|', stack.length, 'stack items,', links.length, 'links |',
   tiers.map((t) => `${t}:${byTier(t).length}`).join(' '));
