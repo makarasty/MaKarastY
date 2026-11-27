@@ -7,6 +7,11 @@ const ai = stack.filter((s) => s.tier === 'ai');
 const systems = CAT_ORDER.filter((c) => c !== 'ai')
   .map((cat) => ({ cat, moons: stack.filter((s) => s.tier !== 'ai' && s.cat === cat).sort(byScore) }))
   .filter((s) => s.moons.length);
+// Moon ring sized to its moon count; around the orbit big and small systems alternate so neighbours never touch.
+const MOON_R = 13;
+const ringFor = (s) => Math.max(34, (s.moons.length * (2 * MOON_R + 5)) / (2 * Math.PI));
+const bySize = [...systems].sort((a, b) => b.moons.length - a.moons.length);
+const orbitOrder = bySize.map((_, i) => (i % 2 ? bySize[bySize.length - 1 - (i >> 1)] : bySize[i >> 1]));
 
 const CSS = `<style>
 @keyframes cw{to{transform:rotate(360deg)}}@keyframes ccw{to{transform:rotate(-360deg)}}
@@ -61,9 +66,17 @@ function desktop() {
   });
   body += o1 + '</g>';
   let o2 = `<g ${spin(cx, cy, 300, 'ccw')}>`;
-  systems.forEach((s, i) => {
+  const at = orbitOrder.map((s, i) => {
     const a = (i / systems.length) * Math.PI * 2 - Math.PI / 2 + Math.PI / systems.length;
-    o2 += system(s, cx + r2o * Math.cos(a), cy + r2o * Math.sin(a), 60, 13, 300);
+    return { s, x: cx + r2o * Math.cos(a), y: cy + r2o * Math.sin(a) };
+  });
+  at.forEach((p, i) => {
+    const q = at[(i + 1) % at.length], gap = Math.hypot(p.x - q.x, p.y - q.y) - ringFor(p.s) - ringFor(q.s) - 2 * MOON_R;
+    if (gap < 6) throw new Error(`systems ${p.s.cat} and ${q.s.cat} touch (gap ${gap.toFixed(1)})`);
+    if (r2o + ringFor(p.s) + MOON_R > Math.min(W, H) / 2 - 6) throw new Error(`system ${p.s.cat} leaves the panel`);
+  });
+  at.forEach(({ s, x, y }) => {
+    o2 += system(s, x, y, ringFor(s), MOON_R, 300);
   });
   body += o2 + '</g>' + me(cx, cy, 50);
   out('variants/r4a/stack.svg', svg(W, H, body, CSS));
@@ -82,7 +95,7 @@ function phone() {
   body += o1 + '</g>' + me(cx, cy, 44);
   systems.forEach((s, i) => {
     const x = (i % cols) * (W / cols) + W / cols / 2, y = top + Math.floor(i / cols) * cell + cell / 2;
-    body += system(s, x, y, 62, 13);
+    body += system(s, x, y, Math.min(62, ringFor(s)), MOON_R);
   });
   out('variants/r4a/stack-m.svg', svg(W, H, body, CSS));
 }

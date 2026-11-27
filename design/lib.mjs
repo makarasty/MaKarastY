@@ -99,6 +99,7 @@ export function iconColor(item, bg, mono) {
 const ICON_SETS = {
   logos: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/logos/icons.json', import.meta.url), 'utf8')),
   devicon: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/devicon/icons.json', import.meta.url), 'utf8')),
+  vscode: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/vscode-icons/icons.json', import.meta.url), 'utf8')),
 };
 const dataUri = (file, type) => `data:${type};base64,${fs.readFileSync(new URL(`./assets/${file}`, import.meta.url)).toString('base64')}`;
 export const LOGOS = {
@@ -114,7 +115,7 @@ export const LOGOS = {
   ubuntu: 'logos:ubuntu', android: 'logos:android-icon', unity: 'logos:unity', sublime: 'logos:sublimetext-icon',
   figma: 'logos:figma', notion: 'logos:notion-icon', gdrive: 'logos:google-drive', json: 'logos:json', yaml: 'logos:yaml',
   toml: 'logos:toml', telegram: 'logos:telegram', gmail: 'logos:google-gmail', npm: 'logos:npm-icon',
-  codewars: 'devicon:codewars', mindustry: 'png:mindustry.png',
+  codewars: 'devicon:codewars', mindustry: 'png:mindustry.png', minecraft: 'vscode:file-type-minecraft',
   bash: 'logos:bash-icon', powershell: 'devicon:powershell', glsl: 'devicon:opengl', markdown: 'devicon:markdown',
   xml: 'devicon:xml', svg: 'logos:svg',
 };
@@ -161,7 +162,7 @@ export const svg = (w, h, body, extra = '') =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none">${extra}${body}</svg>\n`;
 
 // Inside a tier, things of one kind sit together; stack.mjs order (usage) decides within a kind.
-export const CAT_ORDER = ['ai', 'lang', 'web', 'data', 'infra', 'tool', 'os', 'game', 'format'];
+export const CAT_ORDER = ['ai', 'lang', 'web', 'data', 'infra', 'editor', 'tool', 'apps', 'ui', 'os', 'game', 'format'];
 // Higher user score first; unscored last; ties keep stack.mjs order (Array.sort is stable).
 export const byScore = (a, b) => (b.score ?? 0) - (a.score ?? 0);
 export const byTier = (t) =>
@@ -223,6 +224,6 @@ export const linkRow = (dir) =>
 export const CAT = {
   ai: ['#D97757', 'ai'], lang: ['#A78BFA', 'languages'], web: ['#34D399', 'web'], data: ['#60A5FA', 'data'],
   tool: ['#FBBF24', 'tools'], os: ['#F472B6', 'platforms'], infra: ['#22D3EE', 'infra'], game: ['#A3E635', 'games'],
-  format: ['#94A3B8', 'formats'],
+  format: ['#94A3B8', 'formats'], editor: ['#FB923C', 'editors'], apps: ['#E879F9', 'apps'], ui: ['#F87171', 'ui'],
 };
 export const header = `<div align="center">\n  <a href="https://makarasty.github.io/">\n    <img alt="header" src="../makarasty.png">\n  </a>\n</div>\n\n<br>\n\n`;
