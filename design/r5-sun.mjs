@@ -167,10 +167,18 @@ linkCards(D, LINK_STYLES[LINKS]);
 // line = one small line of the main web stack under the flower, details = the whole stack by kind, folded,
 // both = the two together with a short alt, since the text below then carries the list (screen readers
 // read a long alt in full, and every agent pipeline keeps plain text).
+// fun1 / fun2 = a playful small line instead of the tech list ("можно написать что-то более прикольное");
+// both only say what the picture really does.
+const FUN = {
+  fun1: `${stack.length} tools, one sunflower: each icon sits 137.5° after the last, like real seeds`,
+  fun2: 'One slow turn every 4 minutes. The more I like a tool, the closer it sits to me',
+};
 const TEXT = process.env.TEXT ?? 'none';
-if (!['none', 'line', 'details', 'both'].includes(TEXT)) throw new Error(`unknown TEXT=${TEXT}`);
+if (!['none', 'line', 'details', 'both', ...Object.keys(FUN)].includes(TEXT)) throw new Error(`unknown TEXT=${TEXT}`);
+assert.equal(SEC, 240, 'fun2 says one turn every 4 minutes');
 const alt = TEXT === 'both' ? `Tech stack of makarasty: ${stack.length} tool icons around their avatar, listed as text below` : stackAlt;
-const text = ['line', 'both'].includes(TEXT) ? `\n  <br>\n  <sub>${keyLine.map((s) => s.name).join(' · ')}</sub>` : '';
+const line = FUN[TEXT] ?? (['line', 'both'].includes(TEXT) ? keyLine.map((s) => s.name).join(' · ') : '');
+const text = line ? `\n  <br>\n  <sub>${line}</sub>` : '';
 const folded = ['details', 'both'].includes(TEXT) ? `\n\n<details>\n<summary><sub>Stack as text</sub></summary>\n\n` +
   kinds.map((k) => `**${k.title}:** ${k.items.map((s) => s.name).join(', ')}`).join('<br>\n') + `\n\n</details>` : '';
 // Round 8: no header image and no "+N more" block (the user: "шапку видимо прийдеться убрать", "+21 more фигня").

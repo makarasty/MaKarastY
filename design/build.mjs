@@ -235,7 +235,8 @@ const readme = liveReadme.replaceAll('src="https://raw.githubusercontent.com/mak
 // The page shows the current round only; older variants stay in variants/ and in git.
 // r4b/r4c come from r4-hex.mjs / r4-iso.mjs, r4a from r4-solar.mjs; a missing one is skipped.
 // Round 12 comes from r12.mjs (rounds 10-11 are rated and kept in variants/ and git).
-const ROUND = ['r12-a', 'r12-b', 'r12-c', 'r12-d'];
+// classic = the old profile brought up to date (classic.mjs), for the side-by-side with r12-a.
+const ROUND = ['classic', 'r12-a', 'r12-b', 'r12-e', 'r12-f'];
 const files = ROUND.map((k) => `${k}.md`).filter((f) => fs.existsSync(new URL(`variants/${f}`, root)));
 const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
   const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="28" viewBox="0 0 100 28" fill="none"><rect width="100" height="28" fill="#323330"/><svg x="10" y="7" width="14" height="14" viewBox="0 0 100 100">
+  <defs
+     id="defs7">
+    <linearGradient
+       id="grad"
+       x1="0"
+       y1="0"
+       x2="100"
+       y2="100"
+       spreadMethod="pad"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#ff8c00"
+         id="stop2"
+         style="stop-color:#fa9800;stop-opacity:1;" />
+      <stop
+         offset="100"
+         stop-color="#ff0000"
+         id="stop4"
+         style="stop-color:#ff005e;stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <rect
+     width="100%"
+     height="100%"
+     fill="url(#grad)"
+     id="rect9"
+     x="0"
+     y="0"
+     rx="14"
+     ry="14"
+     style="fill:url(#grad)" />
+  <path
+     style="vector-effect:none;fill:#ffffff;fill-opacity:1;stroke-width:1.27808;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+     d="m 57,25 h 13 l -7,27 h 12 l -2,8.5 H 48 Z"
+     id="path724-5" />
+  <path
+     style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke-width:1.33907;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+     d="m 37.5,25 h 14 l -10,40 H 72 L 70,75 H 25 Z"
+     id="path724" />
+</svg><path d="M36.29 17.60L31.66 17.60L31.66 10.32L33.15 10.32L33.15 16.36L36.29 16.36L36.29 17.60ZM39.54 17.60L37.89 17.60L40.38 10.32L42.33 10.32L44.88 17.60L43.23 17.60L42.66 15.91L40.08 15.91L39.54 17.60ZM40.45 14.74L42.28 14.74L42.06 14.09Q41.85 13.41 41.63 12.60L41.63 12.60Q41.49 12.08 41.34 11.50L41.34 11.50Q41.19 12.09 41.07 12.61L41.07 12.61Q40.86 13.43 40.66 14.09L40.66 14.09L40.45 14.74ZM50.86 17.60L48.91 17.60L46.36 10.32L48.01 10.32L49.18 13.84Q49.39 14.50 49.60 15.30L49.60 15.30Q49.74 15.82 49.89 16.40L49.89 16.40Q50.04 15.81 50.17 15.29L50.17 15.29Q50.38 14.50 50.58 13.84L50.58 13.84L51.70 10.32L53.35 10.32L50.86 17.60ZM56.47 17.60L54.83 17.60L57.31 10.32L59.26 10.32L61.81 17.60L60.16 17.60L59.60 15.91L57.01 15.91L56.47 17.60ZM57.38 14.74L59.21 14.74L58.99 14.09Q58.78 13.41 58.57 12.60L58.57 12.60Q58.42 12.08 58.27 11.50L58.27 11.50Q58.13 12.09 58.00 12.61L58.00 12.61Q57.79 13.43 57.59 14.09L57.59 14.09L57.38 14.74ZM68.34 17.60L63.71 17.60L63.71 10.32L65.20 10.32L65.20 16.36L68.34 16.36L68.34 17.60ZM70.37 10.32L71.85 10.32L71.85 17.60L70.37 17.60L70.37 10.32ZM75.70 17.60L74.17 17.60L74.17 10.32L75.83 10.32L78.13 14.01Q78.31 14.29 78.49 14.62Q78.67 14.95 78.86 15.36L78.86 15.36Q78.95 15.56 79.04 15.78L79.04 15.78Q79.03 15.60 79.02 15.41L79.02 15.41Q78.99 14.95 78.97 14.53Q78.95 14.11 78.95 13.82L78.95 13.82L78.95 10.32L80.48 10.32L80.48 17.60L78.81 17.60L76.72 14.26Q76.49 13.88 76.30 13.53Q76.10 13.18 75.89 12.75L75.89 12.75Q75.76 12.49 75.60 12.16L75.60 12.16Q75.62 12.46 75.63 12.74L75.63 12.74Q75.66 13.22 75.68 13.61Q75.70 14.01 75.70 14.26L75.70 14.26L75.70 17.60ZM84.28 17.60L82.79 17.60L82.79 10.32L84.28 10.32L84.28 12.31L84.26 13.96Q84.30 13.90 84.33 13.85L84.33 13.85Q84.55 13.51 84.81 13.16Q85.07 12.82 85.40 12.41L85.40 12.41L87.18 10.32L89.00 10.32L86.28 13.47L89.08 17.60L87.32 17.60L85.25 14.46L84.28 15.52L84.28 17.60Z" fill="#FFFFFF"/></svg>

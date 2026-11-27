@@ -1,0 +1,4805 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="28" viewBox="0 0 90 28" fill="none"><rect width="90" height="28" fill="#323330"/><svg x="10" y="7" width="14" height="14" viewBox="0 0 65 65">
+  <defs
+     id="defs53">
+    <radialGradient
+      
+       href="#linearGradient1638"
+       id="radialGradient1680"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.058469,0.08930151,-0.16507404,1.9565823,2.7884105,-28.123773)"
+       cx="32.135498"
+       cy="28.274265"
+       fx="32.135498"
+       fy="28.274265"
+       r="7.0000019" />
+    <linearGradient
+      
+       id="linearGradient1638">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop1634" />
+      <stop
+         style="stop-color:#009bd8;stop-opacity:1"
+         offset="1"
+         id="stop1636" />
+    </linearGradient>
+    <radialGradient
+      
+       href="#linearGradient2515"
+       id="radialGradient2517"
+       cx="34.077766"
+       cy="33.654915"
+       fx="34.077766"
+       fy="33.654915"
+       r="8.0000048"
+       gradientTransform="matrix(1.9033696,0.76036676,-0.40632236,1.0171167,-17.110072,-25.819532)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+      
+       id="linearGradient2515">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop2511" />
+      <stop
+         style="stop-color:#ff3044;stop-opacity:1"
+         offset="1"
+         id="stop2513" />
+    </linearGradient>
+    <radialGradient
+      
+       href="#linearGradient2850"
+       id="radialGradient2852"
+       cx="29.661343"
+       cy="35.66066"
+       fx="29.661343"
+       fy="35.66066"
+       r="8.0000048"
+       gradientTransform="matrix(-1.7236439,1.148614,-0.5221049,-0.78348595,99.579489,27.599128)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+      
+       id="linearGradient2850">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop2846" />
+      <stop
+         style="stop-color:#fcff7c;stop-opacity:1"
+         offset="1"
+         id="stop2848" />
+    </linearGradient>
+  </defs>
+  
+  <g
+    
+     id="layer1"
+    
+     style="display:inline"
+     transform="translate(-3.3808972,-48.469422)">
+    <g
+       id="g4889"
+       transform="rotate(130,35.024663,79.565145)">
+      <rect
+         style="fill-rule:evenodd;stroke:none;stroke-width:0.745804px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="rect3619"
+         width="17.461231"
+         height="3.0174103"
+         x="23.695072"
+         y="76.345604"
+        
+        
+        
+        
+        
+        
+        
+         ry="0" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="translate(-17.461231)"
+         fill="#0019ff"
+         stroke="#0019ff"
+         id="use3786"
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(1,44.875958,-922.61901)"
+         fill="#0015ff"
+         stroke="#0015ff"
+         id="use3788"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(2,44.875958,-422.36618)"
+         fill="#0011ff"
+         stroke="#0011ff"
+         id="use3790"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(3,44.875958,-255.59831)"
+         fill="#000cff"
+         stroke="#000cff"
+         id="use3792"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(4,44.875958,-172.20167)"
+         fill="#0008ff"
+         stroke="#0008ff"
+         id="use3794"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(5,44.875958,-122.15352)"
+         fill="#0004ff"
+         stroke="#0004ff"
+         id="use3796"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(6,44.875958,-88.77962)"
+         fill="#0000ff"
+         stroke="#0000ff"
+         id="use3798"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(7,44.875958,-64.933854)"
+         fill="#0500ff"
+         stroke="#0500ff"
+         id="use3800"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(8,44.875958,-47.04317)"
+         fill="#0900ff"
+         stroke="#0900ff"
+         id="use3802"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(9,44.875958,-33.12254)"
+         fill="#0d00ff"
+         stroke="#0d00ff"
+         id="use3804"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(10,44.875958,-21.980943)"
+         fill="#1100ff"
+         stroke="#1100ff"
+         id="use3806"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(11,44.875958,-12.86046)"
+         fill="#1600ff"
+         stroke="#1600ff"
+         id="use3808"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(12,44.875958,-5.2558092)"
+         fill="#1a00ff"
+         stroke="#1a00ff"
+         id="use3810"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(13,44.875958,1.1828199)"
+         fill="#1e00ff"
+         stroke="#1e00ff"
+         id="use3812"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(14,44.875958,6.7052916)"
+         fill="#2200ff"
+         stroke="#2200ff"
+         id="use3814"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(15,44.875958,11.49484)"
+         fill="#2700ff"
+         stroke="#2700ff"
+         id="use3816"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(16,44.875958,15.688892)"
+         fill="#2b00ff"
+         stroke="#2b00ff"
+         id="use3818"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(17,44.875958,19.392537)"
+         fill="#2f00ff"
+         stroke="#2f00ff"
+         id="use3820"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(18,44.875958,22.687512)"
+         fill="#3300ff"
+         stroke="#3300ff"
+         id="use3822"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(19,44.875958,25.638348)"
+         fill="#3800ff"
+         stroke="#3800ff"
+         id="use3824"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(20,44.875958,28.296668)"
+         fill="#3c00ff"
+         stroke="#3c00ff"
+         id="use3826"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(21,44.875958,30.704263)"
+         fill="#4000ff"
+         stroke="#4000ff"
+         id="use3828"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(22,44.875958,32.895326)"
+         fill="#4400ff"
+         stroke="#4400ff"
+         id="use3830"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(23,44.875958,34.898103)"
+         fill="#4800ff"
+         stroke="#4800ff"
+         id="use3832"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(24,44.875958,36.736133)"
+         fill="#4d00ff"
+         stroke="#4d00ff"
+         id="use3834"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(25,44.875958,38.429188)"
+         fill="#5100ff"
+         stroke="#5100ff"
+         id="use3836"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(26,44.875958,39.993999)"
+         fill="#5500ff"
+         stroke="#5500ff"
+         id="use3838"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(27,44.875958,41.444819)"
+         fill="#5900ff"
+         stroke="#5900ff"
+         id="use3840"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(28,44.875958,42.793863)"
+         fill="#5e00ff"
+         stroke="#5e00ff"
+         id="use3842"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(29,44.875958,44.051664)"
+         fill="#6200ff"
+         stroke="#6200ff"
+         id="use3844"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(30,44.875958,45.227349)"
+         fill="#6600ff"
+         stroke="#6600ff"
+         id="use3846"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(31,44.875958,46.328867)"
+         fill="#6a00ff"
+         stroke="#6a00ff"
+         id="use3848"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(32,44.875958,47.363175)"
+         fill="#6f00ff"
+         stroke="#6f00ff"
+         id="use3850"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(33,44.875958,48.336385)"
+         fill="#7300ff"
+         stroke="#7300ff"
+         id="use3852"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(34,44.875958,49.253893)"
+         fill="#7700ff"
+         stroke="#7700ff"
+         id="use3854"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(35,44.875958,50.120475)"
+         fill="#7b00ff"
+         stroke="#7b00ff"
+         id="use3856"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(36,44.875958,50.940378)"
+         fill="#8000ff"
+         stroke="#8000ff"
+         id="use3858"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(37,44.875958,51.71739)"
+         fill="#8400ff"
+         stroke="#8400ff"
+         id="use3860"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(38,44.875958,52.454901)"
+         fill="#8800ff"
+         stroke="#8800ff"
+         id="use3862"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(39,44.875958,53.155952)"
+         fill="#8c00ff"
+         stroke="#8c00ff"
+         id="use3864"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(40,44.875958,53.82328)"
+         fill="#9100ff"
+         stroke="#9100ff"
+         id="use3866"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(41,44.875958,54.459358)"
+         fill="#9500ff"
+         stroke="#9500ff"
+         id="use3868"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(42,44.875958,55.066418)"
+         fill="#9900ff"
+         stroke="#9900ff"
+         id="use3870"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(43,44.875958,55.646491)"
+         fill="#9d00ff"
+         stroke="#9d00ff"
+         id="use3872"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(44,44.875958,56.201418)"
+         fill="#a100ff"
+         stroke="#a100ff"
+         id="use3874"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(45,44.875958,56.732879)"
+         fill="#a600ff"
+         stroke="#a600ff"
+         id="use3876"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(46,44.875958,57.242408)"
+         fill="#aa00ff"
+         stroke="#aa00ff"
+         id="use3878"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(47,44.875958,57.731408)"
+         fill="#ae00ff"
+         stroke="#ae00ff"
+         id="use3880"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(48,44.875958,58.201166)"
+         fill="#b200ff"
+         stroke="#b200ff"
+         id="use3882"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(49,44.875958,58.652862)"
+         fill="#b700ff"
+         stroke="#b700ff"
+         id="use3884"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(50,44.875958,59.087584)"
+         fill="#bb00ff"
+         stroke="#bb00ff"
+         id="use3886"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(51,44.875958,59.506333)"
+         fill="#bf00ff"
+         stroke="#bf00ff"
+         id="use3888"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(52,44.875958,59.910035)"
+         fill="#c300ff"
+         stroke="#c300ff"
+         id="use3890"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(53,44.875958,60.299544)"
+         fill="#c800ff"
+         stroke="#c800ff"
+         id="use3892"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(54,44.875958,60.675652)"
+         fill="#cc00ff"
+         stroke="#cc00ff"
+         id="use3894"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(55,44.875958,61.039093)"
+         fill="#d000ff"
+         stroke="#d000ff"
+         id="use3896"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(56,44.875958,61.39055)"
+         fill="#d400ff"
+         stroke="#d400ff"
+         id="use3898"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(57,44.875958,61.730656)"
+         fill="#d900ff"
+         stroke="#d900ff"
+         id="use3900"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(58,44.875958,62.060002)"
+         fill="#dd00ff"
+         stroke="#dd00ff"
+         id="use3902"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(59,44.875958,62.379139)"
+         fill="#e100ff"
+         stroke="#e100ff"
+         id="use3904"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(60,44.875958,62.68858)"
+         fill="#e500ff"
+         stroke="#e500ff"
+         id="use3906"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(61,44.875958,62.988806)"
+         fill="#ea00ff"
+         stroke="#ea00ff"
+         id="use3908"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(62,44.875958,63.280265)"
+         fill="#ee00ff"
+         stroke="#ee00ff"
+         id="use3910"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(63,44.875958,63.56338)"
+         fill="#f200ff"
+         stroke="#f200ff"
+         id="use3912"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(64,44.875958,63.838544)"
+         fill="#f600ff"
+         stroke="#f600ff"
+         id="use3914"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(65,44.875958,64.106128)"
+         fill="#fa00ff"
+         stroke="#fa00ff"
+         id="use3916"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(66,44.875958,64.366481)"
+         fill="#ff00ff"
+         stroke="#ff00ff"
+         id="use3918"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(67,44.875958,64.619928)"
+         fill="#ff00fb"
+         stroke="#ff00fb"
+         id="use3920"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(68,44.875958,64.86678)"
+         fill="#ff00f7"
+         stroke="#ff00f7"
+         id="use3922"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(69,44.875958,65.107325)"
+         fill="#ff00f3"
+         stroke="#ff00f3"
+         id="use3924"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(70,44.875958,65.341838)"
+         fill="#ff00ee"
+         stroke="#ff00ee"
+         id="use3926"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(71,44.875958,65.570578)"
+         fill="#ff00ea"
+         stroke="#ff00ea"
+         id="use3928"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(72,44.875958,65.793788)"
+         fill="#ff00e6"
+         stroke="#ff00e6"
+         id="use3930"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(73,44.875958,66.0117)"
+         fill="#ff00e2"
+         stroke="#ff00e2"
+         id="use3932"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(74,44.875958,66.224531)"
+         fill="#ff00dd"
+         stroke="#ff00dd"
+         id="use3934"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(75,44.875958,66.43249)"
+         fill="#ff00d9"
+         stroke="#ff00d9"
+         id="use3936"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(76,44.875958,66.635771)"
+         fill="#ff00d5"
+         stroke="#ff00d5"
+         id="use3938"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(77,44.875958,66.834562)"
+         fill="#ff00d1"
+         stroke="#ff00d1"
+         id="use3940"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(78,44.875958,67.029037)"
+         fill="#ff00cc"
+         stroke="#ff00cc"
+         id="use3942"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(79,44.875958,67.219366)"
+         fill="#ff00c8"
+         stroke="#ff00c8"
+         id="use3944"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(80,44.875958,67.405707)"
+         fill="#ff00c4"
+         stroke="#ff00c4"
+         id="use3946"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(81,44.875958,67.588212)"
+         fill="#ff00c0"
+         stroke="#ff00c0"
+         id="use3948"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(82,44.875958,67.767025)"
+         fill="#ff00bb"
+         stroke="#ff00bb"
+         id="use3950"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(83,44.875958,67.942284)"
+         fill="#ff00b7"
+         stroke="#ff00b7"
+         id="use3952"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(84,44.875958,68.114119)"
+         fill="#ff00b3"
+         stroke="#ff00b3"
+         id="use3954"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(85,44.875958,68.282655)"
+         fill="#ff00af"
+         stroke="#ff00af"
+         id="use3956"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(86,44.875958,68.448011)"
+         fill="#ff00ab"
+         stroke="#ff00ab"
+         id="use3958"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(87,44.875958,68.610301)"
+         fill="#ff00a6"
+         stroke="#ff00a6"
+         id="use3960"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(88,44.875958,68.769633)"
+         fill="#ff00a2"
+         stroke="#ff00a2"
+         id="use3962"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(89,44.875958,68.926111)"
+         fill="#ff009e"
+         stroke="#ff009e"
+         id="use3964"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(90,44.875958,69.079834)"
+         fill="#ff009a"
+         stroke="#ff009a"
+         id="use3966"
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(91,44.875958,69.230898)"
+         fill="#ff0095"
+         stroke="#ff0095"
+         id="use3968"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(92,44.875958,69.379392)"
+         fill="#ff0091"
+         stroke="#ff0091"
+         id="use3970"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(93,44.875958,69.525405)"
+         fill="#ff008d"
+         stroke="#ff008d"
+         id="use3972"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(94,44.875958,69.669019)"
+         fill="#ff0089"
+         stroke="#ff0089"
+         id="use3974"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(95,44.875958,69.810314)"
+         fill="#ff0084"
+         stroke="#ff0084"
+         id="use3976"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(96,44.875958,69.949368)"
+         fill="#ff0080"
+         stroke="#ff0080"
+         id="use3978"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(97,44.875958,70.086254)"
+         fill="#ff007c"
+         stroke="#ff007c"
+         id="use3980"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(98,44.875958,70.221041)"
+         fill="#ff0078"
+         stroke="#ff0078"
+         id="use3982"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(99,44.875958,70.3538)"
+         fill="#ff0073"
+         stroke="#ff0073"
+         id="use3984"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(100,44.875958,70.484593)"
+         fill="#ff006f"
+         stroke="#ff006f"
+         id="use3986"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(101,44.875958,70.613486)"
+         fill="#ff006b"
+         stroke="#ff006b"
+         id="use3988"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(102,44.875958,70.740537)"
+         fill="#ff0067"
+         stroke="#ff0067"
+         id="use3990"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(103,44.875958,70.865804)"
+         fill="#ff0062"
+         stroke="#ff0062"
+         id="use3992"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(104,44.875958,70.989345)"
+         fill="#ff005e"
+         stroke="#ff005e"
+         id="use3994"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(105,44.875958,71.111213)"
+         fill="#ff005a"
+         stroke="#ff005a"
+         id="use3996"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(106,44.875958,71.231459)"
+         fill="#ff0056"
+         stroke="#ff0056"
+         id="use3998"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(107,44.875958,71.350134)"
+         fill="#ff0052"
+         stroke="#ff0052"
+         id="use4000"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(108,44.875958,71.467286)"
+         fill="#ff004d"
+         stroke="#ff004d"
+         id="use4002"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(109,44.875958,71.582962)"
+         fill="#ff0049"
+         stroke="#ff0049"
+         id="use4004"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(110,44.875958,71.697207)"
+         fill="#ff0045"
+         stroke="#ff0045"
+         id="use4006"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(111,44.875958,71.810064)"
+         fill="#ff0041"
+         stroke="#ff0041"
+         id="use4008"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(112,44.875958,71.921575)"
+         fill="#ff003c"
+         stroke="#ff003c"
+         id="use4010"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(113,44.875958,72.031781)"
+         fill="#ff0038"
+         stroke="#ff0038"
+         id="use4012"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(114,44.875958,72.140722)"
+         fill="#ff0034"
+         stroke="#ff0034"
+         id="use4014"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(115,44.875958,72.248434)"
+         fill="#ff0030"
+         stroke="#ff0030"
+         id="use4016"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(116,44.875958,72.354956)"
+         fill="#ff002b"
+         stroke="#ff002b"
+         id="use4018"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(117,44.875958,72.460322)"
+         fill="#ff0027"
+         stroke="#ff0027"
+         id="use4020"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(118,44.875958,72.564567)"
+         fill="#ff0023"
+         stroke="#ff0023"
+         id="use4022"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(119,44.875958,72.667724)"
+         fill="#ff001f"
+         stroke="#ff001f"
+         id="use4024"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(120,44.875958,72.769826)"
+         fill="#ff001a"
+         stroke="#ff001a"
+         id="use4026"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(121,44.875958,72.870905)"
+         fill="#ff0016"
+         stroke="#ff0016"
+         id="use4028"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(122,44.875958,72.97099)"
+         fill="#ff0012"
+         stroke="#ff0012"
+         id="use4030"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(123,44.875958,73.070112)"
+         fill="#ff000e"
+         stroke="#ff000e"
+         id="use4032"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(124,44.875958,73.168299)"
+         fill="#ff0009"
+         stroke="#ff0009"
+         id="use4034"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(125,44.875958,73.265579)"
+         fill="#ff0005"
+         stroke="#ff0005"
+         id="use4036"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(126,44.875958,73.361979)"
+         fill="#ff0001"
+         stroke="#ff0001"
+         id="use4038"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(127,44.875958,73.457525)"
+         fill="#ff0300"
+         stroke="#ff0300"
+         id="use4040"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(128,44.875958,73.552244)"
+         fill="#ff0700"
+         stroke="#ff0700"
+         id="use4042"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(129,44.875958,73.64616)"
+         fill="#ff0c00"
+         stroke="#ff0c00"
+         id="use4044"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(130,44.875958,73.739297)"
+         fill="#ff1000"
+         stroke="#ff1000"
+         id="use4046"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(131,44.875958,73.831679)"
+         fill="#ff1400"
+         stroke="#ff1400"
+         id="use4048"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(132,44.875958,73.923329)"
+         fill="#ff1800"
+         stroke="#ff1800"
+         id="use4050"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(133,44.875958,74.01427)"
+         fill="#ff1d00"
+         stroke="#ff1d00"
+         id="use4052"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(134,44.875958,74.104523)"
+         fill="#ff2100"
+         stroke="#ff2100"
+         id="use4054"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(135,44.875958,74.19411)"
+         fill="#ff2500"
+         stroke="#ff2500"
+         id="use4056"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(136,44.875958,74.283052)"
+         fill="#ff2900"
+         stroke="#ff2900"
+         id="use4058"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(137,44.875958,74.371369)"
+         fill="#ff2e00"
+         stroke="#ff2e00"
+         id="use4060"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(138,44.875958,74.45908)"
+         fill="#ff3200"
+         stroke="#ff3200"
+         id="use4062"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(139,44.875958,74.546206)"
+         fill="#ff3600"
+         stroke="#ff3600"
+         id="use4064"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(140,44.875958,74.632766)"
+         fill="#ff3a00"
+         stroke="#ff3a00"
+         id="use4066"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(141,44.875958,74.718777)"
+         fill="#ff3f00"
+         stroke="#ff3f00"
+         id="use4068"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(142,44.875958,74.804258)"
+         fill="#ff4300"
+         stroke="#ff4300"
+         id="use4070"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(143,44.875958,74.889227)"
+         fill="#ff4700"
+         stroke="#ff4700"
+         id="use4072"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(144,44.875958,74.973701)"
+         fill="#ff4b00"
+         stroke="#ff4b00"
+         id="use4074"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(145,44.875958,75.057697)"
+         fill="#ff5000"
+         stroke="#ff5000"
+         id="use4076"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(146,44.875958,75.141233)"
+         fill="#ff5400"
+         stroke="#ff5400"
+         id="use4078"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(147,44.875958,75.224324)"
+         fill="#ff5800"
+         stroke="#ff5800"
+         id="use4080"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(148,44.875958,75.306986)"
+         fill="#ff5c00"
+         stroke="#ff5c00"
+         id="use4082"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(149,44.875958,75.389236)"
+         fill="#ff6000"
+         stroke="#ff6000"
+         id="use4084"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(150,44.875958,75.471088)"
+         fill="#ff6500"
+         stroke="#ff6500"
+         id="use4086"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(151,44.875958,75.552559)"
+         fill="#ff6900"
+         stroke="#ff6900"
+         id="use4088"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(152,44.875958,75.633663)"
+         fill="#ff6d00"
+         stroke="#ff6d00"
+         id="use4090"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(153,44.875958,75.714414)"
+         fill="#ff7100"
+         stroke="#ff7100"
+         id="use4092"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(154,44.875958,75.794828)"
+         fill="#ff7600"
+         stroke="#ff7600"
+         id="use4094"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(155,44.875958,75.874919)"
+         fill="#ff7a00"
+         stroke="#ff7a00"
+         id="use4096"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(156,44.875958,75.9547)"
+         fill="#ff7e00"
+         stroke="#ff7e00"
+         id="use4098"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(157,44.875958,76.034186)"
+         fill="#ff8200"
+         stroke="#ff8200"
+         id="use4100"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(158,44.875958,76.11339)"
+         fill="#ff8700"
+         stroke="#ff8700"
+         id="use4102"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(159,44.875958,76.192326)"
+         fill="#ff8b00"
+         stroke="#ff8b00"
+         id="use4104"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(160,44.875958,76.271007)"
+         fill="#ff8f00"
+         stroke="#ff8f00"
+         id="use4106"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(161,44.875958,76.349446)"
+         fill="#ff9300"
+         stroke="#ff9300"
+         id="use4108"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(162,44.875958,76.427656)"
+         fill="#ff9800"
+         stroke="#ff9800"
+         id="use4110"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(163,44.875958,76.50565)"
+         fill="#ff9c00"
+         stroke="#ff9c00"
+         id="use4112"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(164,44.875958,76.583442)"
+         fill="#ffa000"
+         stroke="#ffa000"
+         id="use4114"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(165,44.875958,76.661042)"
+         fill="#ffa400"
+         stroke="#ffa400"
+         id="use4116"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(166,44.875958,76.738465)"
+         fill="#ffa900"
+         stroke="#ffa900"
+         id="use4118"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(167,44.875958,76.815722)"
+         fill="#ffad00"
+         stroke="#ffad00"
+         id="use4120"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(168,44.875958,76.892825)"
+         fill="#ffb100"
+         stroke="#ffb100"
+         id="use4122"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(169,44.875958,76.969787)"
+         fill="#ffb500"
+         stroke="#ffb500"
+         id="use4124"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(170,44.875958,77.04662)"
+         fill="#ffb900"
+         stroke="#ffb900"
+         id="use4126"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(171,44.875958,77.123335)"
+         fill="#ffbe00"
+         stroke="#ffbe00"
+         id="use4128"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(172,44.875958,77.199946)"
+         fill="#ffc200"
+         stroke="#ffc200"
+         id="use4130"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(173,44.875958,77.276462)"
+         fill="#ffc600"
+         stroke="#ffc600"
+         id="use4132"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(174,44.875958,77.352898)"
+         fill="#ffca00"
+         stroke="#ffca00"
+         id="use4134"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(175,44.875958,77.429263)"
+         fill="#ffcf00"
+         stroke="#ffcf00"
+         id="use4136"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(176,44.875958,77.50557)"
+         fill="#ffd300"
+         stroke="#ffd300"
+         id="use4138"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(177,44.875958,77.581831)"
+         fill="#ffd700"
+         stroke="#ffd700"
+         id="use4140"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(178,44.875958,77.658056)"
+         fill="#ffdb00"
+         stroke="#ffdb00"
+         id="use4142"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(179,44.875958,77.734259)"
+         fill="#ffe000"
+         stroke="#ffe000"
+         id="use4144"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(180,44.875958,77.81045)"
+         fill="#ffe400"
+         stroke="#ffe400"
+         id="use4146"
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-179,44.875958,77.886641)"
+         fill="#ffe800"
+         stroke="#ffe800"
+         id="use4148"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-178,44.875958,77.962843)"
+         fill="#ffec00"
+         stroke="#ffec00"
+         id="use4150"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-177,44.875958,78.039069)"
+         fill="#fff100"
+         stroke="#fff100"
+         id="use4152"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-176,44.875958,78.11533)"
+         fill="#fff500"
+         stroke="#fff500"
+         id="use4154"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-175,44.875958,78.191637)"
+         fill="#fff900"
+         stroke="#fff900"
+         id="use4156"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-174,44.875958,78.268002)"
+         fill="#fffd00"
+         stroke="#fffd00"
+         id="use4158"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-173,44.875958,78.344437)"
+         fill="#fcff00"
+         stroke="#fcff00"
+         id="use4160"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-172,44.875958,78.420954)"
+         fill="#f8ff00"
+         stroke="#f8ff00"
+         id="use4162"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-171,44.875958,78.497564)"
+         fill="#f4ff00"
+         stroke="#f4ff00"
+         id="use4164"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-170,44.875958,78.57428)"
+         fill="#f0ff00"
+         stroke="#f0ff00"
+         id="use4166"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-169,44.875958,78.651112)"
+         fill="#ecff00"
+         stroke="#ecff00"
+         id="use4168"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-168,44.875958,78.728074)"
+         fill="#e7ff00"
+         stroke="#e7ff00"
+         id="use4170"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-167,44.875958,78.805178)"
+         fill="#e3ff00"
+         stroke="#e3ff00"
+         id="use4172"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-166,44.875958,78.882435)"
+         fill="#dfff00"
+         stroke="#dfff00"
+         id="use4174"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-165,44.875958,78.959857)"
+         fill="#dbff00"
+         stroke="#dbff00"
+         id="use4176"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-164,44.875958,79.037458)"
+         fill="#d6ff00"
+         stroke="#d6ff00"
+         id="use4178"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-163,44.875958,79.115249)"
+         fill="#d2ff00"
+         stroke="#d2ff00"
+         id="use4180"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-162,44.875958,79.193243)"
+         fill="#ceff00"
+         stroke="#ceff00"
+         id="use4182"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-161,44.875958,79.271454)"
+         fill="#caff00"
+         stroke="#caff00"
+         id="use4184"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-160,44.875958,79.349893)"
+         fill="#c5ff00"
+         stroke="#c5ff00"
+         id="use4186"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-159,44.875958,79.428574)"
+         fill="#c1ff00"
+         stroke="#c1ff00"
+         id="use4188"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-158,44.875958,79.507509)"
+         fill="#bdff00"
+         stroke="#bdff00"
+         id="use4190"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-157,44.875958,79.586714)"
+         fill="#b9ff00"
+         stroke="#b9ff00"
+         id="use4192"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-156,44.875958,79.666199)"
+         fill="#b4ff00"
+         stroke="#b4ff00"
+         id="use4194"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-155,44.875958,79.745981)"
+         fill="#b0ff00"
+         stroke="#b0ff00"
+         id="use4196"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-154,44.875958,79.826071)"
+         fill="#acff00"
+         stroke="#acff00"
+         id="use4198"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-153,44.875958,79.906485)"
+         fill="#a8ff00"
+         stroke="#a8ff00"
+         id="use4200"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-152,44.875958,79.987237)"
+         fill="#a3ff00"
+         stroke="#a3ff00"
+         id="use4202"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-151,44.875958,80.06834)"
+         fill="#9fff00"
+         stroke="#9fff00"
+         id="use4204"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-150,44.875958,80.149811)"
+         fill="#9bff00"
+         stroke="#9bff00"
+         id="use4206"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-149,44.875958,80.231664)"
+         fill="#97ff00"
+         stroke="#97ff00"
+         id="use4208"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-148,44.875958,80.313913)"
+         fill="#93ff00"
+         stroke="#93ff00"
+         id="use4210"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-147,44.875958,80.396576)"
+         fill="#8eff00"
+         stroke="#8eff00"
+         id="use4212"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-146,44.875958,80.479667)"
+         fill="#8aff00"
+         stroke="#8aff00"
+         id="use4214"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-145,44.875958,80.563202)"
+         fill="#86ff00"
+         stroke="#86ff00"
+         id="use4216"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-144,44.875958,80.647199)"
+         fill="#82ff00"
+         stroke="#82ff00"
+         id="use4218"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-143,44.875958,80.731673)"
+         fill="#7dff00"
+         stroke="#7dff00"
+         id="use4220"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-142,44.875958,80.816642)"
+         fill="#79ff00"
+         stroke="#79ff00"
+         id="use4222"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-141,44.875958,80.902123)"
+         fill="#75ff00"
+         stroke="#75ff00"
+         id="use4224"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-140,44.875958,80.988134)"
+         fill="#71ff00"
+         stroke="#71ff00"
+         id="use4226"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-139,44.875958,81.074693)"
+         fill="#6cff00"
+         stroke="#6cff00"
+         id="use4228"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-138,44.875958,81.161819)"
+         fill="#68ff00"
+         stroke="#68ff00"
+         id="use4230"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-137,44.875958,81.249531)"
+         fill="#64ff00"
+         stroke="#64ff00"
+         id="use4232"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-136,44.875958,81.337847)"
+         fill="#60ff00"
+         stroke="#60ff00"
+         id="use4234"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-135,44.875958,81.426789)"
+         fill="#5bff00"
+         stroke="#5bff00"
+         id="use4236"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-134,44.875958,81.516376)"
+         fill="#57ff00"
+         stroke="#57ff00"
+         id="use4238"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-133,44.875958,81.606629)"
+         fill="#53ff00"
+         stroke="#53ff00"
+         id="use4240"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-132,44.875958,81.69757)"
+         fill="#4fff00"
+         stroke="#4fff00"
+         id="use4242"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-131,44.875958,81.78922)"
+         fill="#4aff00"
+         stroke="#4aff00"
+         id="use4244"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-130,44.875958,81.881603)"
+         fill="#46ff00"
+         stroke="#46ff00"
+         id="use4246"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-129,44.875958,81.97474)"
+         fill="#42ff00"
+         stroke="#42ff00"
+         id="use4248"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-128,44.875958,82.068655)"
+         fill="#3eff00"
+         stroke="#3eff00"
+         id="use4250"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-127,44.875958,82.163374)"
+         fill="#3aff00"
+         stroke="#3aff00"
+         id="use4252"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-126,44.875958,82.258921)"
+         fill="#35ff00"
+         stroke="#35ff00"
+         id="use4254"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-125,44.875958,82.355321)"
+         fill="#31ff00"
+         stroke="#31ff00"
+         id="use4256"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-124,44.875958,82.4526)"
+         fill="#2dff00"
+         stroke="#2dff00"
+         id="use4258"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-123,44.875958,82.550787)"
+         fill="#29ff00"
+         stroke="#29ff00"
+         id="use4260"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-122,44.875958,82.649909)"
+         fill="#24ff00"
+         stroke="#24ff00"
+         id="use4262"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-121,44.875958,82.749994)"
+         fill="#20ff00"
+         stroke="#20ff00"
+         id="use4264"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-120,44.875958,82.851073)"
+         fill="#1cff00"
+         stroke="#1cff00"
+         id="use4266"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-119,44.875958,82.953175)"
+         fill="#18ff00"
+         stroke="#18ff00"
+         id="use4268"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-118,44.875958,83.056333)"
+         fill="#13ff00"
+         stroke="#13ff00"
+         id="use4270"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-117,44.875958,83.160578)"
+         fill="#0fff00"
+         stroke="#0fff00"
+         id="use4272"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-116,44.875958,83.265944)"
+         fill="#0bff00"
+         stroke="#0bff00"
+         id="use4274"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-115,44.875958,83.372465)"
+         fill="#07ff00"
+         stroke="#07ff00"
+         id="use4276"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-114,44.875958,83.480178)"
+         fill="#02ff00"
+         stroke="#02ff00"
+         id="use4278"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-113,44.875958,83.589118)"
+         fill="#00ff02"
+         stroke="#00ff02"
+         id="use4280"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-112,44.875958,83.699324)"
+         fill="#00ff06"
+         stroke="#00ff06"
+         id="use4282"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-111,44.875958,83.810836)"
+         fill="#00ff0a"
+         stroke="#00ff0a"
+         id="use4284"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-110,44.875958,83.923693)"
+         fill="#00ff0f"
+         stroke="#00ff0f"
+         id="use4286"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-109,44.875958,84.037937)"
+         fill="#00ff13"
+         stroke="#00ff13"
+         id="use4288"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-108,44.875958,84.153613)"
+         fill="#00ff17"
+         stroke="#00ff17"
+         id="use4290"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-107,44.875958,84.270765)"
+         fill="#00ff1b"
+         stroke="#00ff1b"
+         id="use4292"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-106,44.875958,84.38944)"
+         fill="#00ff1f"
+         stroke="#00ff1f"
+         id="use4294"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-105,44.875958,84.509687)"
+         fill="#00ff24"
+         stroke="#00ff24"
+         id="use4296"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-104,44.875958,84.631554)"
+         fill="#00ff28"
+         stroke="#00ff28"
+         id="use4298"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-103,44.875958,84.755095)"
+         fill="#00ff2c"
+         stroke="#00ff2c"
+         id="use4300"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-102,44.875958,84.880363)"
+         fill="#00ff30"
+         stroke="#00ff30"
+         id="use4302"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-101,44.875958,85.007414)"
+         fill="#00ff35"
+         stroke="#00ff35"
+         id="use4304"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-100,44.875958,85.136306)"
+         fill="#00ff39"
+         stroke="#00ff39"
+         id="use4306"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-99,44.875958,85.2671)"
+         fill="#00ff3d"
+         stroke="#00ff3d"
+         id="use4308"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-98,44.875958,85.399858)"
+         fill="#00ff41"
+         stroke="#00ff41"
+         id="use4310"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-97,44.875958,85.534646)"
+         fill="#00ff46"
+         stroke="#00ff46"
+         id="use4312"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-96,44.875958,85.671531)"
+         fill="#00ff4a"
+         stroke="#00ff4a"
+         id="use4314"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-95,44.875958,85.810585)"
+         fill="#00ff4e"
+         stroke="#00ff4e"
+         id="use4316"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-94,44.875958,85.95188)"
+         fill="#00ff52"
+         stroke="#00ff52"
+         id="use4318"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-93,44.875958,86.095495)"
+         fill="#00ff57"
+         stroke="#00ff57"
+         id="use4320"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-92,44.875958,86.241507)"
+         fill="#00ff5b"
+         stroke="#00ff5b"
+         id="use4322"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-91,44.875958,86.390002)"
+         fill="#00ff5f"
+         stroke="#00ff5f"
+         id="use4324"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-90,44.875958,86.541065)"
+         fill="#00ff63"
+         stroke="#00ff63"
+         id="use4326"
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-89,44.875958,86.694789)"
+         fill="#00ff68"
+         stroke="#00ff68"
+         id="use4328"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-88,44.875958,86.851267)"
+         fill="#00ff6c"
+         stroke="#00ff6c"
+         id="use4330"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-87,44.875958,87.010599)"
+         fill="#00ff70"
+         stroke="#00ff70"
+         id="use4332"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-86,44.875958,87.172889)"
+         fill="#00ff74"
+         stroke="#00ff74"
+         id="use4334"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-85,44.875958,87.338245)"
+         fill="#00ff78"
+         stroke="#00ff78"
+         id="use4336"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-84,44.875958,87.506781)"
+         fill="#00ff7d"
+         stroke="#00ff7d"
+         id="use4338"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-83,44.875958,87.678616)"
+         fill="#00ff81"
+         stroke="#00ff81"
+         id="use4340"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-82,44.875958,87.853874)"
+         fill="#00ff85"
+         stroke="#00ff85"
+         id="use4342"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-81,44.875958,88.032687)"
+         fill="#00ff89"
+         stroke="#00ff89"
+         id="use4344"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-80,44.875958,88.215192)"
+         fill="#00ff8e"
+         stroke="#00ff8e"
+         id="use4346"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-79,44.875958,88.401533)"
+         fill="#00ff92"
+         stroke="#00ff92"
+         id="use4348"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-78,44.875958,88.591862)"
+         fill="#00ff96"
+         stroke="#00ff96"
+         id="use4350"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-77,44.875958,88.786338)"
+         fill="#00ff9a"
+         stroke="#00ff9a"
+         id="use4352"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-76,44.875958,88.985128)"
+         fill="#00ff9f"
+         stroke="#00ff9f"
+         id="use4354"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-75,44.875958,89.18841)"
+         fill="#00ffa3"
+         stroke="#00ffa3"
+         id="use4356"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-74,44.875958,89.396368)"
+         fill="#00ffa7"
+         stroke="#00ffa7"
+         id="use4358"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-73,44.875958,89.6092)"
+         fill="#00ffab"
+         stroke="#00ffab"
+         id="use4360"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-72,44.875958,89.827111)"
+         fill="#00ffb0"
+         stroke="#00ffb0"
+         id="use4362"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-71,44.875958,90.050321)"
+         fill="#00ffb4"
+         stroke="#00ffb4"
+         id="use4364"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-70,44.875958,90.279061)"
+         fill="#00ffb8"
+         stroke="#00ffb8"
+         id="use4366"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-69,44.875958,90.513574)"
+         fill="#00ffbc"
+         stroke="#00ffbc"
+         id="use4368"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-68,44.875958,90.75412)"
+         fill="#00ffc1"
+         stroke="#00ffc1"
+         id="use4370"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-67,44.875958,91.000971)"
+         fill="#00ffc5"
+         stroke="#00ffc5"
+         id="use4372"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-66,44.875958,91.254419)"
+         fill="#00ffc9"
+         stroke="#00ffc9"
+         id="use4374"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-65,44.875958,91.514771)"
+         fill="#00ffcd"
+         stroke="#00ffcd"
+         id="use4376"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-64,44.875958,91.782355)"
+         fill="#00ffd1"
+         stroke="#00ffd1"
+         id="use4378"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-63,44.875958,92.05752)"
+         fill="#00ffd6"
+         stroke="#00ffd6"
+         id="use4380"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-62,44.875958,92.340634)"
+         fill="#00ffda"
+         stroke="#00ffda"
+         id="use4382"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-61,44.875958,92.632094)"
+         fill="#00ffde"
+         stroke="#00ffde"
+         id="use4384"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-60,44.875958,92.93232)"
+         fill="#00ffe2"
+         stroke="#00ffe2"
+         id="use4386"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-59,44.875958,93.241761)"
+         fill="#00ffe7"
+         stroke="#00ffe7"
+         id="use4388"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-58,44.875958,93.560897)"
+         fill="#00ffeb"
+         stroke="#00ffeb"
+         id="use4390"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-57,44.875958,93.890243)"
+         fill="#00ffef"
+         stroke="#00ffef"
+         id="use4392"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-56,44.875958,94.23035)"
+         fill="#00fff3"
+         stroke="#00fff3"
+         id="use4394"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-55,44.875958,94.581806)"
+         fill="#00fff8"
+         stroke="#00fff8"
+         id="use4396"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-54,44.875958,94.945248)"
+         fill="#00fffc"
+         stroke="#00fffc"
+         id="use4398"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-53,44.875958,95.321356)"
+         fill="#00feff"
+         stroke="#00feff"
+         id="use4400"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-52,44.875958,95.710864)"
+         fill="#00faff"
+         stroke="#00faff"
+         id="use4402"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-51,44.875958,96.114566)"
+         fill="#00f5ff"
+         stroke="#00f5ff"
+         id="use4404"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-50,44.875958,96.533315)"
+         fill="#00f1ff"
+         stroke="#00f1ff"
+         id="use4406"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-49,44.875958,96.968037)"
+         fill="#00edff"
+         stroke="#00edff"
+         id="use4408"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-48,44.875958,97.419733)"
+         fill="#00e9ff"
+         stroke="#00e9ff"
+         id="use4410"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-47,44.875958,97.889491)"
+         fill="#00e4ff"
+         stroke="#00e4ff"
+         id="use4412"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-46,44.875958,98.378491)"
+         fill="#00e0ff"
+         stroke="#00e0ff"
+         id="use4414"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-45,44.875958,98.88802)"
+         fill="#00dcff"
+         stroke="#00dcff"
+         id="use4416"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-44,44.875958,99.419482)"
+         fill="#00d8ff"
+         stroke="#00d8ff"
+         id="use4418"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-43,44.875958,99.974409)"
+         fill="#00d4ff"
+         stroke="#00d4ff"
+         id="use4420"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-42,44.875958,100.55448)"
+         fill="#00cfff"
+         stroke="#00cfff"
+         id="use4422"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-41,44.875958,101.16154)"
+         fill="#00cbff"
+         stroke="#00cbff"
+         id="use4424"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-40,44.875958,101.79762)"
+         fill="#00c7ff"
+         stroke="#00c7ff"
+         id="use4426"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-39,44.875958,102.46495)"
+         fill="#00c3ff"
+         stroke="#00c3ff"
+         id="use4428"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-38,44.875958,103.166)"
+         fill="#00beff"
+         stroke="#00beff"
+         id="use4430"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-37,44.875958,103.90351)"
+         fill="#00baff"
+         stroke="#00baff"
+         id="use4432"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-36,44.875958,104.68052)"
+         fill="#00b6ff"
+         stroke="#00b6ff"
+         id="use4434"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-35,44.875958,105.50042)"
+         fill="#00b2ff"
+         stroke="#00b2ff"
+         id="use4436"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-34,44.875958,106.36701)"
+         fill="#00adff"
+         stroke="#00adff"
+         id="use4438"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-33,44.875958,107.28451)"
+         fill="#00a9ff"
+         stroke="#00a9ff"
+         id="use4440"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-32,44.875958,108.25772)"
+         fill="#00a5ff"
+         stroke="#00a5ff"
+         id="use4442"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-31,44.875958,109.29203)"
+         fill="#00a1ff"
+         stroke="#00a1ff"
+         id="use4444"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-30,44.875958,110.39355)"
+         fill="#009cff"
+         stroke="#009cff"
+         id="use4446"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-29,44.875958,111.56924)"
+         fill="#0098ff"
+         stroke="#0098ff"
+         id="use4448"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-28,44.875958,112.82704)"
+         fill="#0094ff"
+         stroke="#0094ff"
+         id="use4450"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-27,44.875958,114.17608)"
+         fill="#0090ff"
+         stroke="#0090ff"
+         id="use4452"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-26,44.875958,115.6269)"
+         fill="#008bff"
+         stroke="#008bff"
+         id="use4454"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-25,44.875958,117.19171)"
+         fill="#0087ff"
+         stroke="#0087ff"
+         id="use4456"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-24,44.875958,118.88477)"
+         fill="#0083ff"
+         stroke="#0083ff"
+         id="use4458"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-23,44.875958,120.7228)"
+         fill="#007fff"
+         stroke="#007fff"
+         id="use4460"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-22,44.875958,122.72557)"
+         fill="#007bff"
+         stroke="#007bff"
+         id="use4462"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-21,44.875958,124.91664)"
+         fill="#0076ff"
+         stroke="#0076ff"
+         id="use4464"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-20,44.875958,127.32423)"
+         fill="#0072ff"
+         stroke="#0072ff"
+         id="use4466"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-19,44.875958,129.98255)"
+         fill="#006eff"
+         stroke="#006eff"
+         id="use4468"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-18,44.875958,132.93339)"
+         fill="#006aff"
+         stroke="#006aff"
+         id="use4470"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-17,44.875958,136.22836)"
+         fill="#0065ff"
+         stroke="#0065ff"
+         id="use4472"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-16,44.875958,139.93201)"
+         fill="#0061ff"
+         stroke="#0061ff"
+         id="use4474"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-15,44.875958,144.12606)"
+         fill="#005dff"
+         stroke="#005dff"
+         id="use4476"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-14,44.875958,148.91561)"
+         fill="#0059ff"
+         stroke="#0059ff"
+         id="use4478"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-13,44.875958,154.43808)"
+         fill="#0054ff"
+         stroke="#0054ff"
+         id="use4480"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-12,44.875958,160.87671)"
+         fill="#0050ff"
+         stroke="#0050ff"
+         id="use4482"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-11,44.875958,168.48136)"
+         fill="#004cff"
+         stroke="#004cff"
+         id="use4484"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-10,44.875958,177.60184)"
+         fill="#0048ff"
+         stroke="#0048ff"
+         id="use4486"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-9,44.875958,188.74344)"
+         fill="#0043ff"
+         stroke="#0043ff"
+         id="use4488"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-8,44.875958,202.66407)"
+         fill="#003fff"
+         stroke="#003fff"
+         id="use4490"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-7,44.875958,220.55475)"
+         fill="#003bff"
+         stroke="#003bff"
+         id="use4492"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-6,44.875958,244.40052)"
+         fill="#0037ff"
+         stroke="#0037ff"
+         id="use4494"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-5,44.875958,277.77442)"
+         fill="#0032ff"
+         stroke="#0032ff"
+         id="use4496"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-4,44.875958,327.82257)"
+         fill="#002eff"
+         stroke="#002eff"
+         id="use4498"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-3,44.875958,411.21921)"
+         fill="#002aff"
+         stroke="#002aff"
+         id="use4500"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-2,44.875958,577.98708)"
+         fill="#0026ff"
+         stroke="#0026ff"
+         id="use4502"
+        
+        
+         width="100%"
+         height="100%" />
+      <use
+         x="0"
+         y="0"
+        
+         href="#rect3619"
+         transform="rotate(-1,44.875958,1078.2399)"
+         fill="#0022ff"
+         stroke="#0022ff"
+         id="use4504"
+        
+        
+         width="100%"
+         height="100%" />
+    </g>
+  </g>
+  <g
+     id="g7572"
+     transform="translate(-0.0232537,-44.297248)">
+    <g
+       id="g6236"
+       transform="matrix(1.0324977,0,0,1.0324977,-1.0437923,44.339431)">
+      <path
+         style="fill:#383838;fill-opacity:1"
+         d="m 33.141663,60 h -1.66012 c -0.07699,-0.028 -0.15427,-0.03501 -0.231979,-0.03501 -0.886341,-0.042 -1.76624,-0.11339 -2.63844,-0.231981 -1.63156,-0.21111 -3.235821,-0.569929 -4.797381,-1.06875 -2.680019,-0.85764 -5.1772,-2.088379 -7.49154,-3.692219 -2.14606,-1.49128 -4.0446,-3.249261 -5.698,-5.274221 -1.9492199,-2.3772 -3.4680799,-5.000659 -4.5448199,-7.8834 -0.96404,-2.559899 -1.5407,-5.210659 -1.71696,-7.94668 0,-0.147699 -0.028,-0.2954 -0.077,-0.443099 V 30.5342 c 0.049,-0.1274 0.07,-0.2604 0.077,-0.393821 0.035,-0.654219 0.105,-1.30844 0.1904,-1.95496 0.42238,-3.12228 1.3503,-6.083699 2.77858,-8.889859 0.98476,-1.93424 2.18078,-3.7338 3.5870799,-5.39448 1.393,-1.64528 2.9547,-3.1157 4.68468,-4.4023 2.821,-2.09608 5.923401,-3.60794 9.313641,-4.53572 1.64584,-0.44954 3.327659,-0.74494 5.02936,-0.88606 0.30212,-0.028 0.61936,0 0.92148,-0.077 h 2.841859 c 0.21784,0.063 0.44324,0.028 0.660939,0.049 1.12616,0.098 2.24448,0.23954 3.35524,0.45724 3.49636,0.68922 6.73876,1.99766 9.736021,3.93064 2.32876,1.49786 4.382699,3.30512 6.17624,5.40778 1.442419,1.68798 2.665739,3.52366 3.66492,5.50606 1.181739,2.342339 2.02552,4.79612 2.50488,7.37688 0.25284,1.36416 0.44324,2.7426 0.44968,4.135179 0,0.0924 0.02101,0.1904 0.028,0.28112 v 1.659842 c -0.028,0.10499 -0.028,0.217699 -0.03501,0.330259 0,0.266979 0,0.53508 -0.02099,0.80192 -0.12741,1.702261 -0.39396,3.38268 -0.816341,5.04224 -0.808779,3.115699 -2.11092,6.006141 -3.918739,8.67104 -1.343861,1.983379 -2.912,3.76992 -4.71324,5.351779 -1.793541,1.575421 -3.75676,2.90472 -5.8884,3.980061 -2.4556,1.23732 -5.037059,2.09608 -7.745501,2.56648 -1.040758,0.182695 -2.08908,0.301981 -3.143979,0.3654 -0.277899,0.03219 -0.57344,0.0252 -0.862259,0.0868 z"
+         id="path27" />
+      <g
+         id="g6228">
+        <path
+           style="mix-blend-mode:lighten;fill:url(#radialGradient1680);fill-opacity:1;fill-rule:nonzero"
+           d="m 25.002653,20.382103 c -0.0196,0.514484 0.0718,1.076908 0.223374,1.639464 0.28878,1.070354 0.76738,2.051108 1.331754,2.977508 1.28567,2.106696 2.906202,3.910326 4.664468,5.584894 0.144,0.13766 0.315414,0.253896 0.498968,0.342532 0.18382,0.0956 0.367372,0.0956 0.557324,0.0136 0.18356,-0.08194 0.347788,-0.19858 0.485652,-0.350044 0.610196,-0.63085 1.213344,-1.262652 1.790902,-1.914668 0.813336,-0.9264 1.587896,-1.879432 2.28987,-2.901844 0.63683,-0.926264 1.20721,-1.900738 1.62667,-2.957296 0.419462,-1.050136 0.623384,-2.133326 0.485652,-3.272238 -0.22964,-1.879324 -0.99689,-3.471671 -2.368332,-4.720254 -1.621578,-1.473935 -3.510396,-2.064083 -5.636032,-1.735343 -3.45726,0.53579 -5.963586,3.719255 -5.95027,7.293465 z"
+           id="path37" />
+        <path
+           style="display:inline;fill:url(#radialGradient2517);fill-opacity:1"
+           d="m 42.894854,45.998033 c -0.435154,0.0132 -0.92375,-0.04062 -1.412214,-0.14436 -1.445174,-0.316356 -2.672642,-0.973434 -3.615956,-2.138388 -0.573684,-0.710394 -1.055976,-1.480258 -1.471696,-2.289948 -0.488728,-0.954048 -0.897096,-1.94805 -1.253202,-2.954234 -0.435154,-1.21709 -0.804654,-2.46077 -1.089068,-3.717812 -0.15796,-0.704236 0.0196,-1.145432 0.798484,-1.388038 0.989404,-0.309152 1.98616,-0.585556 3.00222,-0.80969 1.682184,-0.368624 3.377764,-0.605072 5.107218,-0.54678 0.488596,0.0196 0.976142,0.07204 1.458436,0.15758 1.398952,0.243786 2.58637,0.888682 3.55621,1.908228 1.656576,1.737144 2.31548,3.8099 1.90698,6.172554 -0.587076,3.376042 -3.582994,5.77747 -6.987412,5.750878 z"
+           id="path39" />
+        <path
+           style="display:inline;fill:url(#radialGradient2852);fill-opacity:1"
+           d="m 21.105156,45.998033 c 0.435154,0.0132 0.92375,-0.04062 1.412216,-0.14436 1.445174,-0.316356 2.67264,-0.973434 3.615954,-2.138388 0.573684,-0.710394 1.055978,-1.480258 1.471698,-2.289948 0.488728,-0.954048 0.897094,-1.94805 1.253202,-2.954234 0.435154,-1.21709 0.804652,-2.46077 1.089066,-3.717812 0.15796,-0.704236 -0.0196,-1.145432 -0.798484,-1.388038 -0.989404,-0.309152 -1.986162,-0.585556 -3.002218,-0.80969 -1.682186,-0.368624 -3.377764,-0.605072 -5.107218,-0.54678 -0.488596,0.0196 -0.976144,0.07204 -1.458436,0.15758 -1.398954,0.243786 -2.586371,0.888682 -3.55621,1.908228 -1.656578,1.737144 -2.315481,3.8099 -1.906982,6.172554 0.587077,3.376042 3.582994,5.77747 6.987412,5.750878 z"
+           id="path33"
+           />
+      </g>
+    </g>
+  </g>
+</svg><path d="M34.22 17.60L34.22 17.60L31.66 17.60L31.66 10.32L34.24 10.32Q35.34 10.32 36.12 10.76Q36.91 11.20 37.34 12.01Q37.76 12.82 37.76 13.96L37.76 13.96Q37.76 15.10 37.34 15.91Q36.91 16.73 36.12 17.16Q35.33 17.60 34.22 17.60ZM33.15 11.61L33.15 16.32L34.14 16.32Q34.85 16.32 35.32 16.07Q35.80 15.82 36.04 15.30Q36.28 14.77 36.28 13.96L36.28 13.96Q36.28 13.15 36.04 12.63Q35.79 12.11 35.32 11.86Q34.85 11.61 34.15 11.61L34.15 11.61L33.15 11.61ZM41.11 17.60L39.46 17.60L41.95 10.32L43.90 10.32L46.45 17.60L44.79 17.60L44.23 15.91L41.65 15.91L41.11 17.60ZM42.02 14.74L43.85 14.74L43.63 14.09Q43.42 13.41 43.20 12.60L43.20 12.60Q43.06 12.08 42.91 11.50L42.91 11.50Q42.76 12.09 42.63 12.61L42.63 12.61Q42.43 13.43 42.23 14.09L42.23 14.09L42.02 14.74ZM52.42 17.60L50.48 17.60L47.93 10.32L49.58 10.32L50.74 13.84Q50.95 14.50 51.17 15.30L51.17 15.30Q51.31 15.82 51.46 16.40L51.46 16.40Q51.61 15.81 51.74 15.29L51.74 15.29Q51.95 14.50 52.15 13.84L52.15 13.84L53.27 10.32L54.91 10.32L52.42 17.60ZM56.81 10.32L58.30 10.32L58.30 17.60L56.81 17.60L56.81 10.32ZM62.14 17.60L60.62 17.60L60.62 10.32L62.28 10.32L64.58 14.01Q64.76 14.29 64.94 14.62Q65.12 14.95 65.31 15.36L65.31 15.36Q65.40 15.56 65.49 15.78L65.49 15.78Q65.48 15.60 65.47 15.41L65.47 15.41Q65.44 14.95 65.42 14.53Q65.40 14.11 65.40 13.82L65.40 13.82L65.40 10.32L66.92 10.32L66.92 17.60L65.26 17.60L63.17 14.26Q62.94 13.88 62.74 13.53Q62.55 13.18 62.34 12.75L62.34 12.75Q62.21 12.49 62.05 12.16L62.05 12.16Q62.07 12.46 62.08 12.74L62.08 12.74Q62.11 13.22 62.13 13.61Q62.14 14.01 62.14 14.26L62.14 14.26L62.14 17.60ZM72.42 17.70L72.42 17.70Q71.45 17.70 70.69 17.26Q69.93 16.82 69.48 15.98Q69.04 15.15 69.04 13.97L69.04 13.97Q69.04 12.78 69.49 11.94Q69.93 11.11 70.70 10.67Q71.46 10.23 72.42 10.23L72.42 10.23Q73.04 10.23 73.58 10.40Q74.11 10.57 74.53 10.91Q74.94 11.24 75.20 11.72Q75.47 12.20 75.55 12.81L75.55 12.81L74.04 12.81Q73.99 12.51 73.85 12.28Q73.71 12.05 73.51 11.88Q73.30 11.72 73.03 11.64Q72.76 11.55 72.45 11.55L72.45 11.55Q71.88 11.55 71.46 11.83Q71.03 12.12 70.79 12.66Q70.56 13.20 70.56 13.97L70.56 13.97Q70.56 14.75 70.79 15.29Q71.03 15.83 71.46 16.10Q71.88 16.37 72.45 16.37L72.45 16.37Q72.76 16.37 73.02 16.29Q73.29 16.20 73.50 16.04Q73.71 15.88 73.85 15.64Q73.99 15.41 74.05 15.11L74.05 15.11L75.56 15.11Q75.50 15.62 75.26 16.08Q75.01 16.55 74.61 16.91Q74.21 17.28 73.66 17.49Q73.11 17.70 72.42 17.70ZM77.64 10.32L79.13 10.32L79.13 17.60L77.64 17.60L77.64 10.32Z" fill="#FFFFFF"/></svg>
