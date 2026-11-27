@@ -38,23 +38,38 @@ function v1(W = 840, file = 'stack', phone = false) {
   if (!phone) { v1(360, 'stack-m', true); linkCards('v1', { bg, rx: 2, fg: '#fff' }); }
 }
 
-// ---------- V2: icons only, square tiles ----------
-function v2(W = 840, file = 'stack', phone = false) {
-  const bg = '#161b22', stroke = '#30363d';
-  // One block: tiers in order, kinds grouped inside each. AI tiles carry their brand outline,
-  // main ones are lighter, tried ones dashed grey.
+// ---------- V2: icons only, one grid; `style` changes only how a tile is drawn ----------
+// base: AI tiles in brand outline, main lighter, tried dashed grey (round-2 winner)
+// mono: one icon colour, the tier is the brightness; tint: tile tinted with the brand colour
+// label: bigger tiles with the name under the icon; round: circles instead of squares
+const V2_DIR = { base: 'v2', mono: 'v2b', tint: 'v2c', label: 'v2d', round: 'v2e' };
+function v2(style = 'base', W = 840, file = 'stack', phone = false) {
+  const bg = '#161b22', stroke = '#30363d', dir = V2_DIR[style];
   const all = tiers.flatMap(byTier);
-  const cols = phone ? fullCols(all.length, 6, 8, 7) : fullCols(all.length, 12, 16, 14);
-  const gap = 8, cell = phone ? (W - (cols - 1) * gap) / cols : 50, gx = phone ? gap : (W - cols * cell) / (cols - 1);
-  const is = Math.round(cell * 0.48);
-  const g = grid(all, cols, cell, cell, gx, gx, 0, (it, x, yy, w, h) => {
+  const label = style === 'label';
+  const cols = label ? (phone ? 4 : fullCols(all.length, 7, 8, 8))
+    : phone ? fullCols(all.length, 6, 8, 7) : fullCols(all.length, 12, 16, 14);
+  const gap = 8;
+  const cw = label || phone ? (W - (cols - 1) * gap) / cols : 50, gx = label || phone ? gap : (W - cols * cw) / (cols - 1);
+  const ch = label ? Math.round(cw * (phone ? 0.78 : 0.72)) : cw;
+  const is = Math.round((label ? ch * 0.36 : cw * 0.48));
+  const tone = { ai: '#e6edf3', main: '#e6edf3', active: '#9da5ae', tried: '#5d646d' };
+  const g = grid(all, cols, cw, ch, gx, gx, 0, (it, x, yy, w, h) => {
     const dim = it.tier === 'tried', main = it.tier === 'main', ai = it.tier === 'ai';
-    const edge = ai ? iconColor(it, bg) : main ? '#3d444d' : stroke;
-    return `<rect x="${r2(x + 0.5)}" y="${r2(yy + 0.5)}" width="${r2(w - 1)}" height="${r2(h - 1)}" rx="${phone ? 10 : 12}" fill="${main || ai ? '#1f262f' : bg}" stroke="${edge}"${ai ? ' stroke-opacity="0.8"' : ''}${dim ? ' stroke-dasharray="3 3"' : ''}/>` +
-      icon(it, x + (cell - is) / 2, yy + (cell - is) / 2, is, bg, dim ? '#6e7681' : null);
+    const brand = iconColor(it, bg);
+    let fill = main || ai ? '#1f262f' : bg, edge = ai ? brand : main ? '#3d444d' : stroke, mono = dim ? '#6e7681' : null, dash = dim;
+    if (style === 'mono') { fill = bg; edge = ai ? brand : stroke; mono = ai ? null : tone[it.tier]; dash = false; }
+    if (style === 'tint' && !dim) { fill = mix('#0d1117', brand, ai ? 0.22 : 0.13); edge = mix('#0d1117', brand, ai ? 0.7 : 0.35); }
+    const attrs = `fill="${fill}" stroke="${edge}"${ai && style !== 'tint' ? ' stroke-opacity="0.8"' : ''}${dash ? ' stroke-dasharray="3 3"' : ''}`;
+    const shape = style === 'round'
+      ? `<circle cx="${r2(x + w / 2)}" cy="${r2(yy + h / 2)}" r="${r2(w / 2 - 0.5)}" ${attrs}/>`
+      : `<rect x="${r2(x + 0.5)}" y="${r2(yy + 0.5)}" width="${r2(w - 1)}" height="${r2(h - 1)}" rx="${phone ? 10 : 12}" ${attrs}/>`;
+    const iy = label ? yy + h * 0.2 : yy + (h - is) / 2;
+    return shape + icon(it, x + (w - is) / 2, iy, is, bg, mono) +
+      (label ? text(F.mid, it.name, x + w / 2, yy + h * 0.8, phone ? 10 : 11, { anchor: 'middle', fill: dim ? '#6e7681' : '#9da5ae' }) : '');
   }, W);
-  out(`variants/v2/${file}.svg`, svg(W, r2(g.h), g.body));
-  if (!phone) { v2(360, 'stack-m', true); linkCards('v2', { bg, rx: 10, stroke, fg: '#e6edf3', h: 36 }); }
+  out(`variants/${dir}/${file}.svg`, svg(W, r2(g.h), g.body));
+  if (!phone) { v2(style, 360, 'stack-m', true); linkCards(dir, { bg, rx: style === 'round' ? 18 : 10, stroke, fg: '#e6edf3', h: 36 }); }
 }
 
 // ---------- V3: periodic table, number = usage rank ----------
@@ -192,10 +207,19 @@ const more = (label, k) => `<details>\n<summary>${label}</summary>\n<br>\n\n${ce
 out('variants/v6.md', `<!-- Переключатель -->\n${header}${center(stackImg('v5'))}\n\n` +
   [more('keyboard', 'v4'), more('periodic table', 'v3'), more('cards', 'v1')].join('\n\n') + `\n\n<br>\n\n${linkRow('v5')}\n`);
 
+// Round 3: the V2 grid drawn four other ways.
+const r3 = { mono: 'Монохром', tint: 'Мягкий цвет', label: 'С подписями', round: 'Круги' };
+for (const [style, name] of Object.entries(r3)) {
+  v2(style);
+  const k = V2_DIR[style];
+  out(`variants/${k}.md`, `<!-- ${name} -->\n${header}${center(pic(`${k}/stack.svg`, 'stack'))}\n\n<br>\n\n${linkRow(k)}\n`);
+}
+
 // Local review page: each variant inside a GitHub-sized README box, with a 1-10 mark and a comment.
 const readme = fs.readFileSync(new URL('README.md', root), 'utf8').replaceAll('src="https://raw.githubusercontent.com/makarasty/MaKarastY/main/makarasty.png"', 'src="../makarasty.png"');
-// Every variants/*.md is shown, including ones other scripts wrote; the first-line comment is its name.
-const files = fs.readdirSync(new URL('variants/', root)).filter((f) => f.endsWith('.md')).sort();
+// The page shows the current round only; older variants stay in variants/ and in git.
+const ROUND = ['v2', 'v2b', 'v2c', 'v2d', 'v2e'];
+const files = ROUND.map((k) => `${k}.md`);
 const entries = [['v0', 'Сейчас (для сравнения)', readme], ...files.map((f) => {
   const html = fs.readFileSync(new URL(`variants/${f}`, root), 'utf8');
   return [f.slice(0, -3), html.match(/^<!-- (.+?) -->/)?.[1] ?? f, html];
