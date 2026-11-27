@@ -84,13 +84,65 @@ export function iconColor(item, bg, mono) {
   const { hex } = iconData(item);
   return contrast(hex, bg) < 2.2 ? '#E6EDF3' : hex;
 }
+// Full-colour logos (Iconify "logos" CC0 and "devicon" MIT sets, or a local PNG); ids not listed keep
+// the one-colour simple-icons mark. The user asked for the real colour logos (round 4).
+const ICON_SETS = {
+  logos: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/logos/icons.json', import.meta.url), 'utf8')),
+  devicon: JSON.parse(fs.readFileSync(new URL('./node_modules/@iconify-json/devicon/icons.json', import.meta.url), 'utf8')),
+};
+const dataUri = (file, type) => `data:${type};base64,${fs.readFileSync(new URL(`./assets/${file}`, import.meta.url)).toString('base64')}`;
+export const LOGOS = {
+  claude: 'logos:claude-icon', gemini: 'logos:google-gemini-icon', chatgpt: 'logos:openai-icon',
+  windows: 'logos:microsoft-windows-icon', vscode: 'logos:visual-studio-code', typescript: 'logos:typescript-icon',
+  javascript: 'logos:javascript', nodejs: 'logos:nodejs-icon', bun: 'logos:bun', vue: 'logos:vue', nuxt: 'logos:nuxt-icon',
+  java: 'logos:java', kotlin: 'logos:kotlin-icon', gradle: 'logos:gradle', git: 'logos:git-icon', actions: 'logos:github-actions',
+  obsidian: 'logos:obsidian-icon', csharp: 'logos:c-sharp', python: 'logos:python', go: 'logos:go', rust: 'logos:rust',
+  react: 'logos:react', html: 'logos:html-5', css: 'logos:css-3', sass: 'logos:sass', vite: 'logos:vitejs',
+  tailwind: 'logos:tailwindcss-icon', discordjs: 'devicon:discordjs', postgresql: 'logos:postgresql', redis: 'logos:redis',
+  sqlite: 'logos:sqlite', firebase: 'logos:firebase-icon', mysql: 'logos:mysql-icon', mongodb: 'logos:mongodb-icon',
+  docker: 'logos:docker-icon', nginx: 'logos:nginx', intellij: 'logos:intellij-idea', debian: 'logos:debian',
+  ubuntu: 'logos:ubuntu', android: 'logos:android-icon', unity: 'logos:unity', sublime: 'logos:sublimetext-icon',
+  figma: 'logos:figma', notion: 'logos:notion-icon', gdrive: 'logos:google-drive', json: 'logos:json', yaml: 'logos:yaml',
+  toml: 'logos:toml', telegram: 'logos:telegram', gmail: 'logos:google-gmail', npm: 'logos:npm-icon',
+  codewars: 'devicon:codewars', mindustry: 'png:mindustry.png',
+};
+const LIGHT = '#E6EDF3';
+function colourLogo(id) {
+  const ref = LOGOS[id];
+  if (!ref) return null;
+  const [set, name] = ref.split(':');
+  if (set === 'png') return { raw: `<image href="${dataUri(name, 'image/png')}" width="24" height="24"/>`, vb: '0 0 24 24' };
+  const s = ICON_SETS[set], ic = s.icons[name];
+  if (!ic) throw new Error(`no ${ref} for ${id}`);
+  let body = ic.body;
+  // A logo drawn only in near-black (Rust, Unity...) vanishes on a dark tile: draw it light instead.
+  const fills = [...body.matchAll(/fill="(#[0-9a-fA-F]{3,6}|currentColor)"/g)].map((m) => m[1]);
+  const hex6 = (h) => (h.length === 4 ? '#' + [...h.slice(1)].map((c) => c + c).join('') : h);
+  const dark = !/fill="url\(/.test(body) &&
+    (fills.length === 0 || fills.every((f) => f === 'currentColor' || lum(hex6(f)) < 0.05));
+  // The root <svg fill="none"> would blank every path that relies on the default black fill.
+  body = dark ? `<g fill="${LIGHT}">${body.replace(/fill="(#[0-9a-fA-F]{3,6}|currentColor)"/g, `fill="${LIGHT}"`)}</g>`
+    : `<g fill="#000">${body}</g>`;
+  return { raw: body, vb: `0 0 ${ic.width ?? s.width} ${ic.height ?? s.height}` };
+}
 export function icon(item, x, y, size, bg, mono) {
+  const logo = !mono && colourLogo(item.id);
+  if (logo) return `<svg x="${r2(x)}" y="${r2(y)}" width="${size}" height="${size}" viewBox="${logo.vb}">${logo.raw}</svg>`;
   const data = iconData(item);
   const c = iconColor(item, bg, mono);
   const inner = data.raw
     ? data.raw.replace(/fill="#[0-9A-Fa-f]{6}"/g, (m) => (mono || c !== data.hex ? `fill="${c}"` : m))
     : `<path d="${data.d}" fill="${c}"/>`;
   return `<svg x="${r2(x)}" y="${r2(y)}" width="${size}" height="${size}" viewBox="${data.vb}">${inner}</svg>`;
+}
+
+// The user's GitHub avatar (downloaded with their OK, 2026-11-27), clipped by `clip` (a shape's markup)
+// or a circle. `id` must be unique inside one SVG.
+export const AVATAR = dataUri('avatar.jpg', 'image/jpeg');
+export function me(cx, cy, r, { clip, id = 'me' } = {}) {
+  const shape = clip ?? `<circle cx="${r2(cx)}" cy="${r2(cy)}" r="${r}"/>`;
+  return `<clipPath id="${id}">${shape}</clipPath>` +
+    `<image href="${AVATAR}" x="${r2(cx - r)}" y="${r2(cy - r)}" width="${2 * r}" height="${2 * r}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>`;
 }
 
 export const svg = (w, h, body, extra = '') =>

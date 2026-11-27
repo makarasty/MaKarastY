@@ -1,6 +1,6 @@
 // Round 4 variant "Соты": 61 pointy-top hex cells in one big hexagon (4 rings), categories as pie wedges.
 import fs from 'node:fs';
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, me as avatar } from './lib.mjs';
 
 const BG = '#0d1117';
 const SQ3 = Math.sqrt(3);
@@ -28,8 +28,8 @@ if (rest.length !== techs.length + 1) throw new Error(`cells ${rest.length} vs t
 // The centre cell. One place to swap the text for an avatar later.
 function centre(cx, cy, w, r, label) {
   const fill = mix(BG, '#e6edf3', 0.2), stroke = mix(BG, '#e6edf3', 0.45);
-  const size = (0.84 * w) / measure(F.bold, label, 1);
-  return hex(cx, cy, r, fill, stroke) + text(F.bold, label, cx, cy + size * 0.36, size, { anchor: 'middle', fill: '#e6edf3' });
+  const cell = hex(cx, cy, r, fill, stroke);
+  return cell + avatar(cx, cy, r, { clip: cell.replace(/ (fill|stroke|stroke-width|stroke-linejoin)="[^"]*"/g, '') }) + hex(cx, cy, r, 'none', stroke);
 }
 const hex = (cx, cy, r, fill, stroke, cls = '') => {
   const pts = [0, 1, 2, 3, 4, 5].map((i) => {

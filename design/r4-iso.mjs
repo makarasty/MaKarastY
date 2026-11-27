@@ -27,8 +27,8 @@ let n = 0;
 const standing = (item, cx, cy, h, bg, lift = 0.75) =>
   `<g class="b" style="animation-delay:${-((n++ * 0.7) % 6).toFixed(1)}s">${icon(item, cx - ICON / 2, cy - h - ICON * lift, ICON, bg)}</g>`;
 
-// Placeholder for the owner's name: swap this one function later.
-const label = (cx, y) => text(F.semi, 'MaKarastY', cx, y, 14, { anchor: 'middle', ls: 1, fill: '#8b949e' });
+// The owner: their GitHub avatar in a ring under the floor's front tip.
+const label = (cx, y) => lib.me(cx, y, 20) + `<circle cx="${cx}" cy="${y}" r="20" stroke="#e6edf3" stroke-opacity="0.35"/>`;
 
 const techs = stack.filter((s) => s.tier !== 'ai')
   .map((s, i) => [s, i]).sort((p, q) => CAT_ORDER.indexOf(p[0].cat) - CAT_ORDER.indexOf(q[0].cat) || p[1] - q[1]).map((p) => p[0]);
@@ -51,8 +51,8 @@ for (const { s, c, r } of cells) {
 }
 
 const bottom = Y0 + (COLS - 1 + ROWS - 1) * PY + B + DEPTH; // front tip of the floor
-floor += label(X0 + (COLS - ROWS) * PX, bottom + 24);
-const H = Math.ceil(bottom + 24 + 10);
+floor += label(X0 + (COLS - ROWS) * PX, bottom + 30);
+const H = Math.ceil(bottom + 30 + 22);
 
 const css = '<style>@media (prefers-reduced-motion:no-preference){.b{animation:b 7s ease-in-out infinite}@keyframes b{50%{transform:translateY(-2px)}}}</style>';
 out('variants/r4c/stack.svg', svg(W, H, floor, css));

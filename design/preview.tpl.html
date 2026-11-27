@@ -26,7 +26,8 @@
   .rate button { min-width:34px; }
   textarea { width:100%; min-height:44px; font:inherit; color:var(--fg); background:var(--box); border:1px solid var(--line); border-radius:6px; padding:6px 8px; resize:vertical; }
   .saved { color:var(--mute); font-size:12px; }
-  .sort { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:6px; }
+  .sort { display:grid; grid-template-columns:repeat(auto-fill, minmax(400px, 1fr)); gap:6px; }
+  .seg button { min-width:26px; }
   .item { display:flex; align-items:center; gap:8px; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--box); }
   .item .ic { width:20px; height:20px; flex:none; display:flex; }
   .item .nm { flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -45,7 +46,7 @@
 <main id="list"></main>
 <script>
 /*DATA*/
-const KEY = 'profile-variants-marks-r4';
+const KEY = 'profile-variants-marks-r5';
 let marks = {};
 try { marks = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(marks)); document.getElementById('state').textContent = 'сохранено'; } catch { document.getElementById('state').textContent = 'не сохраняется: браузер запретил хранилище'; } };
@@ -53,7 +54,7 @@ const list = document.getElementById('list');
 for (const v of VARIANTS) {
   const s = document.createElement('section');
   const m = marks[v.id] || {};
-  s.innerHTML = `<h2>${v.id.toUpperCase()} · ${v.name} <span>${({ v0: 'раунд 1: 6', r4d: 'раунд 3 «С подписями»: 7' })[v.id] ?? ''}</span></h2><div class="box">${v.html}</div>
+  s.innerHTML = `<h2>${v.id.toUpperCase()} · ${v.name} <span>${({ v0: 'раунд 1: 6', r4a: 'раунд 4: 7', r4b: 'раунд 4: 6', r4c: 'раунд 4: 6', r5d: 'новый' })[v.id] ?? ''}</span></h2><div class="box">${v.html}</div>
     <div class="rate" role="group" aria-label="Оценка ${v.name}">${Array.from({length:10},(_,i)=>`<button data-n="${i+1}" aria-pressed="${m.score===i+1}">${i+1}</button>`).join('')}</div>
     <textarea placeholder="Комментарий к ${v.id.toUpperCase()}: что нравится, что убрать">${m.note || ''}</textarea>`;
   s.querySelectorAll('.rate button').forEach(b => b.onclick = () => {
@@ -64,19 +65,18 @@ for (const v of VARIANTS) {
   s.querySelector('textarea').oninput = e => { marks[v.id] = { ...marks[v.id], note: e.target.value }; save(); };
   list.append(s);
 }
-// "Sort your stack": the user, not me, says how much each thing is used.
-const TIERS = [['main', 'каждый день'], ['active', 'активно'], ['tried', 'трогал'], ['drop', 'убрать']];
-marks.tiers ??= {};
+// "Score your stack": the user, not me, says how much each thing matters to them, 1-10.
+marks.scores ??= {};
 const sorter = document.createElement('section');
-sorter.innerHTML = `<h2>Разложи стек <span>как часто пользуешься; можно оставить пустым</span></h2><div class="sort"></div>`;
+sorter.innerHTML = `<h2>Оцени стек <span>1-10, насколько это твоё; второй клик снимает оценку</span></h2><div class="sort"></div>`;
 for (const s of STACK) {
   const row = document.createElement('div');
   row.className = 'item';
   row.innerHTML = `<span class="ic">${s.icon}</span><span class="nm">${s.name}</span><span class="seg" role="group" aria-label="${s.name}">` +
-    TIERS.map(([k, t]) => `<button data-k="${k}" aria-pressed="${marks.tiers[s.id] === k}">${t}</button>`).join('') + `</span>`;
+    Array.from({ length: 10 }, (_, i) => `<button data-n="${i + 1}" aria-pressed="${marks.scores[s.id] === i + 1}">${i + 1}</button>`).join('') + `</span>`;
   row.querySelectorAll('button').forEach(b => b.onclick = () => {
-    const on = marks.tiers[s.id] !== b.dataset.k;
-    if (on) marks.tiers[s.id] = b.dataset.k; else delete marks.tiers[s.id];
+    const n = +b.dataset.n, on = marks.scores[s.id] !== n;
+    if (on) marks.scores[s.id] = n; else delete marks.scores[s.id];
     row.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', on && x === b));
     save();
   });
@@ -108,10 +108,8 @@ document.getElementById('width').onclick = e => {
 document.getElementById('copy').onclick = async () => {
   const lines = VARIANTS.map(v => `${v.id.toUpperCase()} ${v.name}: ${marks[v.id]?.score ?? '-'}${marks[v.id]?.note ? ' — ' + marks[v.id].note : ''}`);
   if (marks.general?.note) lines.push('Общее: ' + marks.general.note);
-  for (const [k, t] of TIERS) {
-    const ids = STACK.filter(s => marks.tiers[s.id] === k).map(s => s.name);
-    if (ids.length) lines.push(`${t}: ${ids.join(', ')}`);
-  }
+  const scored = STACK.filter(s => marks.scores[s.id]).sort((a, b) => marks.scores[b.id] - marks.scores[a.id]);
+  if (scored.length) lines.push('Стек: ' + scored.map(s => `${s.name} ${marks.scores[s.id]}`).join(', '));
   try { await navigator.clipboard.writeText(lines.join('\n')); document.getElementById('state').textContent = 'скопировано'; }
   catch { document.getElementById('state').textContent = 'не скопировалось: выдели текст вручную'; }
 };

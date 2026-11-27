@@ -1,6 +1,6 @@
 // Round 4, "Солнечная система": the user in the centre, the three AI on the first orbit as equals,
 // categories as planets on the second orbit, each with its technologies as moons.
-import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2 } from './lib.mjs';
+import { F, out, text, measure, mix, icon, iconColor, svg, stack, CAT, CAT_ORDER, header, linkCards, linkRow, pic, r2, me as avatar } from './lib.mjs';
 
 const BG = '#0d1117', TILE = '#161b22', LINE = '#30363d';
 const ai = stack.filter((s) => s.tier === 'ai');
@@ -20,11 +20,10 @@ const upright = (sec, dir) => `class="up" style="animation:${dir === 'cw' ? 'ccw
 const panel = (w, h) => `<rect width="${w}" height="${h}" rx="16" fill="${BG}"/><rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="15.5" stroke="#21262d"/>`;
 
 // The user. One function so it can become an avatar later.
+// The user: GitHub avatar in a ring.
 function me(cx, cy, r) {
-  const size = Math.min(14, (14 * r * 1.55) / measure(F.bold, 'MaKarastY', 14));
   return `<circle cx="${cx}" cy="${cy}" r="${r + 9}" stroke="#e6edf3" stroke-opacity="0.08"/>` +
-    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#1b2028" stroke="#e6edf3" stroke-opacity="0.35"/>` +
-    text(F.bold, 'MaKarastY', cx, cy + size * 0.36, size, { anchor: 'middle', fill: '#f0f6fc' });
+    avatar(cx, cy, r) + `<circle cx="${cx}" cy="${cy}" r="${r}" stroke="#e6edf3" stroke-opacity="0.35"/>`;
 }
 function aiPlanet(it, x, y, r) {
   const c = iconColor(it, TILE);
