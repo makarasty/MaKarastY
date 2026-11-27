@@ -1,5 +1,7 @@
 <div align="center">
   <picture><source media="(max-width: 600px)" srcset="profile/stack-m.svg"><img alt="Tech stack of makarasty around their avatar. AI: Claude, Gemini, ChatGPT. Languages: PowerShell, TypeScript, JavaScript, Go, Rust, Python, Bash, Batch, Java, C#, Kotlin, GLSL. Web: Bun, Nuxt, HTML, Tailwind, discord.js, Node.js, Vue, Vite, Fastify, CSS, Sass, Elysia, React, EJS. Data: PostgreSQL, SQLite, LMDB, Redis, Firebase, MongoDB, MySQL, SQL, Prisma, MariaDB, Drizzle. Infra: Nginx, Lavalink, Actions, Pterodactyl, Docker. Editors: VS Code, Sublime, IntelliJ. Tools: Git, Diff, oxlint / oxfmt, Vitest, Zod, Gradle, Playwright. Apps: Obsidian, Figma, Notion, draw.io, Drive. UI: Slint, Avalonia. Media: yt-dlp, FFmpeg, Aseprite, OBS, DaVinci. Platforms: Windows, Debian, Ubuntu, Android. Games: Mindustry, Minecraft, Unity. Formats: YAML, CSV, .env, Markdown, JSON, TOML, XML, Properties, SVG." src="profile/stack.svg"></picture>
+  <br>
+  <sub>One slow turn every 4 minutes. The more I like a tool, the closer it sits to me</sub>
 </div>
 
 <br>

@@ -310,7 +310,10 @@ export const linkRow = (dir) =>
 // The three AI differ by how much the user uses them (stack.mjs tag main / second / images):
 // "отношения к ним разные" (2026-11-27) replaced the earlier "three AI equal".
 // ChatGPT "хотя бы такой же, как у Gemini"; Claude still first but "можно немного уменьшить" (2026-11-27).
-export const AI_K = { claude: 0.98, gemini: 0.86, chatgpt: 0.86 };
+// env AIK=near (round 13): Gemini and ChatGPT nearly as big as Claude ("Джимини тоже крутой").
+const AI_SETS = { now: { claude: 0.98, gemini: 0.86, chatgpt: 0.86 }, near: { claude: 0.95, gemini: 0.91, chatgpt: 0.91 } };
+export const AI_K = AI_SETS[process.env.AIK ?? 'now'];
+if (!AI_K) throw new Error(`unknown AIK=${process.env.AIK}`);
 // Tech size by the user's 1-10 score.
 export const SIZES = {
   equal: () => 1,

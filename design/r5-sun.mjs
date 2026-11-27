@@ -76,10 +76,22 @@ function build(file, o) {
   // Each slot takes ring area in proportion to its disc's area; with equal sizes this is r0 + c * sqrt(n).
   const cum = [0];
   seq.forEach((it, n) => n && cum.push(cum[n - 1] + (base(seq[n - 1]) ** 2 + base(it) ** 2) / 2));
-  const slots = seq.map((it, n) => {
-    const a = n * GOLDEN, r = r0 + (rMax - r0) * Math.sqrt(cum[n] / cum[seq.length - 1]);
+  // env AIR=ring (round 13): the three AI share the first orbit, 120 degrees apart, so Gemini and ChatGPT sit
+  // as close to the avatar as Claude ("подтянул Джимини ближе ко мне", "GPT тоже немножко ближе").
+  const ring = process.env.AIR === 'ring';
+  // With the AI on a ring the techs' spiral starts at rIn (inside the ring's reach) instead of after the AI.
+  const makeSlots = (rOut, rIn = r0) => seq.map((it, n) => {
+    const onRing = ring && n < nAi;
+    const a = onRing ? (n * 2 * Math.PI) / nAi : n * GOLDEN;
+    const t = ring && rIn !== r0 ? (cum[n] - cum[nAi]) / (cum[seq.length - 1] - cum[nAi]) : cum[n] / cum[seq.length - 1];
+    const r = onRing ? r0 : rIn + (rOut - rIn) * Math.sqrt(t);
     return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a), r0: r, a: ((a % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI) };
   });
+  // env TIGHT=1 (round 13, "можно всё прижать сильнее"): same disc sizes, the spiral drawn in as far as it goes
+  // with 3px gaps, so the icons sit closer to each other and to the avatar.
+  const tight = process.env.TIGHT === '1';
+  if (tight && PLACE === 'sector') throw new Error('TIGHT and PLACE=sector are not combined');
+  let slots = makeSlots(rMax);
   let items = seq;
   if (PLACE === 'sector') {
     // One wedge per kind, sized by how many items it has; inside a wedge, higher score sits closer to the centre.
@@ -98,9 +110,22 @@ function build(file, o) {
   }
   const place = (s) => items.map((it, n) => ({ it, ...slots[n], r: base(it) * s }));
   // No overlaps (2px gap) with each other and with the avatar ring; always inside the panel, at any rotation.
-  const fits = (discs) => discs.every((d, i) =>
+  const fits = (discs, gap = 2) => discs.every((d, i) =>
     d.r0 + d.r <= Math.min(W, H) / 2 - 4 && Math.hypot(d.x - cx, d.y - cy) >= d.r + meR + 9 + 2 &&
-    discs.slice(i + 1).every((e) => Math.hypot(d.x - e.x, d.y - e.y) >= d.r + e.r + 2));
+    discs.slice(i + 1).every((e) => Math.hypot(d.x - e.x, d.y - e.y) >= d.r + e.r + gap));
+  if (tight) {
+    // Smallest outer radius, with the techs starting as close to the AI ring as fits; every pair keeps 3px.
+    // Fit is not monotonic in either radius, so this scans the whole grid (about 20k layouts, under a second).
+    let best = { rOut: rMax, rIn: r0 };
+    for (let rIn = r0; rIn <= r0 + aiR * 2; rIn += 2) {
+      for (let rOut = rMax; rOut > rIn + 60; rOut -= 1) {
+        slots = makeSlots(rOut, rIn);
+        if (rOut < best.rOut && fits(place(1), 3)) best = { rOut, rIn };
+      }
+    }
+    slots = makeSlots(best.rOut, best.rIn);
+    console.log(`${file}: drawn in to r=${best.rOut} (was ${r2(rMax)}), techs from r=${best.rIn}`);
+  }
   // The largest scale that still fits; equal sizes never grow past the rated layout (scale 1).
   let s = 1;
   if (SIZE !== 'equal' || !fits(place(1))) {
@@ -122,6 +147,7 @@ function build(file, o) {
   // Claude biggest; ChatGPT at least as big as Gemini (the user, 2026-11-27), on the picture, not only in AI_K.
   const rOf = (id) => discs.find((d) => d.it.id === id).r;
   assert(rOf('claude') > rOf('gemini') && rOf('chatgpt') >= rOf('gemini'), `${file}: AI sizes out of order`);
+  if (ring) for (const id of ['gemini', 'chatgpt']) assert(Math.abs(discs.find((d) => d.it.id === id).r0 - r0) < 0.01, `${file}: ${id} left the AI ring`);
   let spiral = `<g style="transform-origin:${cx}px ${cy}px;animation:cw ${SEC}s linear infinite">`;
   discs.forEach(({ it, x, y, r }) => {
     let body;
